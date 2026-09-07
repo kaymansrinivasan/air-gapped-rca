@@ -1,4 +1,5 @@
 # airgap-rca working paper template
+![Uploading image.png…]()
 
 ## Overleaf
 
@@ -29,28 +30,6 @@ Download TeX dependencies in the connected staging environment in advance.
   future measured results.
 - IEEEtran.cls, if bundled: unchanged third-party IEEE class with its original
   license header. Overleaf also supplies IEEEtran through TeX Live.
-
-## Workflow
-
-1. Confirm affiliations and co-authors before submission.
-2. Keep the guide's section order. Replace blue Draft task blocks as work finishes.
-3. Expand related work with primary papers, not only the current web references.
-4. Agree on evaluation definitions before running the frozen test set.
-5. Implement the real benchmark exporter to write tables and figures from raw
-   measurement records. Never type benchmark numbers into the manuscript.
-6. Remove every Pending and Draft task only when evidence exists. Unmeasured
-   values are missing, not zero. Report errors and missing power data honestly.
-7. Keep the final internal draft within 8–12 pages. Follow a selected venue's
-   page limits and template when preparing a submission.
-
-## GitHub integration
-
-Copy these source files into the repository's paper/ folder. Add paper/main.pdf
-if you want a readable draft link on GitHub. Once LaTeX is the chosen source,
-replace paper/draft.md with a short link to main.tex and main.pdf, rather than
-maintaining two competing manuscripts. Update notes/decisions.md to record the
-week-1 choice. No remote repository or Overleaf project was modified by creating
-this package.
 
 ## Layout versus results
 
