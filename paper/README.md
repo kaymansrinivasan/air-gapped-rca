@@ -1,5 +1,4 @@
 # airgap-rca working paper template
-![Uploading image.png…]()
 
 ## Overleaf
 
