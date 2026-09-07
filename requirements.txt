@@ -1,0 +1,2 @@
+# Skeleton only: no third-party dependencies selected.
+# Pin exact versions after verifying compatibility on both target platforms.
