@@ -1,5 +1,9 @@
 # airgap-rca working paper template
 
+## Paper preview
+
+![Paper draft preview in Overleaf](latex.png)
+
 ## Overleaf
 
 Use New Project > Upload Project and select the supplied ZIP. Alternatively,
