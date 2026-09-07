@@ -10,11 +10,11 @@ native libraries, SDK/runtime/export tooling, datasets and labels, and documenta
 
 ## Cold-boot test record
 
-Date: TBD
-Platform and configuration: TBD
-Bundle checksum: TBD
-All network connections disabled/disconnected: NOT TESTED
-Reboot and automatic startup: NOT TESTED
-Command/request: TBD
-Observed output: TBD
-Missing dependencies: TBD
+Date: 
+Platform and configuration: 
+Bundle checksum: 
+All network connections disabled/disconnected:
+Reboot and automatic startup: 
+Command/request: 
+Observed output: 
+Missing dependencies: 
