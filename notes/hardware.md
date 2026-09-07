@@ -18,5 +18,4 @@ Status: target names come from the guide; lab specifications are unverified.
 | Power measurement method / boundary | TBD | TBD |
 | Network disconnection verification | NOT TESTED | NOT TESTED |
 
-Record the date and configuration with each benchmark. Do not overwrite the only
-record of an earlier run's settings; preserve configuration snapshots with results.
+
