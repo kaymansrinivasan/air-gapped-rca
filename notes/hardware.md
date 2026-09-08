@@ -1,21 +1,10 @@
-# Hardware and software configuration
+### RB3 Gen 2 — initial DSP validation
 
-Status: target names come from the guide; lab specifications are unverified.
-
-| Field | Jetson AGX Orin | Qualcomm RB3 Gen 2 |
-| --- | --- | --- |
-| Exact module / board variant | TBD | TBD |
-| RAM and available memory | TBD | TBD |
-| Storage and free space | TBD | TBD |
-| OS / kernel / architecture | TBD | TBD |
-| SDK and driver versions | TBD | TBD |
-| Inference runtime and version | TBD | TBD |
-| Model checkpoint / checksum | TBD | TBD |
-| Quantisation / activation precision | TBD | TBD |
-| Accelerator execution / CPU fallback | TBD | TBD |
-| Power mode / clock settings | TBD | TBD |
-| Cooling / temperature | TBD | TBD |
-| Power measurement method / boundary | TBD | TBD |
-| Network disconnection verification | NOT TESTED | NOT TESTED |
-
+- OS: Ubuntu 24.04.4 LTS, ARM64
+- QAIRT packages: 2.46.0-0ubuntu1~bpo24.04.1
+- Detected DSP architecture: Hexagon V68
+- QNN platform validator: hardware supported, libraries found
+- DSP calculator unit test: passed
+- Evidence: rca-validation/validator.log
+- Language-model inference and offline cold-boot test: pending
 
