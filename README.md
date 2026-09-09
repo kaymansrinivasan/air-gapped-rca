@@ -5,7 +5,7 @@ Grounded root cause analysis on offline edge accelerators.
 ## Status
 
 Repository skeleton only. The pipeline, dataset, models, verification rules,
-and benchmark are not implemented or selected yet. No results are claimed.
+and benchmark are not implemented or selected yet. No claim
 
 ## Structure
 
