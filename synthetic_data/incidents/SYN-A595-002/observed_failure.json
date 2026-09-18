@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0",
+  "incident_id": "SYN-A595-002",
+  "synthetic_device_key": "SYNDEV-SYN-A595-002-W02-D080",
+  "source_anchor": {
+    "dataset_id": "A595",
+    "lot_id": "TEST",
+    "wafer_id": "02",
+    "part_id": "80",
+    "site": 0,
+    "x": -2,
+    "y": 21,
+    "source_device_key": "A595:1a835188e49010c78505e8cc1bacde1be22aa2e4c91be2898dba23808c68a94f:W02:D80:SITE0"
+  },
+  "evidence_id": "SYN-A595-002-FAILURE",
+  "origin": "REAL_OBSERVED",
+  "scope": "Original failure copied unchanged; its attachment to this synthetic incident is fictional.",
+  "source_citation": {
+    "file": "source/a595_tester_log.txt",
+    "sha256": "50dd35d58a93ff75404743a49789115b7180808b870cab4d6223d56430c81928",
+    "line_start": 12704,
+    "line_end": 12706,
+    "binary_file": "source/a595.stdf",
+    "binary_sha256": "1a835188e49010c78505e8cc1bacde1be22aa2e4c91be2898dba23808c68a94f",
+    "record_index": 10205,
+    "byte_offset": 527566
+  },
+  "source_test_record": {
+    "lot_id": "TEST",
+    "tester": "a595-tst",
+    "program": "mcc",
+    "wafer_id": "02",
+    "part_id": "80",
+    "station": 1,
+    "site": 0,
+    "timestamp_text": "Mon Dec  2 08:59:18 2002",
+    "bin": 10,
+    "x": -2,
+    "y": 21,
+    "test_number": 100,
+    "line_start": 12704,
+    "line_end": 12706,
+    "raw_line": "   100 Open/Short-         Halt Vector:      0   Halt Cycle:      0   Failing Pins:  1 (F)",
+    "status": "FAIL",
+    "alarm": false,
+    "failed_pins": [
+      {
+        "name": "AMSDSM",
+        "number": 40
+      }
+    ],
+    "test_name": "Open/Short-",
+    "kind": "pin_or_pattern",
+    "failing_pin_count": 1,
+    "halt_vector": 0,
+    "halt_cycle": 0,
+    "stdf_record_type": "FTR",
+    "stdf_record_index": 10205,
+    "stdf_byte_offset": 527566,
+    "test_flags": 128,
+    "parameter_flags": null,
+    "root_cause": null,
+    "stdf_return_states": [],
+    "stdf_return_indices": [],
+    "stdf_functional_details": {
+      "CYCL_CNT": 0,
+      "REL_VADR": 0,
+      "REPT_CNT": 0,
+      "NUM_FAIL": 1,
+      "FAIL_PIN": {
+        "bits": 240,
+        "hex": "000000008000000000000000000000000000000000000000000000000000"
+      },
+      "VECT_NAM": "",
+      "TIME_SET": "",
+      "TEST_TXT": "Open/Short- <> cont"
+    }
+  },
+  "excerpt": "   100 Open/Short-         Halt Vector:      0   Halt Cycle:      0   Failing Pins:  1 (F)\n          Failed Pins:\n               AMSDSM : 40    ",
+  "source_device_test_count": 1,
+  "actual_physical_cause": null
+}

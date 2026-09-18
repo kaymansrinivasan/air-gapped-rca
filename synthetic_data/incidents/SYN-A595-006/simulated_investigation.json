@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "incident_id": "SYN-A595-006",
+  "synthetic_device_key": "SYNDEV-SYN-A595-006-W03-D198",
+  "source_anchor": {
+    "dataset_id": "A595",
+    "lot_id": "TEST",
+    "wafer_id": "03",
+    "part_id": "198",
+    "site": 0,
+    "x": 4,
+    "y": 22,
+    "source_device_key": "A595:1a835188e49010c78505e8cc1bacde1be22aa2e4c91be2898dba23808c68a94f:W03:D198:SITE0"
+  },
+  "evidence_id": "SYN-A595-006-INVESTIGATION",
+  "origin": "SIMULATED",
+  "label": "FICTIONAL INVESTIGATION — NO ENGINEER PERFORMED THESE CHECKS",
+  "observations": [
+    {
+      "step": 1,
+      "origin": "SIMULATED",
+      "text": "A fictional candidate retest is attached to the incident but its synthetic device key does not match the incident subject."
+    },
+    {
+      "step": 2,
+      "origin": "SIMULATED",
+      "text": "Its passing result must be excluded from this device's recovery evidence."
+    },
+    {
+      "step": 3,
+      "origin": "SIMULATED",
+      "text": "A correctly identified focused repeat is required; its outcome is not yet known. No discriminating cause investigation is available."
+    }
+  ],
+  "interpretation_within_simulation": null,
+  "cause_status": "UNRESOLVED",
+  "cites": [
+    "SYN-A595-006-FAILURE",
+    "SYN-A595-006-RETEST-1"
+  ]
+}

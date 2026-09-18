@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "incident_id": "SYN-A595-003",
+  "synthetic_device_key": "SYNDEV-SYN-A595-003-W02-D041",
+  "source_anchor": {
+    "dataset_id": "A595",
+    "lot_id": "TEST",
+    "wafer_id": "02",
+    "part_id": "41",
+    "site": 0,
+    "x": 6,
+    "y": 18,
+    "source_device_key": "A595:1a835188e49010c78505e8cc1bacde1be22aa2e4c91be2898dba23808c68a94f:W02:D41:SITE0"
+  },
+  "evidence_id": "SYN-A595-003-INVESTIGATION",
+  "origin": "SIMULATED",
+  "label": "FICTIONAL INVESTIGATION — NO ENGINEER PERFORMED THESE CHECKS",
+  "observations": [
+    {
+      "step": 1,
+      "origin": "SIMULATED",
+      "text": "The original 200.01 mA display is preserved as an alarm-marked reading, not treated as a precise clean measurement."
+    },
+    {
+      "step": 2,
+      "origin": "SIMULATED",
+      "text": "A fictional isolation check reports excessive supply load even with the synthetic DUT disconnected; that load is absent on a reference interface."
+    },
+    {
+      "step": 3,
+      "origin": "SIMULATED",
+      "text": "A fictional fixture inspection identifies an unintended supply load. These added observations are the basis of the scenario diagnosis."
+    }
+  ],
+  "interpretation_within_simulation": "Unintended load in the simulated test fixture supply path",
+  "cause_status": "CONFIRMED_WITHIN_SIMULATION_ONLY",
+  "cites": [
+    "SYN-A595-003-FAILURE"
+  ]
+}

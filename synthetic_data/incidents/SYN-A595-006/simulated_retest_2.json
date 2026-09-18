@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "incident_id": "SYN-A595-006",
+  "synthetic_device_key": "SYNDEV-SYN-A595-006-W03-D198",
+  "source_anchor": {
+    "dataset_id": "A595",
+    "lot_id": "TEST",
+    "wafer_id": "03",
+    "part_id": "198",
+    "site": 0,
+    "x": 4,
+    "y": 22,
+    "source_device_key": "A595:1a835188e49010c78505e8cc1bacde1be22aa2e4c91be2898dba23808c68a94f:W03:D198:SITE0"
+  },
+  "evidence_id": "SYN-A595-006-RETEST-2",
+  "origin": "SIMULATED",
+  "label": "SIMULATED RETEST — THESE MEASUREMENTS WERE NOT TAKEN",
+  "candidate_incident_id": "SYN-A595-006",
+  "attempt": 2,
+  "scope": "TARGETED_CHECK_ONLY",
+  "expected_catalogue_tests": 123,
+  "test_count": 1,
+  "device_outcome": "FAIL",
+  "tests": [
+    {
+      "test_number": 702,
+      "test_name": "Delay Line #03",
+      "kind": "parametric",
+      "status": "FAIL",
+      "alarm": false,
+      "value": 389.8,
+      "unit": "ns",
+      "lower_limit": 390.0,
+      "upper_limit": 430.0,
+      "lower_comparator": "<",
+      "upper_comparator": "<",
+      "failed_pins": [],
+      "origin": "SIMULATED",
+      "template_provenance": {
+        "source_part_id": "198",
+        "file": "source/a595_tester_log.txt",
+        "line_start": 30496,
+        "line_end": 30496
+      },
+      "generation_method": "Copied values from a source record into a fictional new run; no physics or noise model."
+    }
+  ],
+  "cites": [
+    "SYN-A595-006-ACTION"
+  ]
+}

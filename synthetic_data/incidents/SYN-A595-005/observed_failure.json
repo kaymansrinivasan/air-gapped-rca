@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "incident_id": "SYN-A595-005",
+  "synthetic_device_key": "SYNDEV-SYN-A595-005-W09-D331",
+  "source_anchor": {
+    "dataset_id": "A595",
+    "lot_id": "TEST",
+    "wafer_id": "09",
+    "part_id": "331",
+    "site": 0,
+    "x": 6,
+    "y": 24,
+    "source_device_key": "A595:1a835188e49010c78505e8cc1bacde1be22aa2e4c91be2898dba23808c68a94f:W09:D331:SITE0"
+  },
+  "evidence_id": "SYN-A595-005-FAILURE",
+  "origin": "REAL_OBSERVED",
+  "scope": "Original failure copied unchanged; its attachment to this synthetic incident is fictional.",
+  "source_citation": {
+    "file": "source/a595_tester_log.txt",
+    "sha256": "50dd35d58a93ff75404743a49789115b7180808b870cab4d6223d56430c81928",
+    "line_start": 50692,
+    "line_end": 50695,
+    "binary_file": "source/a595.stdf",
+    "binary_sha256": "1a835188e49010c78505e8cc1bacde1be22aa2e4c91be2898dba23808c68a94f",
+    "record_index": 40188,
+    "byte_offset": 2079784
+  },
+  "source_test_record": {
+    "lot_id": "TEST",
+    "tester": "a595-tst",
+    "program": "mcc",
+    "wafer_id": "09",
+    "part_id": "331",
+    "station": 1,
+    "site": 0,
+    "timestamp_text": "Mon Dec  2 09:13:12 2002",
+    "bin": 3,
+    "x": 6,
+    "y": 24,
+    "test_number": 606,
+    "line_start": 50692,
+    "line_end": 50695,
+    "raw_line": "   606 SCAN Test           Halt Vector:  15470   Halt Cycle:  15470   Failing Pins:  1 (F)",
+    "status": "FAIL",
+    "alarm": false,
+    "failed_pins": [
+      {
+        "name": "TSTOUT",
+        "number": 87
+      }
+    ],
+    "test_name": "SCAN Test",
+    "kind": "pin_or_pattern",
+    "failing_pin_count": 1,
+    "halt_vector": 15470,
+    "halt_cycle": 15470,
+    "pattern": "scan",
+    "stdf_record_type": "FTR",
+    "stdf_record_index": 40188,
+    "stdf_byte_offset": 2079784,
+    "test_flags": 128,
+    "parameter_flags": null,
+    "root_cause": null,
+    "stdf_return_states": [],
+    "stdf_return_indices": [],
+    "stdf_functional_details": {
+      "CYCL_CNT": 15470,
+      "REL_VADR": 15470,
+      "REPT_CNT": 0,
+      "NUM_FAIL": 1,
+      "FAIL_PIN": {
+        "bits": 240,
+        "hex": "000000000000000000004000000000000000000000000000000000000000"
+      },
+      "VECT_NAM": "scan",
+      "TIME_SET": "",
+      "TEST_TXT": "SCAN Test <> digital"
+    }
+  },
+  "excerpt": "   606 SCAN Test           Halt Vector:  15470   Halt Cycle:  15470   Failing Pins:  1 (F)\n       Pattern: scan                                                                            \n          Failed Pins:\n               TSTOUT : 87    ",
+  "source_device_test_count": 74,
+  "actual_physical_cause": null
+}

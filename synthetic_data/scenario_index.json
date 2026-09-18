@@ -1,0 +1,165 @@
+[
+  {
+    "schema_version": "1.0",
+    "incident_id": "SYN-A595-001",
+    "synthetic_device_key": "SYNDEV-SYN-A595-001-W02-D080",
+    "source_anchor": {
+      "dataset_id": "A595",
+      "lot_id": "TEST",
+      "wafer_id": "02",
+      "part_id": "80",
+      "site": 0,
+      "x": -2,
+      "y": 21,
+      "source_device_key": "A595:1a835188e49010c78505e8cc1bacde1be22aa2e4c91be2898dba23808c68a94f:W02:D80:SITE0"
+    },
+    "title": "Continuity branch A: recovery after a simulated contact intervention",
+    "intended_use": "WORKFLOW_DEMONSTRATION_ONLY",
+    "source_lineage_group": "A595:1a835188e49010c78505e8cc1bacde1be22aa2e4c91be2898dba23808c68a94f:W02:D80:SITE0",
+    "evidence_ids": [
+      "SYN-A595-001-FAILURE",
+      "SYN-A595-001-INVESTIGATION",
+      "SYN-A595-001-ACTION",
+      "SYN-A595-001-RETEST-1"
+    ],
+    "scenario_origin": "SYNTHETIC_EXTENSION_OF_REAL_FAILURE",
+    "real_world_cause_status": "UNKNOWN",
+    "human_engineer_reviewed": false
+  },
+  {
+    "schema_version": "1.0",
+    "incident_id": "SYN-A595-002",
+    "synthetic_device_key": "SYNDEV-SYN-A595-002-W02-D080",
+    "source_anchor": {
+      "dataset_id": "A595",
+      "lot_id": "TEST",
+      "wafer_id": "02",
+      "part_id": "80",
+      "site": 0,
+      "x": -2,
+      "y": 21,
+      "source_device_key": "A595:1a835188e49010c78505e8cc1bacde1be22aa2e4c91be2898dba23808c68a94f:W02:D80:SITE0"
+    },
+    "title": "Continuity branch B: no recovery from the same initial failure",
+    "intended_use": "WORKFLOW_DEMONSTRATION_ONLY",
+    "source_lineage_group": "A595:1a835188e49010c78505e8cc1bacde1be22aa2e4c91be2898dba23808c68a94f:W02:D80:SITE0",
+    "evidence_ids": [
+      "SYN-A595-002-FAILURE",
+      "SYN-A595-002-INVESTIGATION",
+      "SYN-A595-002-ACTION",
+      "SYN-A595-002-RETEST-1"
+    ],
+    "scenario_origin": "SYNTHETIC_EXTENSION_OF_REAL_FAILURE",
+    "real_world_cause_status": "UNKNOWN",
+    "human_engineer_reviewed": false
+  },
+  {
+    "schema_version": "1.0",
+    "incident_id": "SYN-A595-003",
+    "synthetic_device_key": "SYNDEV-SYN-A595-003-W02-D041",
+    "source_anchor": {
+      "dataset_id": "A595",
+      "lot_id": "TEST",
+      "wafer_id": "02",
+      "part_id": "41",
+      "site": 0,
+      "x": 6,
+      "y": 18,
+      "source_device_key": "A595:1a835188e49010c78505e8cc1bacde1be22aa2e4c91be2898dba23808c68a94f:W02:D41:SITE0"
+    },
+    "title": "Supply-current alarm: simulated fixture isolation and recovery",
+    "intended_use": "WORKFLOW_DEMONSTRATION_ONLY",
+    "source_lineage_group": "A595:1a835188e49010c78505e8cc1bacde1be22aa2e4c91be2898dba23808c68a94f:W02:D41:SITE0",
+    "evidence_ids": [
+      "SYN-A595-003-FAILURE",
+      "SYN-A595-003-INVESTIGATION",
+      "SYN-A595-003-ACTION",
+      "SYN-A595-003-RETEST-1"
+    ],
+    "scenario_origin": "SYNTHETIC_EXTENSION_OF_REAL_FAILURE",
+    "real_world_cause_status": "UNKNOWN",
+    "human_engineer_reviewed": false
+  },
+  {
+    "schema_version": "1.0",
+    "incident_id": "SYN-A595-004",
+    "synthetic_device_key": "SYNDEV-SYN-A595-004-W02-D011",
+    "source_anchor": {
+      "dataset_id": "A595",
+      "lot_id": "TEST",
+      "wafer_id": "02",
+      "part_id": "11",
+      "site": 0,
+      "x": 1,
+      "y": 15,
+      "source_device_key": "A595:1a835188e49010c78505e8cc1bacde1be22aa2e4c91be2898dba23808c68a94f:W02:D11:SITE0"
+    },
+    "title": "High delay: simulated test-configuration investigation",
+    "intended_use": "WORKFLOW_DEMONSTRATION_ONLY",
+    "source_lineage_group": "A595:1a835188e49010c78505e8cc1bacde1be22aa2e4c91be2898dba23808c68a94f:W02:D11:SITE0",
+    "evidence_ids": [
+      "SYN-A595-004-FAILURE",
+      "SYN-A595-004-INVESTIGATION",
+      "SYN-A595-004-ACTION",
+      "SYN-A595-004-RETEST-1"
+    ],
+    "scenario_origin": "SYNTHETIC_EXTENSION_OF_REAL_FAILURE",
+    "real_world_cause_status": "UNKNOWN",
+    "human_engineer_reviewed": false
+  },
+  {
+    "schema_version": "1.0",
+    "incident_id": "SYN-A595-005",
+    "synthetic_device_key": "SYNDEV-SYN-A595-005-W09-D331",
+    "source_anchor": {
+      "dataset_id": "A595",
+      "lot_id": "TEST",
+      "wafer_id": "09",
+      "part_id": "331",
+      "site": 0,
+      "x": 6,
+      "y": 24,
+      "source_device_key": "A595:1a835188e49010c78505e8cc1bacde1be22aa2e4c91be2898dba23808c68a94f:W09:D331:SITE0"
+    },
+    "title": "Scan: repeated failure with an unresolved cause",
+    "intended_use": "WORKFLOW_DEMONSTRATION_ONLY",
+    "source_lineage_group": "A595:1a835188e49010c78505e8cc1bacde1be22aa2e4c91be2898dba23808c68a94f:W09:D331:SITE0",
+    "evidence_ids": [
+      "SYN-A595-005-FAILURE",
+      "SYN-A595-005-INVESTIGATION",
+      "SYN-A595-005-ACTION",
+      "SYN-A595-005-RETEST-1"
+    ],
+    "scenario_origin": "SYNTHETIC_EXTENSION_OF_REAL_FAILURE",
+    "real_world_cause_status": "UNKNOWN",
+    "human_engineer_reviewed": false
+  },
+  {
+    "schema_version": "1.0",
+    "incident_id": "SYN-A595-006",
+    "synthetic_device_key": "SYNDEV-SYN-A595-006-W03-D198",
+    "source_anchor": {
+      "dataset_id": "A595",
+      "lot_id": "TEST",
+      "wafer_id": "03",
+      "part_id": "198",
+      "site": 0,
+      "x": 4,
+      "y": 22,
+      "source_device_key": "A595:1a835188e49010c78505e8cc1bacde1be22aa2e4c91be2898dba23808c68a94f:W03:D198:SITE0"
+    },
+    "title": "Low delay: reject a retest linked to the wrong device",
+    "intended_use": "WORKFLOW_DEMONSTRATION_ONLY",
+    "source_lineage_group": "A595:1a835188e49010c78505e8cc1bacde1be22aa2e4c91be2898dba23808c68a94f:W03:D198:SITE0",
+    "evidence_ids": [
+      "SYN-A595-006-FAILURE",
+      "SYN-A595-006-INVESTIGATION",
+      "SYN-A595-006-ACTION",
+      "SYN-A595-006-RETEST-1",
+      "SYN-A595-006-RETEST-2"
+    ],
+    "scenario_origin": "SYNTHETIC_EXTENSION_OF_REAL_FAILURE",
+    "real_world_cause_status": "UNKNOWN",
+    "human_engineer_reviewed": false
+  }
+]

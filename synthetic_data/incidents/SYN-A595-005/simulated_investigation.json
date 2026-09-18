@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "incident_id": "SYN-A595-005",
+  "synthetic_device_key": "SYNDEV-SYN-A595-005-W09-D331",
+  "source_anchor": {
+    "dataset_id": "A595",
+    "lot_id": "TEST",
+    "wafer_id": "09",
+    "part_id": "331",
+    "site": 0,
+    "x": 6,
+    "y": 24,
+    "source_device_key": "A595:1a835188e49010c78505e8cc1bacde1be22aa2e4c91be2898dba23808c68a94f:W09:D331:SITE0"
+  },
+  "evidence_id": "SYN-A595-005-INVESTIGATION",
+  "origin": "SIMULATED",
+  "label": "FICTIONAL INVESTIGATION — NO ENGINEER PERFORMED THESE CHECKS",
+  "observations": [
+    {
+      "step": 1,
+      "origin": "SIMULATED",
+      "text": "A fictional targeted repeat again reports TSTOUT at cycle 15470."
+    },
+    {
+      "step": 2,
+      "origin": "SIMULATED",
+      "text": "No scan-chain or cell mapping, complete pattern definition, approved timing comparison, or physical diagnosis is supplied."
+    },
+    {
+      "step": 3,
+      "origin": "SIMULATED",
+      "text": "Repeatability establishes a repeatable observation within this scenario; it does not isolate the cause to silicon or equipment."
+    }
+  ],
+  "interpretation_within_simulation": null,
+  "cause_status": "UNRESOLVED",
+  "cites": [
+    "SYN-A595-005-FAILURE"
+  ]
+}

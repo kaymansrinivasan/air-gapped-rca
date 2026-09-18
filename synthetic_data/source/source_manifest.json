@@ -1,0 +1,12 @@
+{
+  "source_archive": "ATE_A595_data_pack.zip",
+  "dataset": "A595",
+  "source_origin": "USER_SUPPLIED_REAL_LOG",
+  "original_factory_provenance_independently_authenticated": false,
+  "repository_attribution": "https://github.com/DavidGattrell/STDF.RADAR/tree/9409d915700ef60adcf6f67574a1e0b2894d42cb/example_data",
+  "files": {
+    "a595.stdf": "1a835188e49010c78505e8cc1bacde1be22aa2e4c91be2898dba23808c68a94f",
+    "a595_tester_log.txt": "50dd35d58a93ff75404743a49789115b7180808b870cab4d6223d56430c81928"
+  },
+  "notice": "Original measured results are preserved. No investigation, repair or retest below is an actual A595 event."
+}
