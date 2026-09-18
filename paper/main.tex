@@ -20,7 +20,11 @@
 \pagestyle{plain}
 \begin{document}
 \title{Sovereign Root Cause Analysis: Grounded Log Triage on Air-Gapped Edge Accelerators, with a Cross-Silicon Characterisation}
-\author{\IEEEauthorblockN{Kayman Srinivasan}\IEEEauthorblockA{Working manuscript --- September 2026\\Affiliations and co-authors to be confirmed}}
+\author{\IEEEauthorblockN{Kayman Srinivasan}
+\IEEEauthorblockA{Working manuscript --- September 2026\\
+Affiliations and co-authors to be confirmed\\[0.5em]
+Supervisor: Kother Badushah\\
+Solutions Architect (Semicon and AI), UST}}
 \maketitle
 \begin{abstract}
 \textbf{Working abstract scaffold; results pending.} Engineering teams operating under strict data residency constraints need methods for investigating machine failures without exporting their logs. This project investigates a fully local log-triage pipeline that combines provenance-preserving ingestion, semantic and keyword retrieval, structured candidate generation, deterministic citation checks, and refusal when no candidate passes the evidence policy. The planned evaluation compares the pipeline on a Jetson AGX Orin and a Qualcomm RB3 Gen 2, documenting model, runtime, and quantisation differences. Quality evaluation will distinguish cause accuracy, citation integrity, refusal behaviour, and incorrect accepted answers. Performance evaluation will measure request latency, generation throughput, power, and energy per triage. Component ablations will examine the contribution of keyword matching, verification, and refusal. No implementation outcome, accelerator compatibility, or benchmark result is claimed in this scaffold. The final abstract will replace this text with the measured quality--performance trade-offs and the principal limitations of the completed study.
