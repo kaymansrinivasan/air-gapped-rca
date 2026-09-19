@@ -26,11 +26,3 @@ Updated on 2026-09-19 to cover work after September 7. Repository-backed entries
 - **Staged demonstration:** [Questions](../syn_data/replay/questions.jsonl), [events](../syn_data/replay/events.jsonl), and [reference answers](../syn_data/reference/answer_key.jsonl) are authored data artifacts. They do not demonstrate that retrieval, generation, verification, or refusal has run successfully.
 - **Paper:** [Manuscript](../paper/main.tex) and [build/status notes](../paper/README.md) describe a working template. Tables and charts remain placeholders with no measured benchmark values. The supervisor update is dated September 18 in Git history.
 
-## Open follow-ups as of 2026-09-19
-
-1. Obtain ATE engineer review of scenario realism, investigation evidence, proposed causes, and reference answers. Agree with the mentor on the boundary between a suggested cause and a confirmed current-incident cause.
-2. Resolve dataset packaging consistency: `syn_data/manifest.json` still lists deleted README, walkthrough, and script files. The manifest needs reconciliation before reproducibility can be claimed.
-3. Implement stage-limited evidence access and prevent answer-key or future-evidence leakage. Keep related scenarios from the same source-device failure together when defining development/evaluation splits.
-4. Build and freeze a reviewed evaluation set. The 18 demonstration questions do not meet the guide's minimum of 50 questions including at least 10 unanswerable cases. Reconcile the manuscript's separate proposed target of 50 answerable plus 10 refusal cases.
-5. Implement the RCA pipeline and benchmark harness; the current source modules and `benchmark.py` remain placeholders. Complete RB3 LLM qualification, comparable model/quantisation settings, and disconnected cold-boot testing on both boards before reporting platform readiness.
-6. Measure accuracy, false answers, refusals, latency, throughput, power, and energy per triage; use those outputs to complete the paper.
