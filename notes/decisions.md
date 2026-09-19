@@ -26,3 +26,12 @@ Updated on 2026-09-19 to cover work after September 7. Repository-backed entries
 - **Staged demonstration:** [Questions](../syn_data/replay/questions.jsonl), [events](../syn_data/replay/events.jsonl), and [reference answers](../syn_data/reference/answer_key.jsonl) are authored data artifacts. They do not demonstrate that retrieval, generation, verification, or refusal has run successfully.
 - **Paper:** [Manuscript](../paper/main.tex) and [build/status notes](../paper/README.md) describe a working template. Tables and charts remain placeholders with no measured benchmark values. The supervisor update is dated September 18 in Git history.
 
+
+## First executable prototype — 2026-09-19
+
+- Implement the staged data flow with standard-library Python so ingestion and verification can be tested before selecting additional dependencies.
+- Start with lexical TF-IDF plus keyword retrieval; semantic embeddings remain pending.
+- Separate fixture generation from local LLM generation. Fixture outcomes are not accuracy or board benchmark results.
+- Enforce stage availability, incident/device identity, exact source citations and an explicit structured cause rule. Treat all current scenario diagnoses as simulation-only.
+- Permit explicitly selected historical cases only after a minimal test-context check; exclude shared source lineage and retain historical conclusions as hypotheses. Richer matching rules require engineer review.
+- This implementation begins after the earlier data-first investigation priority. It does not mark data validation or platform qualification complete.

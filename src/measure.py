@@ -1,4 +1,8 @@
-"""Measure end-to-end latency, generation throughput, power, and energy.
+"""Host wall-clock timing only; hardware power/energy instrumentation is pending."""
+from time import perf_counter
 
-Status: unimplemented placeholder for guide section 11.
-"""
+
+def timed(function, *args, **kwargs):
+    start = perf_counter()
+    result = function(*args, **kwargs)
+    return result, perf_counter() - start
