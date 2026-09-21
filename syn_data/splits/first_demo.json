@@ -1,0 +1,183 @@
+{
+  "schema_version": "1.0",
+  "split_id": "a595-first-demo-v1",
+  "source_repository": "kaymansrinivasan/air-gapped-rca",
+  "source_commit": "99a5bd6fbac1cb250be80fe02462e87995a0ede5",
+  "path_base": "repository_root",
+  "intended_use": "SYNTHETIC_WORKFLOW_DEMONSTRATION_ONLY",
+  "historical": {
+    "incident_ids": [
+      "SYN-A595-001",
+      "SYN-A595-002",
+      "SYN-A595-003",
+      "SYN-A595-004"
+    ],
+    "files": [
+      {
+        "evidence_id": "SYN-A595-001-FAILURE",
+        "path": "syn_data/incidents/SYN-A595-001/observed_failure.json",
+        "git_blob_sha": "19dfc6b31a3f3626d308475b0b3cd4d13e6c3c0f"
+      },
+      {
+        "evidence_id": "SYN-A595-001-INVESTIGATION",
+        "path": "syn_data/incidents/SYN-A595-001/simulated_investigation.json",
+        "git_blob_sha": "f7607a41bfcded9e139c7be515e28a911df299ae"
+      },
+      {
+        "evidence_id": "SYN-A595-001-ACTION",
+        "path": "syn_data/incidents/SYN-A595-001/simulated_action.json",
+        "git_blob_sha": "4b0d15775e7d084e92e6a1d32667eca7cd86c9c5"
+      },
+      {
+        "evidence_id": "SYN-A595-001-RETEST-1",
+        "path": "syn_data/incidents/SYN-A595-001/simulated_retest_1.json",
+        "git_blob_sha": "7dda90693f1cd0e372290ba34f496d676e0184c8"
+      },
+      {
+        "evidence_id": "SYN-A595-002-FAILURE",
+        "path": "syn_data/incidents/SYN-A595-002/observed_failure.json",
+        "git_blob_sha": "97479d49fcb2fcdcc6ea97c5a855579df1fd5a83"
+      },
+      {
+        "evidence_id": "SYN-A595-002-INVESTIGATION",
+        "path": "syn_data/incidents/SYN-A595-002/simulated_investigation.json",
+        "git_blob_sha": "6fe1983d03a8a61d4662855f3e83a378eefe6893"
+      },
+      {
+        "evidence_id": "SYN-A595-002-ACTION",
+        "path": "syn_data/incidents/SYN-A595-002/simulated_action.json",
+        "git_blob_sha": "c4e53409a34d653d383388fc60d8893afff00ab6"
+      },
+      {
+        "evidence_id": "SYN-A595-002-RETEST-1",
+        "path": "syn_data/incidents/SYN-A595-002/simulated_retest_1.json",
+        "git_blob_sha": "bb1c2a9ffbc80a92b40ebae836722944b0e623d9"
+      },
+      {
+        "evidence_id": "SYN-A595-003-FAILURE",
+        "path": "syn_data/incidents/SYN-A595-003/observed_failure.json",
+        "git_blob_sha": "7e304295d5af2388f11113dd479912d439273f31"
+      },
+      {
+        "evidence_id": "SYN-A595-003-INVESTIGATION",
+        "path": "syn_data/incidents/SYN-A595-003/simulated_investigation.json",
+        "git_blob_sha": "30dcbf64f32244891f0a84247e6bbd4f94175047"
+      },
+      {
+        "evidence_id": "SYN-A595-003-ACTION",
+        "path": "syn_data/incidents/SYN-A595-003/simulated_action.json",
+        "git_blob_sha": "7a0144836ca18e1562918dc14b06016538d1e4f3"
+      },
+      {
+        "evidence_id": "SYN-A595-003-RETEST-1",
+        "path": "syn_data/incidents/SYN-A595-003/simulated_retest_1.json",
+        "git_blob_sha": "f8c85bfa20ab813e1f916f7d379a2e65e2c28b5f"
+      },
+      {
+        "evidence_id": "SYN-A595-004-FAILURE",
+        "path": "syn_data/incidents/SYN-A595-004/observed_failure.json",
+        "git_blob_sha": "1c4c89132db597d66db88bc0237f5c8485404b84"
+      },
+      {
+        "evidence_id": "SYN-A595-004-INVESTIGATION",
+        "path": "syn_data/incidents/SYN-A595-004/simulated_investigation.json",
+        "git_blob_sha": "896b0a39ec822bd3ec76cf33e255d559a83e0c1e"
+      },
+      {
+        "evidence_id": "SYN-A595-004-ACTION",
+        "path": "syn_data/incidents/SYN-A595-004/simulated_action.json",
+        "git_blob_sha": "172ddd848c00feb7b92815722ffd68c59370657e"
+      },
+      {
+        "evidence_id": "SYN-A595-004-RETEST-1",
+        "path": "syn_data/incidents/SYN-A595-004/simulated_retest_1.json",
+        "git_blob_sha": "2162b828ef81ad2d04a8304184425f756282d188"
+      }
+    ]
+  },
+  "query": {
+    "incident_id": "SYN-A595-005",
+    "stage": "failure",
+    "files": [
+      {
+        "evidence_id": "SYN-A595-005-FAILURE",
+        "path": "syn_data/incidents/SYN-A595-005/observed_failure.json",
+        "git_blob_sha": "4a92082f63d902ec27e56b3bcae04a74a91305a7"
+      }
+    ],
+    "question": "What possible causes does the available evidence support for this failure, and what should be checked next? Cite relevant historical cases and current evidence, and state what remains unverified."
+  },
+  "evaluator_only": {
+    "held_out_files": [
+      {
+        "evidence_id": "SYN-A595-005-INVESTIGATION",
+        "path": "syn_data/incidents/SYN-A595-005/simulated_investigation.json",
+        "git_blob_sha": "84cfc161c0662bf0a177d192630668873e6e8844"
+      },
+      {
+        "evidence_id": "SYN-A595-005-ACTION",
+        "path": "syn_data/incidents/SYN-A595-005/simulated_action.json",
+        "git_blob_sha": "3959b1e4029f1d872f76fe70e27442e269b93de1"
+      },
+      {
+        "evidence_id": "SYN-A595-005-RETEST-1",
+        "path": "syn_data/incidents/SYN-A595-005/simulated_retest_1.json",
+        "git_blob_sha": "1f8281f04f5b3d60ae7253a8406627170a0da10b"
+      }
+    ],
+    "reference_answers": {
+      "path": "syn_data/reference/answer_key.jsonl",
+      "question_ids": [
+        "SYN-A595-005-Q-FAILURE"
+      ]
+    }
+  },
+  "reserved": {
+    "incident_ids": [
+      "SYN-A595-006"
+    ],
+    "files": [
+      {
+        "evidence_id": "SYN-A595-006-FAILURE",
+        "path": "syn_data/incidents/SYN-A595-006/observed_failure.json",
+        "git_blob_sha": "ae935ca78cab52ea1af928df72fa8b480cef080d"
+      },
+      {
+        "evidence_id": "SYN-A595-006-INVESTIGATION",
+        "path": "syn_data/incidents/SYN-A595-006/simulated_investigation.json",
+        "git_blob_sha": "f8fba31fce5e6eae26087db5ec663ccccff5f2d9"
+      },
+      {
+        "evidence_id": "SYN-A595-006-ACTION",
+        "path": "syn_data/incidents/SYN-A595-006/simulated_action.json",
+        "git_blob_sha": "604c562fb337a8cc3172765d23411baf0af90ef1"
+      },
+      {
+        "evidence_id": "SYN-A595-006-RETEST-1",
+        "path": "syn_data/incidents/SYN-A595-006/simulated_retest_1.json",
+        "git_blob_sha": "b4987b4b96c65c93cd4e2f9506d6cb85a0a8f264"
+      },
+      {
+        "evidence_id": "SYN-A595-006-RETEST-2",
+        "path": "syn_data/incidents/SYN-A595-006/simulated_retest_2.json",
+        "git_blob_sha": "fe6210f1e38fbd429407827cf60b53b4208fe615"
+      }
+    ]
+  },
+  "input_policy": {
+    "default": "EXCLUDE",
+    "historical_index": "historical.files only",
+    "current_evidence": "query.files only; keep separate from historical index",
+    "model_question": "query.question only",
+    "exclude_metadata_from_model": true,
+    "recursive_directory_loading_allowed": false,
+    "source_citation_resolution": "Allow only exact source excerpts referenced by permitted evidence, for citation verification; never index full source files.",
+    "runtime_enforcement": "PENDING_BLOCK_2_IMPLEMENTATION"
+  },
+  "limitations": [
+    "Historical investigations, actions and retests are fictional and not engineer-reviewed.",
+    "Cases 001 and 002 are alternative branches of the same original failure; keep them together and do not count them as independent real incidents.",
+    "No historical scan-failure case is included. This demonstration examines insufficient relevant history, not successful diagnosis from a matching scan case.",
+    "This is an explicit input selection, not a trained model, implemented retrieval pipeline, or measured benchmark."
+  ]
+}
