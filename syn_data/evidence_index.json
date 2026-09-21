@@ -148,5 +148,11 @@
     "origin": "SIMULATED",
     "incident_id": "SYN-A595-006",
     "stage": "retest"
+  },
+  "SYN-A595-007-FAILURE": {
+    "path": "incidents/SYN-A595-007/observed_failure.json",
+    "origin": "SIMULATED",
+    "incident_id": "SYN-A595-007",
+    "stage": "failure"
   }
 }

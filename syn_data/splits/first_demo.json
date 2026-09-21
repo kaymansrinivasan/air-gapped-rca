@@ -1,8 +1,9 @@
 {
-  "schema_version": "1.0",
-  "split_id": "a595-first-demo-v1",
+  "schema_version": "1.1",
+  "split_id": "a595-first-demo-v2",
+  "supersedes": "a595-first-demo-v1",
   "source_repository": "kaymansrinivasan/air-gapped-rca",
-  "source_commit": "99a5bd6fbac1cb250be80fe02462e87995a0ede5",
+  "historical_source_commit": "a43d1a1cdeb1644d86cad442d6e0235a0c586ef2",
   "path_base": "repository_root",
   "intended_use": "SYNTHETIC_WORKFLOW_DEMONSTRATION_ONLY",
   "historical": {
@@ -10,7 +11,9 @@
       "SYN-A595-001",
       "SYN-A595-002",
       "SYN-A595-003",
-      "SYN-A595-004"
+      "SYN-A595-004",
+      "SYN-A595-005",
+      "SYN-A595-006"
     ],
     "files": [
       {
@@ -92,23 +95,12 @@
         "evidence_id": "SYN-A595-004-RETEST-1",
         "path": "syn_data/incidents/SYN-A595-004/simulated_retest_1.json",
         "git_blob_sha": "2162b828ef81ad2d04a8304184425f756282d188"
-      }
-    ]
-  },
-  "query": {
-    "incident_id": "SYN-A595-005",
-    "stage": "failure",
-    "files": [
+      },
       {
         "evidence_id": "SYN-A595-005-FAILURE",
         "path": "syn_data/incidents/SYN-A595-005/observed_failure.json",
         "git_blob_sha": "4a92082f63d902ec27e56b3bcae04a74a91305a7"
-      }
-    ],
-    "question": "What possible causes does the available evidence support for this failure, and what should be checked next? Cite relevant historical cases and current evidence, and state what remains unverified."
-  },
-  "evaluator_only": {
-    "held_out_files": [
+      },
       {
         "evidence_id": "SYN-A595-005-INVESTIGATION",
         "path": "syn_data/incidents/SYN-A595-005/simulated_investigation.json",
@@ -123,20 +115,7 @@
         "evidence_id": "SYN-A595-005-RETEST-1",
         "path": "syn_data/incidents/SYN-A595-005/simulated_retest_1.json",
         "git_blob_sha": "1f8281f04f5b3d60ae7253a8406627170a0da10b"
-      }
-    ],
-    "reference_answers": {
-      "path": "syn_data/reference/answer_key.jsonl",
-      "question_ids": [
-        "SYN-A595-005-Q-FAILURE"
-      ]
-    }
-  },
-  "reserved": {
-    "incident_ids": [
-      "SYN-A595-006"
-    ],
-    "files": [
+      },
       {
         "evidence_id": "SYN-A595-006-FAILURE",
         "path": "syn_data/incidents/SYN-A595-006/observed_failure.json",
@@ -164,20 +143,41 @@
       }
     ]
   },
+  "query": {
+    "incident_id": "SYN-A595-007",
+    "stage": "failure",
+    "files": [
+      {
+        "evidence_id": "SYN-A595-007-FAILURE",
+        "path": "syn_data/incidents/SYN-A595-007/observed_failure.json",
+        "git_blob_sha": "df762b9695be7cc011c82095cc383fdd0afe6d3c"
+      }
+    ],
+    "question": "For this incoming failure, which historical cases are relevant, what possible causes does the available evidence support, and what checks would distinguish them? Cite historical and current evidence separately and state what remains unknown."
+  },
+  "evaluator_only": {
+    "held_out_files": [],
+    "reference_answers": null
+  },
+  "reserved": {
+    "incident_ids": [],
+    "files": []
+  },
   "input_policy": {
     "default": "EXCLUDE",
-    "historical_index": "historical.files only",
-    "current_evidence": "query.files only; keep separate from historical index",
-    "model_question": "query.question only",
+    "historical_index": "historical.files only: all 25 evidence records for cases 001–006",
+    "current_evidence": "query.files only: case 007; keep separate from the historical index",
+    "model_question": "query.question",
     "exclude_metadata_from_model": true,
     "recursive_directory_loading_allowed": false,
-    "source_citation_resolution": "Allow only exact source excerpts referenced by permitted evidence, for citation verification; never index full source files.",
+    "source_citation_resolution": "Resolve only exact source excerpts cited by permitted evidence. Case 007 has no original measured-source citation; cite its own JSON file and line range.",
     "runtime_enforcement": "PENDING_BLOCK_2_IMPLEMENTATION"
   },
   "limitations": [
-    "Historical investigations, actions and retests are fictional and not engineer-reviewed.",
-    "Cases 001 and 002 are alternative branches of the same original failure; keep them together and do not count them as independent real incidents.",
-    "No historical scan-failure case is included. This demonstration examines insufficient relevant history, not successful diagnosis from a matching scan case.",
-    "This is an explicit input selection, not a trained model, implemented retrieval pipeline, or measured benchmark."
+    "Cases 001–006 remain unchanged; their follow-up investigations, actions and retests are synthetic and await engineer review.",
+    "Cases 001 and 002 share one original failure: six historical scenarios represent five distinct original failures.",
+    "Case 007 is an authored query using historical test vocabulary and a fictional observation sequence. It is not an independently collected incident or an independent accuracy benchmark.",
+    "Case 007 has no assigned cause, hidden solution or answer key. Similar past cases can support hypotheses and suggested checks, not confirmation of its cause.",
+    "This configuration specifies inputs; chunking, retrieval and model execution are not implemented by this change."
   ]
 }

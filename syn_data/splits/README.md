@@ -1,32 +1,36 @@
-# First A595 demonstration split
+# Historical cases and a new incoming case
 
-This records the agreed separation before Block 2 (chunking).
+All six original cases stay as historical examples. Case 007 is a separate fictional incoming failure.
 
-| Role | Cases | Allowed evidence |
+| Role | Cases | Files |
 | --- | --- | --- |
-| Historical collection | SYN-A595-001 through SYN-A595-004 | All four records per case: failure, investigation, action and retest (16 files). |
-| Incoming query | SYN-A595-005 | observed_failure.json only (1 file). |
-| Evaluator only | SYN-A595-005 | Its investigation, action and retest remain hidden from retrieval and model input. |
-| Reserved | SYN-A595-006 | All five records excluded from this demonstration. |
+| Historical collection | SYN-A595-001 through SYN-A595-006 | All 25 existing failure, investigation, action and retest records. |
+| Current input | SYN-A595-007 | One observed_failure.json containing only currently available observations and provenance. |
 
-The exact file allowlists and source Git blob hashes are in [first_demo.json](first_demo.json). Paths are relative to the repository root. The source revision is pinned there. Original records remain in their existing locations.
+[first_demo.json](first_demo.json) lists the exact paths for each role. Version 2 replaces the previous arrangement that used case 005 as the query and reserved case 006. No original incident file has been edited.
 
-## How Block 2 must use this split
+## Case 007
 
-1. Read this configuration as control data, never as model evidence.
-2. Build historical chunks only from `historical.files`. Preserve evidence IDs, case/device identity, original-versus-simulated labels, source paths and line references.
-3. Prepare current evidence only from `query.files`, separately from the historical index. Use `query.question` for this demonstration.
-4. Exclude every unlisted file from retrieval and model input. Do not recursively ingest `syn_data/` or the repository.
-5. In particular, do not feed scenario titles, scenario/evidence indexes, replay files, answer keys, this README, the split configuration, or full source logs to the model. They can reveal future events or evaluation information. A citation verifier may resolve only the exact original-source excerpts cited by permitted evidence.
-6. After recording the model response, the evaluator may inspect the selected failure-stage answer-key row and the held-out case-005 records. Do not use later events to judge what the model could have known at the failure stage.
-7. Check file hashes against the pinned source revision before loading; if records change, explicitly review and version the split.
+[Open the new case](../incidents/SYN-A595-007/observed_failure.json).
 
-The configuration defines the boundary; a runtime loader enforcing it is still pending. No chunks, vector index, retrieval, model run or benchmark have been produced by this step. "Hidden" means excluded from model input, not deleted or access-restricted in GitHub.
+A fictional device has a fail–pass–fail sequence on test 100 (Open/Short-), with AMSDSM pin 40 reported on the failing attempts. These are three executions of one check, not three full-device test runs. No investigation, corrective intervention, assigned cause, or answer key has been created.
 
-## What this demonstration can show
+The test/pin vocabulary comes from the historical continuity example; the new sequence and identifiers are authored. No real device was tested. This example can exercise retrieval of relevant histories and cautious suggestions. It is not independent evidence of diagnostic accuracy.
 
-The historical collection contains continuity, supply-current and high-delay examples, but no matching scan-failure history. Case 005 therefore tests whether the system can describe a new failure, recognize insufficient historical support and withhold an unsupported confirmed cause. It does not establish successful diagnosis from a close historical match.
+The actual tester, product and setup details are unspecified. Their compatibility with a historical case must not be assumed. Historical cases 001 and 002 offer different follow-up outcomes for the same original symptom; neither establishes the cause of case 007.
 
-All follow-up histories are synthetic and await engineer review. Cases 001 and 002 share one source-device failure and remain together; four historical scenarios represent three distinct original failures. Case 005 is new to this demonstration's historical collection, not a newly collected real-world incident.
+## Next: Block 2
 
-The original `syn_data/manifest.json` is a pre-existing package manifest; it is not a current repository inventory and does not cover these new split files. It also references documentation/scripts absent from the current repository. This split records its own source revision and file identities without rewriting that original manifest.
+- Chunk the 25 historical records for later indexing, retaining case/device identity, evidence IDs, origin labels, file paths and source lines.
+- Prepare case 007 separately as current evidence. Its own JSON file and line range are its citation source; it has no real STDF record or original-source line range.
+- Use the engineer question from the configuration.
+- Keep answer keys, replay files, scenario summaries, this README and configuration metadata out of searchable evidence/model input. They are administrative or evaluation material.
+- Verify each listed Git blob hash before loading. The historical source commit identifies the unchanged original records; the new query is identified by its own blob hash in this version's repository tree.
+
+This is input preparation for retrieval, not a training split. No historical case is held out or reserved now. The runtime loader, chunks, indexes and model pipeline are still pending.
+
+All historical follow-up records remain explicitly synthetic. Six historical scenarios come from five distinct original failures because 001 and 002 share an original failure.
+
+## Existing manifest
+
+The original syn_data/manifest.json describes an earlier package and is not a current repository inventory. The hashes for the updated indexes, case 007 and these configuration files have been refreshed or added. It still lists previously absent documentation/scripts from the earlier package. The input configuration provides the exact files and per-file Git blob hashes for this demonstration.

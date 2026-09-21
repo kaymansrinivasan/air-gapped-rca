@@ -161,5 +161,26 @@
     "scenario_origin": "SYNTHETIC_EXTENSION_OF_REAL_FAILURE",
     "real_world_cause_status": "UNKNOWN",
     "human_engineer_reviewed": false
+  },
+  {
+    "schema_version": "1.1",
+    "incident_id": "SYN-A595-007",
+    "synthetic_device_key": "SYNDEV-SYN-A595-007-DEMO-DUT-007",
+    "source_anchor": null,
+    "title": "Incoming fictional continuity failure with mixed repeated-check results",
+    "intended_use": "WORKFLOW_DEMONSTRATION_ONLY",
+    "source_lineage_group": null,
+    "evidence_ids": [
+      "SYN-A595-007-FAILURE"
+    ],
+    "scenario_origin": "AUTHORED_SYNTHETIC_QUERY",
+    "real_world_cause_status": "UNKNOWN",
+    "human_engineer_reviewed": false,
+    "provenance": {
+      "generation_method": "Manually authored illustrative fail/pass/fail sequence; no measurements were taken and no physical simulator was used.",
+      "vocabulary_template": "Test 100, Open/Short-, and AMSDSM pin 40 were reused from the existing A595 continuity example.",
+      "independent_real_incident": false,
+      "purpose": "Exercise historical-case retrieval and cautious cause suggestions; not an independent accuracy benchmark."
+    }
   }
 ]

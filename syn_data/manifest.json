@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "intended_use": "SYNTHETIC_WORKFLOW_DEMONSTRATION",
   "files": {
-    "evidence_index.json": "d2072e84e81dd551213d1c64fc0fd2aa75487578708af29e3c7f3814f4471380",
+    "evidence_index.json": "77e4e162eceff88577e59671fdba94e111ab6e9e58b56b039b3b0d3ae55370c2",
     "incidents/SYN-A595-001/observed_failure.json": "01c1ea3db673708b30012542cbd6c4015847bc2d8178a5fe3534132e32923cfe",
     "incidents/SYN-A595-001/simulated_action.json": "5db536f5049b41035c556520dc131cab9eb77f70891e90fd107798fb1a4b6170",
     "incidents/SYN-A595-001/simulated_investigation.json": "cd9ad41dcf8d4ba7ca6277f377a24d35215717ec7193860e075f4a4a8d396774",
@@ -32,12 +32,15 @@
     "reference/answer_key.jsonl": "78b3b302c2b09e1e2d37c217579737c94aad86a09c01ea3ac0c1eb65c1c0dfd7",
     "replay/events.jsonl": "b1dde07edf5566847e854ba0e6b64c01d3161a0a996c25037974c9398228ee71",
     "replay/questions.jsonl": "403f2f631f0690bb791c7d4f121995a0174b152edf4a460bc6dfc4952f222e4f",
-    "scenario_index.json": "ba41ab7e0d7015bd1870bb8b81817d5962aec5f6e627db5dee8012fbd360ff7c",
+    "scenario_index.json": "42167faf8dd386c45dc5c930ba6a48a0a2d2559652d2e9d5440dce72377fd0f9",
     "scripts/replay_demo.py": "665de0eb8a649308c2ec3242c3dde7f9ce3e42f469199f8e522f720e858382cb",
     "scripts/validate_dataset.py": "44d620a8ef663289e87c473c31d65c66330003515f4abd3923bcc2324e7c57d3",
     "source/a595.stdf": "1a835188e49010c78505e8cc1bacde1be22aa2e4c91be2898dba23808c68a94f",
     "source/a595_tester_log.txt": "50dd35d58a93ff75404743a49789115b7180808b870cab4d6223d56430c81928",
     "source/source_manifest.json": "97810f4a52ec7f22b0efce3a8399209bb6c71b8d897c4b640ea1c5d162ec59c1",
-    "walkthrough.md": "dcd19bd317b8ed8463373191ecc2038c0d2a8a83f725fd9547f4ddd0c5da2740"
+    "walkthrough.md": "dcd19bd317b8ed8463373191ecc2038c0d2a8a83f725fd9547f4ddd0c5da2740",
+    "incidents/SYN-A595-007/observed_failure.json": "f71b76b672fb180f23cebba0356f8b41b6090a9e73e8ae085380d5b96cea7530",
+    "splits/first_demo.json": "2d7d6da6836ff6f9cdf5074d3d5d75d3872512ebc639bca1069a9e3a0eb29d2e",
+    "splits/README.md": "2d2df267a3aa6c403e12147a90228f4f957aaf8a208ed94d829fad12a7c85713"
   }
 }
