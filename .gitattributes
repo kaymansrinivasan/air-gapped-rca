@@ -1,0 +1,2 @@
+# Evidence/configuration hashes refer to exact bytes, including line endings.
+syn_data/** -text
