@@ -17,3 +17,26 @@ Proposed architecture; implementation and validation are pending.
 
 No third-party dependencies are required for this skeleton.
 
+Files to change:
+- src/ingest.py
+- README.md
+- notes/decisions.md
+- .gitignore
+New files to add:
+- .gitattributes
+- tests/test_ingest.py
+- docs/block2_chunking.md
+Keep all other existing files unchanged, including:
+- Everything in syn_data/
+- Everything in paper/
+- Everything in offline/
+- Everything in results/
+- docs/images/immutable-log-evidence.png
+- notes/hardware.md
+- src/index.py
+- src/generate.py
+- src/verify.py
+- src/measure.py
+- benchmark.py
+- requirements.txt
+- LICENSE
