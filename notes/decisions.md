@@ -17,6 +17,18 @@
 | 2026-09-18 | Update the working paper with supervisor details and a refreshed PDF | Record Kother Badushah, Solutions Architect (Semicon and AI), UST, in the manuscript while retaining explicit pending-results language | Source and PDF updated; completed technical paper and experiments still pending |
 | 2026-09-18–19 | Define the intended prototype around new failures compared with historical investigated cases | Historical logs, investigations, and engineer solutions should support possible-cause suggestions for new logs. Merely naming the failed test does not meet the intended goal; a similar past case alone does not confirm the current cause | Prototype intent clarified; exact evidence requirements for confirmation and mentor agreement remain open |
 
+## Block 2 implementation — 2026-09-21
+
+The local implementation in [src/ingest.py](../src/ingest.py) uses the existing
+first-demo allowlist: all 25 historical records from cases 001–006, with case 007
+prepared separately. Complete evidence records and test objects retain exact
+source line citations, hashes, identity and origin labels. The default build
+produces 91 historical chunks and one current chunk, preserving 373 synthetic
+retest results. The implementation and corruption tests run without third-party
+dependencies or network access. [Design and validation](../docs/block2_chunking.md)
+describe the boundary policy and handoff to indexing. This is input preparation;
+retrieval, answer verification and cross-board evaluation remain pending.
+
 ## Evidence and status notes
 
 Updated on 2026-09-19 to cover work after September 7. Repository-backed entries were checked against the current files and commit history. Hardware and scope discussions without committed test artifacts are identified as reported progress, not independently reproduced results. Date ranges indicate discussion periods rather than exact implementation timestamps.
@@ -25,4 +37,3 @@ Updated on 2026-09-19 to cover work after September 7. Repository-backed entries
 - **ATE source and synthetic data:** [Source provenance](../syn_data/source/source_manifest.json), [scenario index](../syn_data/scenario_index.json), and [evidence index](../syn_data/evidence_index.json) distinguish original failure anchors from simulated follow-up records. The two continuity branches share one source-device failure and must not be counted as independent real incidents.
 - **Staged demonstration:** [Questions](../syn_data/replay/questions.jsonl), [events](../syn_data/replay/events.jsonl), and [reference answers](../syn_data/reference/answer_key.jsonl) are authored data artifacts. They do not demonstrate that retrieval, generation, verification, or refusal has run successfully.
 - **Paper:** [Manuscript](../paper/main.tex) and [build/status notes](../paper/README.md) describe a working template. Tables and charts remain placeholders with no measured benchmark values. The supervisor update is dated September 18 in Git history.
-
