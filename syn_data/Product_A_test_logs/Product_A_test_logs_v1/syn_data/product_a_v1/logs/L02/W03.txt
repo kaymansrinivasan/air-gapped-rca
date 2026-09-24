@@ -1,0 +1,1686 @@
+
+Wafer: W03   Start Time: Thu Jan  1 09:00:54 2026
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 001      Station: 1   Site: 0    Date: Thu Jan  1 09:01:04 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    42.93 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 2 , 14)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 002      Station: 1   Site: 0    Date: Thu Jan  1 09:01:07 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    44.70 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 3 , 14)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 003      Station: 1   Site: 0    Date: Thu Jan  1 09:01:10 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    38.93 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 4 , 14)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 004      Station: 1   Site: 0    Date: Thu Jan  1 09:01:13 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    45.06 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 5 , 14)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 005      Station: 1   Site: 0    Date: Thu Jan  1 09:01:16 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    47.71 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 7 , 15)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 006      Station: 1   Site: 0    Date: Thu Jan  1 09:01:19 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    51.97 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 6 , 15)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 007      Station: 1   Site: 0    Date: Thu Jan  1 09:01:22 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    43.39 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 5 , 15)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 008      Station: 1   Site: 0    Date: Thu Jan  1 09:01:25 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    42.77 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 4 , 15)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 009      Station: 1   Site: 0    Date: Thu Jan  1 09:01:28 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    48.91 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 3 , 15)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 010      Station: 1   Site: 0    Date: Thu Jan  1 09:01:31 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    45.99 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 2 , 15)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 011      Station: 1   Site: 0    Date: Thu Jan  1 09:01:34 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    40.36 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 1 , 15)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 012      Station: 1   Site: 0    Date: Thu Jan  1 09:01:37 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    40.18 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 0 , 15)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 013      Station: 1   Site: 0    Date: Thu Jan  1 09:01:40 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    41.66 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( -1 , 16)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 014      Station: 1   Site: 0    Date: Thu Jan  1 09:01:43 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    41.12 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 0 , 16)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 015      Station: 1   Site: 0    Date: Thu Jan  1 09:01:46 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    50.29 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 1 , 16)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 016      Station: 1   Site: 0    Date: Thu Jan  1 09:01:49 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    48.72 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 2 , 16)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 017      Station: 1   Site: 0    Date: Thu Jan  1 09:01:52 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    42.09 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 3 , 16)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 018      Station: 1   Site: 0    Date: Thu Jan  1 09:01:55 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    48.44 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 4 , 16)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 019      Station: 1   Site: 0    Date: Thu Jan  1 09:01:58 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    49.18 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 5 , 16)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 020      Station: 1   Site: 0    Date: Thu Jan  1 09:02:01 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    50.10 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 6 , 16)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 021      Station: 1   Site: 0    Date: Thu Jan  1 09:02:04 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    44.05 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 7 , 16)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 022      Station: 1   Site: 0    Date: Thu Jan  1 09:02:07 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    51.68 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 8 , 16)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 023      Station: 1   Site: 0    Date: Thu Jan  1 09:02:10 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    41.00 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 8 , 17)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 024      Station: 1   Site: 0    Date: Thu Jan  1 09:02:13 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    42.26 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 7 , 17)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 025      Station: 1   Site: 0    Date: Thu Jan  1 09:02:16 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    40.52 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 6 , 17)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 026      Station: 1   Site: 0    Date: Thu Jan  1 09:02:19 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    47.71 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 5 , 17)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 027      Station: 1   Site: 0    Date: Thu Jan  1 09:02:22 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    51.24 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 4 , 17)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 028      Station: 1   Site: 0    Date: Thu Jan  1 09:02:25 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    47.34 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 3 , 17)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 029      Station: 1   Site: 0    Date: Thu Jan  1 09:02:28 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    43.80 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 2 , 17)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 030      Station: 1   Site: 0    Date: Thu Jan  1 09:02:31 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    47.91 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 1 , 17)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 031      Station: 1   Site: 0    Date: Thu Jan  1 09:02:34 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    41.61 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 0 , 17)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 032      Station: 1   Site: 0    Date: Thu Jan  1 09:02:37 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    41.61 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( -1 , 17)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 033      Station: 1   Site: 0    Date: Thu Jan  1 09:02:40 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    45.85 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( -2 , 18)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 034      Station: 1   Site: 0    Date: Thu Jan  1 09:02:43 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    51.50 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( -1 , 18)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 035      Station: 1   Site: 0    Date: Thu Jan  1 09:02:46 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    51.03 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 0 , 18)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 036      Station: 1   Site: 0    Date: Thu Jan  1 09:02:49 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    39.30 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 1 , 18)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 037      Station: 1   Site: 0    Date: Thu Jan  1 09:02:52 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    46.29 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 2 , 18)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 038      Station: 1   Site: 0    Date: Thu Jan  1 09:02:55 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    40.86 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 3 , 18)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 039      Station: 1   Site: 0    Date: Thu Jan  1 09:02:58 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    51.09 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 4 , 18)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 040      Station: 1   Site: 0    Date: Thu Jan  1 09:03:01 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    48.74 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 5 , 18)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 041      Station: 1   Site: 0    Date: Thu Jan  1 09:03:04 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    39.34 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 6 , 18)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 042      Station: 1   Site: 0    Date: Thu Jan  1 09:03:07 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    38.30 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 7 , 18)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 043      Station: 1   Site: 0    Date: Thu Jan  1 09:03:10 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    39.98 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 8 , 18)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 044      Station: 1   Site: 0    Date: Thu Jan  1 09:03:13 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    51.02 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 9 , 18)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 045      Station: 1   Site: 0    Date: Thu Jan  1 09:03:16 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    49.27 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 9 , 19)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 046      Station: 1   Site: 0    Date: Thu Jan  1 09:03:19 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    44.74 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 8 , 19)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 047      Station: 1   Site: 0    Date: Thu Jan  1 09:03:22 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    42.90 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 7 , 19)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 048      Station: 1   Site: 0    Date: Thu Jan  1 09:03:25 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    44.56 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 6 , 19)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 049      Station: 1   Site: 0    Date: Thu Jan  1 09:03:28 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    49.66 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 5 , 19)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 050      Station: 1   Site: 0    Date: Thu Jan  1 09:03:31 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    41.91 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 4 , 19)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 051      Station: 1   Site: 0    Date: Thu Jan  1 09:03:34 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    47.71 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 3 , 19)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 052      Station: 1   Site: 0    Date: Thu Jan  1 09:03:37 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    39.99 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 2 , 19)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 053      Station: 1   Site: 0    Date: Thu Jan  1 09:03:40 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    46.20 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 1 , 19)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 054      Station: 1   Site: 0    Date: Thu Jan  1 09:03:43 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    51.54 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 0 , 19)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 055      Station: 1   Site: 0    Date: Thu Jan  1 09:03:46 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    44.46 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( -1 , 19)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 056      Station: 1   Site: 0    Date: Thu Jan  1 09:03:49 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    49.65 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( -2 , 19)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 057      Station: 1   Site: 0    Date: Thu Jan  1 09:03:52 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    41.90 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( -2 , 20)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 058      Station: 1   Site: 0    Date: Thu Jan  1 09:03:55 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    38.34 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( -1 , 20)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 059      Station: 1   Site: 0    Date: Thu Jan  1 09:03:58 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    40.76 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 0 , 20)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 060      Station: 1   Site: 0    Date: Thu Jan  1 09:04:01 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    40.97 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 1 , 20)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 061      Station: 1   Site: 0    Date: Thu Jan  1 09:04:04 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    43.98 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 2 , 20)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 062      Station: 1   Site: 0    Date: Thu Jan  1 09:04:07 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    51.74 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 3 , 20)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 063      Station: 1   Site: 0    Date: Thu Jan  1 09:04:10 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    39.57 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 4 , 20)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 064      Station: 1   Site: 0    Date: Thu Jan  1 09:04:13 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    47.05 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 5 , 20)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 065      Station: 1   Site: 0    Date: Thu Jan  1 09:04:16 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    42.32 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 6 , 20)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 066      Station: 1   Site: 0    Date: Thu Jan  1 09:04:19 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    39.42 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 7 , 20)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 067      Station: 1   Site: 0    Date: Thu Jan  1 09:04:22 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    41.71 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 8 , 20)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 068      Station: 1   Site: 0    Date: Thu Jan  1 09:04:25 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    40.99 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 9 , 20)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 069      Station: 1   Site: 0    Date: Thu Jan  1 09:04:28 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    42.19 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 9 , 21)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 070      Station: 1   Site: 0    Date: Thu Jan  1 09:04:31 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    51.59 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 8 , 21)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 071      Station: 1   Site: 0    Date: Thu Jan  1 09:04:34 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    48.69 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 7 , 21)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 072      Station: 1   Site: 0    Date: Thu Jan  1 09:04:37 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    45.75 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 6 , 21)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 073      Station: 1   Site: 0    Date: Thu Jan  1 09:04:40 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    45.73 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 5 , 21)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 074      Station: 1   Site: 0    Date: Thu Jan  1 09:04:43 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    48.41 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 4 , 21)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 075      Station: 1   Site: 0    Date: Thu Jan  1 09:04:46 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    41.28 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 3 , 21)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 076      Station: 1   Site: 0    Date: Thu Jan  1 09:04:49 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    48.34 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 2 , 21)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 077      Station: 1   Site: 0    Date: Thu Jan  1 09:04:52 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    48.95 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 1 , 21)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 078      Station: 1   Site: 0    Date: Thu Jan  1 09:04:55 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    47.61 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 0 , 21)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 079      Station: 1   Site: 0    Date: Thu Jan  1 09:04:58 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    41.33 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( -1 , 21)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 080      Station: 1   Site: 0    Date: Thu Jan  1 09:05:01 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    39.21 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( -2 , 21)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 081      Station: 1   Site: 0    Date: Thu Jan  1 09:05:04 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    48.15 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( -1 , 22)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 082      Station: 1   Site: 0    Date: Thu Jan  1 09:05:07 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    44.16 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 0 , 22)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 083      Station: 1   Site: 0    Date: Thu Jan  1 09:05:10 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    47.04 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 1 , 22)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 084      Station: 1   Site: 0    Date: Thu Jan  1 09:05:13 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    41.08 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 2 , 22)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 085      Station: 1   Site: 0    Date: Thu Jan  1 09:05:16 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    44.25 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 3 , 22)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 086      Station: 1   Site: 0    Date: Thu Jan  1 09:05:19 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    41.49 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 4 , 22)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 087      Station: 1   Site: 0    Date: Thu Jan  1 09:05:22 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    38.80 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 5 , 22)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 088      Station: 1   Site: 0    Date: Thu Jan  1 09:05:25 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    41.41 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 6 , 22)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 089      Station: 1   Site: 0    Date: Thu Jan  1 09:05:28 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    39.13 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 7 , 22)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 090      Station: 1   Site: 0    Date: Thu Jan  1 09:05:31 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    48.95 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 8 , 22)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 091      Station: 1   Site: 0    Date: Thu Jan  1 09:05:34 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    47.99 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 8 , 23)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 092      Station: 1   Site: 0    Date: Thu Jan  1 09:05:37 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    51.97 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 7 , 23)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 093      Station: 1   Site: 0    Date: Thu Jan  1 09:05:40 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    51.02 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 6 , 23)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 094      Station: 1   Site: 0    Date: Thu Jan  1 09:05:43 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    41.08 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 5 , 23)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 095      Station: 1   Site: 0    Date: Thu Jan  1 09:05:46 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    41.05 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 4 , 23)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 096      Station: 1   Site: 0    Date: Thu Jan  1 09:05:49 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    40.66 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 3 , 23)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 097      Station: 1   Site: 0    Date: Thu Jan  1 09:05:52 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    38.72 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 2 , 23)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 098      Station: 1   Site: 0    Date: Thu Jan  1 09:05:55 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    51.57 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 1 , 23)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 099      Station: 1   Site: 0    Date: Thu Jan  1 09:05:58 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    51.20 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 0 , 23)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 100      Station: 1   Site: 0    Date: Thu Jan  1 09:06:01 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    39.90 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( -1 , 23)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 101      Station: 1   Site: 0    Date: Thu Jan  1 09:06:04 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    47.25 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 0 , 24)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 102      Station: 1   Site: 0    Date: Thu Jan  1 09:06:07 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    40.76 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 1 , 24)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 103      Station: 1   Site: 0    Date: Thu Jan  1 09:06:10 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    43.29 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 2 , 24)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 104      Station: 1   Site: 0    Date: Thu Jan  1 09:06:13 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    51.53 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 3 , 24)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 105      Station: 1   Site: 0    Date: Thu Jan  1 09:06:16 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    41.32 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 4 , 24)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 106      Station: 1   Site: 0    Date: Thu Jan  1 09:06:19 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    44.45 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 5 , 24)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 107      Station: 1   Site: 0    Date: Thu Jan  1 09:06:22 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    49.69 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 6 , 24)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 108      Station: 1   Site: 0    Date: Thu Jan  1 09:06:25 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    43.42 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 7 , 24)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 109      Station: 1   Site: 0    Date: Thu Jan  1 09:06:28 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    39.47 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 5 , 25)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 110      Station: 1   Site: 0    Date: Thu Jan  1 09:06:31 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    42.96 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 4 , 25)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 111      Station: 1   Site: 0    Date: Thu Jan  1 09:06:34 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    46.36 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 3 , 25)
+
+
+Lot: L02                   Tester: ate-01           Program: product_a_ws
+Device: 112      Station: 1   Site: 0    Date: Thu Jan  1 09:06:37 2026
+
+Sequencer:  product_a_ws_seq
+
+   100 Open/Short-          Failing Pins:  0
+
+   210 IDD_Static         curr         35.00 ma <    51.93 ma     <  55.00 ma
+
+   606 SCAN Test            Failing Pins:  0
+       Pattern: scan
+
+Bin:  1     Wafer Coordinates: ( 2 , 25)
+
+
+End of Wafer: W03  Part Count: 112   Finish Time: Thu Jan  1 09:06:40 2026
+

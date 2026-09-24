@@ -1,0 +1,243 @@
+{
+  "config_sha256": "6e8355e6a142f2bf90b4239a0dd0d8e3f7f84cc0f6fd9733198f3e175d0fca26",
+  "coordinate_template_sha256": "45b573583bd1b1353d99b45e410c6b13736213d16b50fd02d52264c583dbefc8",
+  "files": [
+    {
+      "path": "device_metadata.jsonl",
+      "sha256": "7743320881e494ca672067ff262d916dda69ced9199da3a8f6b1e29eee4ef497"
+    },
+    {
+      "path": "logs/L01/W01.txt",
+      "sha256": "1fcd002157e81535a9a4218e6823597402e14d78d3357212a30cf3eed1fcb632"
+    },
+    {
+      "path": "logs/L01/W02.txt",
+      "sha256": "0be547a6bbc02e4ff410355945e188c2a85bd6161e9d09846710f1177931250f"
+    },
+    {
+      "path": "logs/L01/W03.txt",
+      "sha256": "dd4ed33ccef091380726cb6c16c49941553305ea05d06db2f1e8e4bed38e5a25"
+    },
+    {
+      "path": "logs/L01/W04.txt",
+      "sha256": "a0e75838633877fcc05f8ae97a129cda56a70ca8f9009cc56f5234f3c7f5ca0c"
+    },
+    {
+      "path": "logs/L01/W05.txt",
+      "sha256": "a507ed65536e8a98d5c109ec6fe2e07436536cc9563e7b96645cc67afe796c11"
+    },
+    {
+      "path": "logs/L01/W06.txt",
+      "sha256": "abdf21236d4819ef7ce0ba4dcfab89bad08e16ddfa38c90e984c5f48ecbb6469"
+    },
+    {
+      "path": "logs/L01/W07.txt",
+      "sha256": "c9bd8875cedab6d0f18c7c23cbf602d927bbdeeb04ef164ef3a60cd6e217f272"
+    },
+    {
+      "path": "logs/L02/W01.txt",
+      "sha256": "92de387bc4c6a46951edb2a3e212a806095176b4da1afab64f29a5f1f52147fd"
+    },
+    {
+      "path": "logs/L02/W02.txt",
+      "sha256": "7ef306bcda100337c764a6b7e7068fae208b794dc9dcd45d12506d68344b6ef9"
+    },
+    {
+      "path": "logs/L02/W03.txt",
+      "sha256": "9166a98abd1de72eea5249087b3de60a669a21dc65d6eb823d39cd027ded3363"
+    },
+    {
+      "path": "logs/L02/W04.txt",
+      "sha256": "66aef0f0a991b5d6a67e475410e371347da20dae30392702686e93bc1c4d0bf6"
+    },
+    {
+      "path": "logs/L02/W05.txt",
+      "sha256": "a11a841bc77130ca3a71fda0d071989e551f0169911fef5b630208128299c2a4"
+    },
+    {
+      "path": "logs/L02/W06.txt",
+      "sha256": "b596ce440b3b289f23b0ab71220c90f72aeb56526f159adf20a7790e20152c1a"
+    },
+    {
+      "path": "logs/L02/W07.txt",
+      "sha256": "a5f1c324dfbc6be56e8a75706095b85fdbd24d2da0550cdea3fed28cec48a35e"
+    },
+    {
+      "path": "logs/L03/W01.txt",
+      "sha256": "e5d7093b69a912ddc6a44bdd2eaa29d52d5d1956f7cd5665e51fb102166d9945"
+    },
+    {
+      "path": "logs/L03/W02.txt",
+      "sha256": "92d690e3c12060907c6c332152b1a94bb00274aabc0651cdb8baaf22201460c4"
+    },
+    {
+      "path": "logs/L03/W03.txt",
+      "sha256": "1917021c124422aacc2ec410838015a9ebeaef74c2446c9acd0c15dc55e1ba38"
+    },
+    {
+      "path": "logs/L03/W04.txt",
+      "sha256": "d199d213246096414c272bc0b641a3ab545fc1e51859cd870b78a4343ee1aa2f"
+    },
+    {
+      "path": "logs/L03/W05.txt",
+      "sha256": "f3a9dde2fd9a430b1abf28d45cb9c6cc1570d18ed23486b356cfa812e26fb89c"
+    },
+    {
+      "path": "logs/L03/W06.txt",
+      "sha256": "f207c3344c66e5a27135421f91c393d080cd9a987c5a18889ae51fcdf334a256"
+    },
+    {
+      "path": "logs/L03/W07.txt",
+      "sha256": "0bc97bc70e395c51385d4f260ce551e7b607f4a2c5c4eef4293fe851c89dad09"
+    },
+    {
+      "path": "logs/L04/W01.txt",
+      "sha256": "28b557509d4223f14b86970a8b8120b0485c18ac43c2bc28937641e8e8439cae"
+    },
+    {
+      "path": "logs/L04/W02.txt",
+      "sha256": "9c5e7133b979dafe7834aec2aa9af6bd536516bc58e0be6b887fddaee8572d57"
+    },
+    {
+      "path": "logs/L04/W03.txt",
+      "sha256": "b4d909c1d9e2ddb146ab633f2e5d29bf3f7055af3c1f89897985fd2b9b143bd1"
+    },
+    {
+      "path": "logs/L04/W04.txt",
+      "sha256": "e8332f6622cf41db8b13b338a2b7ab2d42d62574603f94fe165d628ae0e7111d"
+    },
+    {
+      "path": "logs/L04/W05.txt",
+      "sha256": "ffdf6da6d71a26b3a3c68ea58722800b3e89e50520a728d51cedf4f6ee25e1ea"
+    },
+    {
+      "path": "logs/L04/W06.txt",
+      "sha256": "731c83b63271b0ddf9a272ba6cd873266d1399cb9775dbead427ce6eb8403366"
+    },
+    {
+      "path": "logs/L04/W07.txt",
+      "sha256": "120f063a45c4770ab77a24d521fb61a0d7f9714dcd34f748b877471cf9d1eaa0"
+    },
+    {
+      "path": "logs/L05/W01.txt",
+      "sha256": "74158694276e3b959e3105ba051a33b44fb038ca9f792b747e3085e86c651108"
+    },
+    {
+      "path": "logs/L05/W02.txt",
+      "sha256": "c4e941ed1c3e4fa073a96cf68d63a661ae7630a6f130b381968e94852648c074"
+    },
+    {
+      "path": "logs/L05/W03.txt",
+      "sha256": "9316e800d5fb7de9a7fee2aeca6de3247764c07369af2d610e6d8fcdce615e78"
+    },
+    {
+      "path": "logs/L05/W04.txt",
+      "sha256": "30b4e750922f1ee573983f30fe0b8b9a6fde59abc636b8664e9f994ae48e402f"
+    },
+    {
+      "path": "logs/L05/W05.txt",
+      "sha256": "44acf0a98ec7ed266736123103585842ea3532931096aeed4f04de7d415ecc2e"
+    },
+    {
+      "path": "logs/L05/W06.txt",
+      "sha256": "2a97f57808fd9764f31002412c68f6365a9632dcc8c4bffe05cba2e494cdd3e6"
+    },
+    {
+      "path": "logs/L05/W07.txt",
+      "sha256": "fed8280c1fdc0923adab4b6ad42d978158b8c7021f07285bf3f3f49779cb9afc"
+    },
+    {
+      "path": "validation_report.json",
+      "sha256": "c3aabf9de68ddaedc5b24f3e3c6c71fb8d2ca85b73389bdf5821dd3a6b4584e0"
+    }
+  ],
+  "format_reference": {
+    "path": "syn_data/source/a595_tester_log.txt",
+    "role": "format, coordinate layout and selected example test definitions only",
+    "sha256": "50dd35d58a93ff75404743a49789115b7180808b870cab4d6223d56430c81928"
+  },
+  "generated_failure_clusters": [
+    {
+      "devices": [
+        "D032",
+        "D031",
+        "D030"
+      ],
+      "lot": "L03",
+      "outcome": "CONTINUITY_FAIL",
+      "wafer": "W05"
+    },
+    {
+      "devices": [
+        "D009",
+        "D008",
+        "D007"
+      ],
+      "lot": "L04",
+      "outcome": "CONTINUITY_FAIL",
+      "wafer": "W03"
+    },
+    {
+      "devices": [
+        "D041",
+        "D042",
+        "D043"
+      ],
+      "lot": "L01",
+      "outcome": "IDD_STATIC_FAIL",
+      "wafer": "W05"
+    },
+    {
+      "devices": [
+        "D106",
+        "D107",
+        "D108"
+      ],
+      "lot": "L05",
+      "outcome": "IDD_STATIC_FAIL",
+      "wafer": "W01"
+    },
+    {
+      "devices": [
+        "D106",
+        "D107",
+        "D108"
+      ],
+      "lot": "L01",
+      "outcome": "SCAN_FAIL",
+      "wafer": "W07"
+    },
+    {
+      "devices": [
+        "D049",
+        "D048",
+        "D047"
+      ],
+      "lot": "L04",
+      "outcome": "SCAN_FAIL",
+      "wafer": "W02"
+    }
+  ],
+  "generator_sha256": "1bced82e7991cb2bfb02b8a26d4252ae9ed3b2d5d5baf0d3603d9401bc9f0b6c",
+  "generator_version": "product-a-log-generator-v1",
+  "origin": "GENERATED_TEST_RESULTS",
+  "schema_version": "product-a-log-manifest-v1",
+  "seed": 5952026,
+  "start_time": "2026-01-01T08:00:00+08:00",
+  "timezone": "Asia/Kuala_Lumpur",
+  "totals": {
+    "bins": {
+      "1": 3528,
+      "2": 196,
+      "3": 98,
+      "4": 98
+    },
+    "dut_count": 3920,
+    "executed_tests": {
+      "100": 3920,
+      "210": 3822,
+      "606": 3724,
+      "total": 11466
+    }
+  }
+}
