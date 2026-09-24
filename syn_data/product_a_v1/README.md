@@ -32,5 +32,5 @@ The generated IDD limits are strict: `35.00 < current < 55.00 mA`. A passing dis
 
 The fixed start is `2026-01-01T08:00:00+08:00` in **Asia/Kuala_Lumpur**. The raw log displays A595-style dates without a timezone suffix; `config.json` and metadata supply the offset. Device times follow their wafer start chronologically. This deliberately corrects a chronology inconsistency in the A595 source, whose first wafer 02 device timestamp precedes its stated wafer start.
 
-The seed fixes a stable SHA-256 ranking for outcome placement and values. The generator reserves two groups of three adjacent failing DUT coordinates for each failure category, then fills exact quotas across the remaining DUTs with stable rankings and moderate wafer variation. These generated spatial patterns are **not evidence of a physical mechanism**. There are no retests, diagnoses, investigations or corrective actions in this dataset.
+The seed fixes a stable SHA-256 ranking for outcome placement and values. The generator reserves two groups of three adjacent failing DUT coordinates for each failure category, then fills exact quotas across the remaining DUTs with stable rankings and moderate wafer variation. These generated spatial patterns are **not evidence of a physical mechanism**. There are no retests, diagnoses, investigations or corrective actions in this dataset...
 
