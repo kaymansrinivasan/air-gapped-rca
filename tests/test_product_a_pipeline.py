@@ -5,7 +5,7 @@ import json
 import tempfile
 import unittest
 
-from src.ingest import build, write_bundle
+from chunk import build, write_bundle
 from src.index import build_index, query_index, source_chunks
 
 ROOT = Path(__file__).resolve().parents[1]
