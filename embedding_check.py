@@ -16,5 +16,6 @@ embedder = DefaultEmbeddingFunction()
 vector = embedder([chunk["retrieval_text"]])[0]
 
 print("DUT:", chunk["dut_id"])
+print("Text being embedded:\n", chunk["retrieval_text"])
 print("Numbers in this vector:", len(vector))
 print("First 8 numbers:", [round(float(x), 4) for x in vector[:8]])
