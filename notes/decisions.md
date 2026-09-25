@@ -21,6 +21,11 @@
 
 The earlier A595 source, authored cases, replay files and A595-specific Block 2 implementation were removed from the active tree to keep the new Product_A work separate. They remain recoverable from Git history; the dated decisions above describe historical work, not current searchable evidence.
 
-Product_A first-attempt logs and STDF files are the active data. They contain generated observations only. ATE engineers are reviewing the next scenario evidence; no Product_A investigation, corrective action, retest or confirmed cause has been added. A new Block 2 input split and chunker must wait for those reviewed scenario records. Retrieval, citation verification and cross-board evaluation remain pending.
+Product_A first-attempt logs and STDF files are the active data. They contain generated observations only. ATE engineers are reviewing the next scenario evidence; no Product_A investigation, corrective action, retest or confirmed cause has been added. Product_A observation chunking and local lexical indexing can proceed while engineers review scenario records. Cause-bearing case histories and cause-answer evaluation still depend on that review. Citation verification and cross-board evaluation remain pending.
 
 Hardware observations remain documented in [hardware.md](hardware.md). The [paper](../paper/main.tex) is a working manuscript with results pending.
+
+## Product_A observations and indexing — 2026-09-25
+
+The current Block 2 reads all 3,920 first-attempt DUT records as separate exact source-linked observations, preserving 35 wafer-file hashes and stopping rules. No diagnosis is assigned. Block 3 stores their keywords in SQLite FTS5 and 256-dimensional hashed TF-IDF vectors for an offline lexical baseline. It is not semantic embedding retrieval; model weights are not yet inventoried for offline use. The incoming DUT must be excluded from its own historical results, and later case histories require an explicit historical/current split. Tests and reproduction commands are in [the Product_A retrieval notes](../docs/product_a_retrieval.md).
+
