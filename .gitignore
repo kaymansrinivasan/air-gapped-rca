@@ -3,4 +3,3 @@ __pycache__/
 *.py[cod]
 .env
 artifacts/
-create_product_a_scenarios.py/
