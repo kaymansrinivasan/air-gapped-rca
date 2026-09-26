@@ -11,11 +11,6 @@ action, retest, or confirmed-cause records for six synthetic cases.
 
 These flows are measured in term of blocks, we had 8 blocks in total. block one, two and three has completed!
 
-## Data and retrieval
-
-- [Product_A readable logs and validation](syn_data/product_a_v1/README.md)
-- [Product_A STDF files for viewers](syn_data/STDF_a_v1/README.md)
-
 ## Proposed workflow
 
 ![Air-gapped RCA workflow: immutable logs, chunks with source lines, local vector and keyword indexes, an engineer question, evidence retrieval, ranked causes and citations, deterministic citation checks, and a supported answer or refusal.](docs/images/immutable-log-evidence.png)
