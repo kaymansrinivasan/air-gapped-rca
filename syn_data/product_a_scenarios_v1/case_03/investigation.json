@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "record_id": "product_a_case_03_investigation",
+  "case_id": "product_a_case_03",
+  "dut_id": "Product_A-L01-W01-D100",
+  "stage": "investigation",
+  "role": "historical",
+  "synthetic": true,
+  "observation_id": "product_a_case_03_observation",
+  "evidence_origin": "engineer_guided_synthetic_scenario",
+  "physical_test_performed": false,
+  "simulated_outcome_review_status": "not_reviewed",
+  "guidance_source": {
+    "file": "Case_cause(Reviewed).xlsx",
+    "sheet": "Engineer review",
+    "row": 15,
+    "reviewer": "Ansari",
+    "date": "2026-09-25",
+    "status_as_recorded": "Plausible",
+    "scope": "Possible causes and proposed investigation procedures; not the newly simulated findings or outcomes."
+  },
+  "possible_causes": [
+    "DUT-related excessive static current",
+    "ATE measurement or interface issue producing a high reading"
+  ],
+  "checks": [
+    {
+      "check": "Verify the intended supply setting and measurement configuration, then measure a known-good reference.",
+      "result": "The configuration matches the intended setup; the reference measures 45.20 mA within 35–55 mA."
+    },
+    {
+      "check": "Measure D100 on the original and an independently verified compatible setup under matched conditions.",
+      "result": "D100 measures 65.40 mA and 65.70 mA respectively, both above the 55 mA upper limit."
+    }
+  ],
+  "assessment": "The elevated current follows D100, supporting a DUT-associated high-current condition."
+}

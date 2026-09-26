@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "record_id": "product_a_case_02_investigation",
+  "case_id": "product_a_case_02",
+  "dut_id": "Product_A-L01-W03-D005",
+  "stage": "investigation",
+  "role": "historical",
+  "synthetic": true,
+  "observation_id": "product_a_case_02_observation",
+  "evidence_origin": "engineer_guided_synthetic_scenario",
+  "physical_test_performed": false,
+  "simulated_outcome_review_status": "not_reviewed",
+  "guidance_source": {
+    "file": "Case_cause(Reviewed).xlsx",
+    "sheet": "Engineer review",
+    "row": 11,
+    "reviewer": "Ansari",
+    "date": "2026-09-25",
+    "status_as_recorded": "Not reviewed",
+    "scope": "Possible causes and proposed investigation procedures; not the newly simulated findings or outcomes."
+  },
+  "possible_causes": [
+    "DUT-related abnormality affecting XCKP, DTO2P and CCK",
+    "Shared interface/contact or tester-resource issue"
+  ],
+  "checks": [
+    {
+      "check": "Run a known-good reference die on the original setup under comparable conditions.",
+      "result": "The reference die passes continuity."
+    },
+    {
+      "check": "Retest D005 on the original and an independently verified compatible setup.",
+      "result": "D005 fails continuity on XCKP, DTO2P and CCK on both setups."
+    }
+  ],
+  "assessment": "The failure follows D005, supporting a DUT-associated abnormality. A specific internal defect is not identified."
+}

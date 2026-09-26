@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "record_id": "product_a_case_05_observation",
+  "case_id": "product_a_case_05",
+  "dut_id": "Product_A-L01-W02-D005",
+  "stage": "observation",
+  "role": "historical",
+  "synthetic": true,
+  "evidence_origin": "existing_synthetic_log_chunk",
+  "source": {
+    "file": "artifacts/product_a_chunks/product_a_dut_chunks.jsonl",
+    "line": 117
+  },
+  "retrieval_text": "Product_A-L01-W02-D005; lot L01; wafer W02; die coordinates 7, 15; outcome SCAN_FAIL; bin 2; executed tests: 100 Open/Short- PASS, 210 IDD_Static PASS, 606 SCAN Test FAIL\nLot: L01                   Tester: ate-01           Program: product_a_ws\nDevice: 005      Station: 1   Site: 0    Date: Thu Jan  1 08:07:08 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    47.16 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   2347   Halt Cycle:   2347   Failing Pins:  1 (F)\n       Pattern: scan\n          Failed Pins:\n                 DTOP : 84\n\nBin:  2     Wafer Coordinates: ( 7 , 15)\n",
+  "original_chunk": {
+    "bin": 2,
+    "cause_status": "UNKNOWN",
+    "chunk_id": "pa1-03e838def14b03c827ee4c27",
+    "chunker_version": "product-a-dut-chunks-v1",
+    "coordinate": [
+      7,
+      15
+    ],
+    "device": "D005",
+    "dut_id": "Product_A-L01-W02-D005",
+    "executed_tests": [
+      100,
+      210,
+      606
+    ],
+    "failed_test": 606,
+    "lot": "L01",
+    "origin": "GENERATED",
+    "outcome": "SCAN_FAIL",
+    "product": "Product_A",
+    "retrieval_text": "Product_A-L01-W02-D005; lot L01; wafer W02; die coordinates 7, 15; outcome SCAN_FAIL; bin 2; executed tests: 100 Open/Short- PASS, 210 IDD_Static PASS, 606 SCAN Test FAIL\nLot: L01                   Tester: ate-01           Program: product_a_ws\nDevice: 005      Station: 1   Site: 0    Date: Thu Jan  1 08:07:08 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    47.16 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   2347   Halt Cycle:   2347   Failing Pins:  1 (F)\n       Pattern: scan\n          Failed Pins:\n                 DTOP : 84\n\nBin:  2     Wafer Coordinates: ( 7 , 15)\n",
+    "schema_version": "1.0",
+    "source_file": "syn_data/product_a_v1/logs/L01/W02.txt",
+    "source_lines": {
+      "end": 81,
+      "start": 67
+    },
+    "source_sha256": "0be547a6bbc02e4ff410355945e188c2a85bd6161e9d09846710f1177931250f",
+    "source_text": "Lot: L01                   Tester: ate-01           Program: product_a_ws\nDevice: 005      Station: 1   Site: 0    Date: Thu Jan  1 08:07:08 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    47.16 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   2347   Halt Cycle:   2347   Failing Pins:  1 (F)\n       Pattern: scan\n          Failed Pins:\n                 DTOP : 84\n\nBin:  2     Wafer Coordinates: ( 7 , 15)\n",
+    "stage": "observation",
+    "wafer": "W02"
+  }
+}

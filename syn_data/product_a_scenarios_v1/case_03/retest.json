@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "record_id": "product_a_case_03_retest",
+  "case_id": "product_a_case_03",
+  "dut_id": "Product_A-L01-W01-D100",
+  "stage": "retest",
+  "role": "historical",
+  "synthetic": true,
+  "observation_id": "product_a_case_03_observation",
+  "evidence_origin": "engineer_guided_synthetic_scenario",
+  "physical_test_performed": false,
+  "simulated_outcome_review_status": "not_reviewed",
+  "guidance_source": {
+    "file": "Case_cause(Reviewed).xlsx",
+    "sheet": "Engineer review",
+    "row": 15,
+    "reviewer": "Ansari",
+    "date": "2026-09-25",
+    "status_as_recorded": "Plausible",
+    "scope": "Possible causes and proposed investigation procedures; not the newly simulated findings or outcomes."
+  },
+  "checks": [
+    {
+      "check": "Measure D100 after contact verification.",
+      "result": "IDD_Static is 65.50 mA and remains above 55 mA."
+    },
+    {
+      "check": "Repeat the reference measurement.",
+      "result": "The reference measures 45.10 mA and passes."
+    }
+  ],
+  "conclusion": "The simulated evidence supports persistent DUT-associated excessive static current.",
+  "limitation": "The evidence does not distinguish leakage, an internal short, or another physical mechanism."
+}

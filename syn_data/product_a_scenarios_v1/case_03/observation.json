@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "record_id": "product_a_case_03_observation",
+  "case_id": "product_a_case_03",
+  "dut_id": "Product_A-L01-W01-D100",
+  "stage": "observation",
+  "role": "historical",
+  "synthetic": true,
+  "evidence_origin": "existing_synthetic_log_chunk",
+  "source": {
+    "file": "artifacts/product_a_chunks/product_a_dut_chunks.jsonl",
+    "line": 100
+  },
+  "retrieval_text": "Product_A-L01-W01-D100; lot L01; wafer W01; die coordinates -1, 23; outcome IDD_STATIC_FAIL; bin 3; executed tests: 100 Open/Short- PASS, 210 IDD_Static FAIL\nLot: L01                   Tester: ate-01           Program: product_a_ws\nDevice: 100      Station: 1   Site: 0    Date: Thu Jan  1 08:05:07 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    65.58 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( -1 , 23)\n",
+  "original_chunk": {
+    "bin": 3,
+    "cause_status": "UNKNOWN",
+    "chunk_id": "pa1-9d6da6deb2bed770d3a30fff",
+    "chunker_version": "product-a-dut-chunks-v1",
+    "coordinate": [
+      -1,
+      23
+    ],
+    "device": "D100",
+    "dut_id": "Product_A-L01-W01-D100",
+    "executed_tests": [
+      100,
+      210
+    ],
+    "failed_test": 210,
+    "lot": "L01",
+    "origin": "GENERATED",
+    "outcome": "IDD_STATIC_FAIL",
+    "product": "Product_A",
+    "retrieval_text": "Product_A-L01-W01-D100; lot L01; wafer W01; die coordinates -1, 23; outcome IDD_STATIC_FAIL; bin 3; executed tests: 100 Open/Short- PASS, 210 IDD_Static FAIL\nLot: L01                   Tester: ate-01           Program: product_a_ws\nDevice: 100      Station: 1   Site: 0    Date: Thu Jan  1 08:05:07 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    65.58 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( -1 , 23)\n",
+    "schema_version": "1.0",
+    "source_file": "syn_data/product_a_v1/logs/L01/W01.txt",
+    "source_lines": {
+      "end": 1499,
+      "start": 1490
+    },
+    "source_sha256": "1fcd002157e81535a9a4218e6823597402e14d78d3357212a30cf3eed1fcb632",
+    "source_text": "Lot: L01                   Tester: ate-01           Program: product_a_ws\nDevice: 100      Station: 1   Site: 0    Date: Thu Jan  1 08:05:07 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    65.58 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( -1 , 23)\n",
+    "stage": "observation",
+    "wafer": "W01"
+  }
+}

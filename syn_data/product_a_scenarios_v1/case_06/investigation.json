@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "record_id": "product_a_case_06_investigation",
+  "case_id": "product_a_case_06",
+  "dut_id": "Product_A-L01-W02-D001",
+  "stage": "investigation",
+  "role": "historical",
+  "synthetic": true,
+  "observation_id": "product_a_case_06_observation",
+  "evidence_origin": "engineer_guided_synthetic_scenario",
+  "physical_test_performed": false,
+  "simulated_outcome_review_status": "not_reviewed",
+  "guidance_source": {
+    "file": "Case_cause(Reviewed).xlsx",
+    "sheet": "Engineer review",
+    "row": 21,
+    "reviewer": "Ansari",
+    "date": "2026-09-25",
+    "status_as_recorded": "Plausible",
+    "scope": "Possible causes and proposed investigation procedures; not the newly simulated findings or outcomes."
+  },
+  "possible_causes": [
+    "DUT-related scan/control-path issue involving TSTIN and TSTEN",
+    "Shared tester-resource or interface issue"
+  ],
+  "checks": [
+    {
+      "check": "Run a known-good reference on the original setup using the same scan program and conditions.",
+      "result": "The reference passes the scan test."
+    },
+    {
+      "check": "Retest D001 on the original and an independently verified compatible setup with matching conditions.",
+      "result": "TSTIN and TSTEN fail at cycle 4030 on both setups."
+    }
+  ],
+  "assessment": "The repeatable signature follows D001, supporting a DUT-associated scan failure."
+}

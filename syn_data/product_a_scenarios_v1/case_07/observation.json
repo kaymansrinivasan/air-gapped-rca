@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "record_id": "product_a_case_07_observation",
+  "case_id": "product_a_case_07",
+  "dut_id": "Product_A-L06-W01-D001",
+  "stage": "observation",
+  "role": "query_only",
+  "synthetic": true,
+  "evidence_origin": "new_synthetic_query",
+  "index_as_history": false,
+  "source": {
+    "type": "authored_synthetic_observation",
+    "raw_log_file": null
+  },
+  "context": {
+    "product": "Product_A",
+    "lot": "L06",
+    "wafer": "W01",
+    "tester": "ate-01",
+    "program": "product_a_ws",
+    "site": 0
+  },
+  "test_result": {
+    "test_number": 100,
+    "test_name": "Open/Short-",
+    "result": "FAIL",
+    "failing_pins": [
+      {
+        "name": "TSTIN",
+        "pin_number": 75
+      }
+    ],
+    "later_tests_run": false,
+    "bin": 4
+  },
+  "retrieval_text": "Product_A-L06-W01-D001; Product_A wafer-sort observation. Tester ate-01; program product_a_ws; site 0. Test 100 Open/Short- failed on TSTIN (75). Later tests were not run. Bin 4. No investigation or retest results are available."
+}

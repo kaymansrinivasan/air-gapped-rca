@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "record_id": "product_a_case_04_investigation",
+  "case_id": "product_a_case_04",
+  "dut_id": "Product_A-L02-W02-D006",
+  "stage": "investigation",
+  "role": "historical",
+  "synthetic": true,
+  "observation_id": "product_a_case_04_observation",
+  "evidence_origin": "engineer_guided_synthetic_scenario",
+  "physical_test_performed": false,
+  "simulated_outcome_review_status": "not_reviewed",
+  "guidance_source": {
+    "file": "Case_cause(Reviewed).xlsx",
+    "sheet": "Engineer review",
+    "row": 16,
+    "reviewer": "Ansari",
+    "date": "2026-09-25",
+    "status_as_recorded": "Plausible",
+    "scope": "Possible causes and proposed investigation procedures; not the newly simulated findings or outcomes."
+  },
+  "possible_causes": [
+    "DUT-related abnormally low static current",
+    "ATE measurement or supply-setup issue"
+  ],
+  "checks": [
+    {
+      "check": "Measure a known-good reference on the suspect setup and compare the supply configuration against the intended test configuration.",
+      "result": "The reference also reads below 35 mA. The applied force-voltage setting differs from the intended setting."
+    },
+    {
+      "check": "Measure D006 and the reference on an independently verified setup using the intended configuration.",
+      "result": "D006 measures 44.60 mA and the reference measures 45.00 mA; both pass."
+    }
+  ],
+  "assessment": "A supply-setup mismatch is a plausible explanation for the low-current readings on the original setup."
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "record_id": "product_a_case_05_investigation",
+  "case_id": "product_a_case_05",
+  "dut_id": "Product_A-L01-W02-D005",
+  "stage": "investigation",
+  "role": "historical",
+  "synthetic": true,
+  "observation_id": "product_a_case_05_observation",
+  "evidence_origin": "engineer_guided_synthetic_scenario",
+  "physical_test_performed": false,
+  "simulated_outcome_review_status": "not_reviewed",
+  "guidance_source": {
+    "file": "Case_cause(Reviewed).xlsx",
+    "sheet": "Engineer review",
+    "row": 20,
+    "reviewer": "Ansari",
+    "date": "2026-09-25",
+    "status_as_recorded": "Plausible",
+    "scope": "Possible causes and proposed investigation procedures; not the newly simulated findings or outcomes."
+  },
+  "possible_causes": [
+    "DUT-related scan-path or logic issue involving DTOP",
+    "ATE interface/contact or timing/setup issue"
+  ],
+  "checks": [
+    {
+      "check": "Repeat the scan test on the suspect DUT and a known-good reference.",
+      "result": "The suspect DUT repeats the DTOP failure near cycle 2347. The reference also shows DTOP mismatches on the original setup."
+    },
+    {
+      "check": "Compare both devices on an independently verified compatible setup with matching pattern and timing.",
+      "result": "Both devices pass the scan test."
+    }
+  ],
+  "assessment": "The comparison points toward the original interface or contact path."
+}

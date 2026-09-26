@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "record_id": "product_a_case_05_action",
+  "case_id": "product_a_case_05",
+  "dut_id": "Product_A-L01-W02-D005",
+  "stage": "action",
+  "role": "historical",
+  "synthetic": true,
+  "observation_id": "product_a_case_05_observation",
+  "evidence_origin": "engineer_guided_synthetic_scenario",
+  "physical_test_performed": false,
+  "simulated_outcome_review_status": "not_reviewed",
+  "guidance_source": {
+    "file": "Case_cause(Reviewed).xlsx",
+    "sheet": "Engineer review",
+    "row": 20,
+    "reviewer": "Ansari",
+    "date": "2026-09-25",
+    "status_as_recorded": "Plausible",
+    "scope": "Possible causes and proposed investigation procedures; not the newly simulated findings or outcomes."
+  },
+  "action_taken": "Clean and re-establish probe contact on the original setup while keeping scan patterns and timing unchanged."
+}

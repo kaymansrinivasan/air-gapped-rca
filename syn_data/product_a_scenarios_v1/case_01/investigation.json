@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "record_id": "product_a_case_01_investigation",
+  "case_id": "product_a_case_01",
+  "dut_id": "Product_A-L01-W03-D012",
+  "stage": "investigation",
+  "role": "historical",
+  "synthetic": true,
+  "observation_id": "product_a_case_01_observation",
+  "evidence_origin": "engineer_guided_synthetic_scenario",
+  "physical_test_performed": false,
+  "simulated_outcome_review_status": "not_reviewed",
+  "guidance_source": {
+    "file": "Case_cause(Reviewed).xlsx",
+    "sheet": "Engineer review",
+    "row": 10,
+    "reviewer": "Ansari",
+    "date": "2026-09-25",
+    "status_as_recorded": "Not reviewed",
+    "scope": "Possible causes and proposed investigation procedures; not the newly simulated findings or outcomes."
+  },
+  "possible_causes": [
+    "DUT-related electrical connection abnormality on TSTIN",
+    "ATE interface/contact issue on the TSTIN path"
+  ],
+  "checks": [
+    {
+      "check": "Test a known-good reference die using comparable program and test conditions on the suspect setup.",
+      "result": "The reference die also fails continuity on TSTIN."
+    },
+    {
+      "check": "Repeat the comparison on an independently verified compatible setup.",
+      "result": "Both the reference die and D012 pass continuity on the comparison setup."
+    }
+  ],
+  "assessment": "The evidence points toward the original interface/contact path rather than a persistent D012 defect."
+}
