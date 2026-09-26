@@ -9,11 +9,7 @@ wafers per lot, and 112 DUTs per wafer. No Product_A DUT was physically
 measured. But engineer-reviewed Product_A investigation, corrective
 action, retest, or confirmed-cause records for six synthetic cases.
 
-Block 2 now produces exact source-linked DUT observation chunks; Block 3
-builds local SQLite FTS5 keyword and hashed TF-IDF vector indexes. The vector
-baseline is lexical, not a pretrained semantic embedding model. A cause
-suggestion pipeline, deterministic answer verification, and edge-board
-benchmarking remain unimplemented.
+These flows are measured in term of blocks, we had 8 blocks in total. block one, two and three has completed!
 
 ## Data and retrieval
 
