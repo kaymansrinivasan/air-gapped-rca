@@ -1,6 +1,6 @@
 # Product_A wafer-sort test logs, version 1
 
-This directory contains **generated test results** for an offline RCA prototype. No Product_A DUT was measured. The A595 readable log supplied the layout, test names and numbers, one coordinate layout, and the example `IDD_Static` limits. It did **not** supply Product_A measurements, real failure rates, investigations, corrective actions, or confirmed causes. Keep this README and `manifest.json` with the raw logs when sharing the dataset.
+This directory contains **generated test results** for an offline RCA prototype. No Product_A DUT was measured. The A595 readable log supplied the layout, test names and numbers, one coordinate layout, and the example `IDD_Static` limits. It did **not** supply Product_A measurements, real failure rates, investigations, corrective actions, or confirmed causes.
 
 ## Contents
 
