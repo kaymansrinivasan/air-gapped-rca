@@ -15,7 +15,6 @@ These flows are measured in term of blocks, we had 8 blocks in total. block one,
 
 - [Product_A readable logs and validation](syn_data/product_a_v1/README.md)
 - [Product_A STDF files for viewers](syn_data/STDF_a_v1/README.md)
-- [Block 2 and Block 3 commands, evidence boundaries and limitations](docs/product_a_retrieval.md)
 
 ## Proposed workflow
 
