@@ -17,11 +17,6 @@ These flows are measured in term of blocks, we had 8 blocks in total. block one,
 - [Product_A STDF files for viewers](syn_data/STDF_a_v1/README.md)
 - [Block 2 and Block 3 commands, evidence boundaries and limitations](docs/product_a_retrieval.md)
 
-The failure distributions were chosen for the demonstration. Neither the
-observed test nor its bin establishes a physical root cause. When the ATE
-engineers review investigation scenarios, link those records as separate
-evidence with their review status and appropriate historical/current split.
-
 ## Proposed workflow
 
 ![Air-gapped RCA workflow: immutable logs, chunks with source lines, local vector and keyword indexes, an engineer question, evidence retrieval, ranked causes and citations, deterministic citation checks, and a supported answer or refusal.](docs/images/immutable-log-evidence.png)
