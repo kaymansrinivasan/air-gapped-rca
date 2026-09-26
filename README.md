@@ -31,4 +31,4 @@ evidence with their review status and appropriate historical/current split.
 ![Air-gapped RCA workflow: immutable logs, chunks with source lines, local vector and keyword indexes, an engineer question, evidence retrieval, ranked causes and citations, deterministic citation checks, and a supported answer or refusal.](docs/images/immutable-log-evidence.png)
 
 The diagram describes the whole intended system. Only the log, observation
-chunking, and local lexical indexing stages are currently implemented.
+chunking, and local lexical indexing stages are currently implemented..
