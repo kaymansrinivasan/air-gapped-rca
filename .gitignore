@@ -1,5 +1,18 @@
+# Python environments
 .venv/
+.venv-chroma/
+
+# Python cache
 __pycache__/
 *.py[cod]
+
+# Local environment settings
 .env
+
+# Generated working outputs: chunks, Chroma database, evidence bundles
 artifacts/
+
+# Test-tool caches and coverage outputs
+.pytest_cache/
+.coverage
+htmlcov/
