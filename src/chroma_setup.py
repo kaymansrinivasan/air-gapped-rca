@@ -1,8 +1,11 @@
 import chromadb
+from pathlib import Path
 from chromadb.config import Settings
 
+ROOT = Path(__file__).resolve().parents[1]
+
 client = chromadb.PersistentClient(
-    path="artifacts/chroma_product_a",
+    path=str(ROOT / "artifacts/chroma_product_a"),
     settings=Settings(anonymized_telemetry=False),
 )
 

@@ -4,7 +4,7 @@ import chromadb
 from chromadb.config import Settings
 from chromadb.utils.embedding_functions import DefaultEmbeddingFunction
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 
 client = chromadb.PersistentClient(
     path=str(ROOT / "artifacts/chroma_product_a"),

@@ -5,7 +5,7 @@ import chromadb
 from chromadb.config import Settings
 from chromadb.utils.embedding_functions import DefaultEmbeddingFunction
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 SCENARIOS = ROOT / "syn_data/product_a_scenarios_v1"
 DB_PATH = ROOT / "artifacts/chroma_product_a"
 OUTPUT = ROOT / "artifacts/retrieval/case_07_evidence.json"
