@@ -29,3 +29,77 @@ Hardware observations remain documented in [hardware.md](hardware.md). The [pape
 
 The current Block 2 reads all 3,920 first-attempt DUT records as separate exact source-linked observations, preserving 35 wafer-file hashes and stopping rules. No diagnosis is assigned. Block 3 stores their keywords in SQLite FTS5 and 256-dimensional hashed TF-IDF vectors for an offline lexical baseline. It is not semantic embedding retrieval; model weights are not yet inventoried for offline use. The incoming DUT must be excluded from its own historical results, and later case histories require an explicit historical/current split. Tests and reproduction commands are in [the Product_A retrieval notes](../docs/product_a_retrieval.md).
 
+## Product_A semantic retrieval and case histories — 2026-09-27
+
+This section supersedes the earlier descriptions of the active retrieval
+approach and the absence of Product_A case histories.
+
+| Date | Decision | Reason | Status |
+| --- | --- | --- | --- |
+| 2026-09-25 | Use Continuity, IDD_Static, and Scan for the prototype, following Kother's recommendation | Reduce test-log complexity while demonstrating the investigation workflow | Implemented in the generated Product_A dataset |
+| 2026-09-25 | Use all-MiniLM-L6-v2 embeddings with a persistent Chroma database | Retrieve observations with similar descriptions using local semantic embeddings | All 3,920 DUT observations embedded as 384-dimensional vectors and stored |
+| 2026-09-25 | Use Ansari's feedback to guide synthetic case histories | Supply plausible causes, investigation checks, and action/retest procedures for the prototype | Engineer guidance received; subsequently simulated outcomes are not engineer-reviewed |
+| 2026-09-26 | Create six historical cases and one observation-only incoming case | Repeat the earlier staged-case approach using Product_A observations | 25 JSON files created under syn_data/product_a_scenarios_v1 |
+| 2026-09-26 | Retrieve historical observations, then load their linked case histories | Provide the LLM with the complete investigation sequence for each matched case | Implemented in retrieve_case_evidence.py |
+| 2026-09-26 | Restrict the initial case-retrieval demonstration to historical cases with the same failed test | Keep the first comparison relevant and easy to inspect | Case 07 searches the two historical Continuity cases |
+| 2026-09-26 | Keep Case 07 outside the historical index | Prevent the incoming incident from retrieving itself as historical evidence | Query-only role and exclusion enforced by the retrieval script |
+
+### Active data and evidence
+
+- Product_A contains five lots, 35 wafers, and 3,920 generated DUT observations.
+- Test order is Continuity → IDD_Static → Scan, stopping at the first failure.
+- Cases 01–06 each contain observation, investigation, action, and retest records.
+- Case 07 contains only the incoming observation.
+- Original observations retain their source references.
+- Investigation findings, actions, and retest outcomes are explicitly synthetic.
+- Ansari's guidance and the newly simulated outcomes have separate review status.
+- Some histories retain unresolved physical causes rather than claiming a specific defect.
+
+### Active retrieval approach
+
+The current working flow uses Chroma and MiniLM embeddings.
+
+The earlier SQLite FTS5 and hashed-TF-IDF implementation remains in
+src/index.py as a separate baseline. It is not called by the current
+Chroma retrieval scripts.
+
+Chroma stores the 3,920 observation records. The 18 historical investigation,
+action, and retest records remain in JSON files and are loaded through their
+case links after observation retrieval. They are not separately embedded
+in the current approach.
+
+### Observed Case 07 run
+
+The local retrieval run returned:
+
+| Rank | Historical case | DUT | Vector distance |
+| --- | --- | --- | --- |
+| 1 | case_01 | Product_A-L01-W03-D012 | 0.5303 |
+| 2 | case_02 | Product_A-L01-W03-D005 | 0.6455 |
+
+The script loaded all four evidence stages for each match and saved:
+
+artifacts/retrieval/case_07_evidence.json
+
+The bundle contains the current observation, eight historical evidence
+records, source references, and instructions for keeping historical findings
+separate from the current incident.
+
+The Chroma record count remained 3,920. No LLM was called.
+
+This run demonstrates filtering, vector ranking, case linking, and evidence
+assembly. It does not establish general retrieval accuracy or diagnostic
+accuracy. Vector distance is not a cause probability.
+
+### Next implementation stage
+
+Connect the evidence bundle to a local LLM to produce:
+
+- Possible causes supported by historical evidence.
+- Citations to the supporting records.
+- Recommended investigation checks.
+- Explicit statements of missing evidence or uncertainty.
+
+Confirm the exact model identifier and runtime before integration.
+LLM generation, deterministic answer verification, broader evaluation,
+offline board execution, and cross-board benchmarking remain pending.
