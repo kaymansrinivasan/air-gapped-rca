@@ -16,3 +16,6 @@ These flows are measured in term of blocks, we had 8 blocks in total. block one,
 ![Air-gapped RCA workflow: immutable logs, chunks with source lines, local vector and keyword indexes, an engineer question, evidence retrieval, ranked causes and citations, deterministic citation checks, and a supported answer or refusal.](docs/images/immutable-log-evidence.png)
 
 The diagram describes the whole intended system.
+
+keep on reseaching...
+
