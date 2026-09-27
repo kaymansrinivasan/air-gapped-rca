@@ -1,9 +1,12 @@
 import json
 from chromadb.utils.embedding_functions import DefaultEmbeddingFunction
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
 
 # Read our existing DUT chunks.
 with open(
-    "artifacts/product_a_chunks/product_a_dut_chunks.jsonl",
+    ROOT / "artifacts/product_a_chunks/product_a_dut_chunks.jsonl",
     encoding="utf-8",
 ) as file:
     chunks = [json.loads(line) for line in file if line.strip()]
