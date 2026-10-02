@@ -45,8 +45,8 @@ Class distribution: https://ctan.org/pkg/ieeetran
 
 Bundled class provenance: IEEEtran V1.8b (2015/08/26), retrieved unchanged from https://github.com/bardsoftware/template-ieee-transactions/blob/master/IEEEtran.cls .
 
-cd ~/TensorRT-Edge-LLM-0.10
-cmake -S . -B build-orin \
+cmake -S . -B build-orin-cuda \
+  -DCMAKE_CUDA_COMPILER=/usr/local/cuda/bin/nvcc \
   -DCMAKE_BUILD_TYPE=Release \
   -DTRT_PACKAGE_DIR=/usr \
   -DCMAKE_TOOLCHAIN_FILE=cmake/aarch64_linux_toolchain.cmake \
