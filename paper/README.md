@@ -53,3 +53,6 @@ cmake -S . -B build-orin-cuda \
   -DEMBEDDED_TARGET=jetson-orin \
   -DCUDA_CTK_VERSION=12.6 \
   -DENABLE_CUTE_DSL=gdn
+
+./build-orin-cuda/examples/llm/llm_build --help
+./build-orin-cuda/examples/llm/llm_inference --help
