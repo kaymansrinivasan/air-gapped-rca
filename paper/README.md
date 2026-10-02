@@ -44,3 +44,12 @@ Template reference: https://conferences.ieeeauthorcenter.ieee.org/write-your-pap
 Class distribution: https://ctan.org/pkg/ieeetran
 
 Bundled class provenance: IEEEtran V1.8b (2015/08/26), retrieved unchanged from https://github.com/bardsoftware/template-ieee-transactions/blob/master/IEEEtran.cls .
+
+cd ~/TensorRT-Edge-LLM-0.10
+cmake -S . -B build-orin \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DTRT_PACKAGE_DIR=/usr \
+  -DCMAKE_TOOLCHAIN_FILE=cmake/aarch64_linux_toolchain.cmake \
+  -DEMBEDDED_TARGET=jetson-orin \
+  -DCUDA_CTK_VERSION=12.6 \
+  -DENABLE_CUTE_DSL=gdn
