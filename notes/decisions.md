@@ -103,3 +103,13 @@ Connect the evidence bundle to a local LLM to produce:
 Confirm the exact model identifier and runtime before integration.
 LLM generation, deterministic answer verification, broader evaluation,
 offline board execution, and cross-board benchmarking remain pending.
+
+## Edge model deployment decision — 2026-10-02
+
+| Date | Decision | Reason | Status |
+| --- | --- | --- | --- |
+| 2026-10-02 | Use Qwen3.5-0.8B with the 2K profile on RB3 Gen 2 via the unofficial QNN/HTP port | Establish a small on-device language-model smoke test before coupling retrieval and generation | Hash-verified assets installed; server health and short text response observed. Offline reboot, quality, and energy evaluation pending |
+| 2026-10-02 | Prepare the same upstream Qwen3.5-0.8B checkpoint for Jetson Orin Nano Super using TensorRT Edge-LLM v0.10.0 | Compare execution on the NVIDIA GPU with the Qualcomm NPU while tracking backend-specific model preparation | SM87 FMHA/GDN kernels and C++ runtime built; model export, engine evidence, and inference output not independently recorded here |
+| 2026-10-02 | Record checkpoint revision, context, precision, and backend separately for every board | RB3 uses quantized QNN graphs; a possible Jetson FP16 engine would not be quantization-equivalent. Latency or quality differences cannot be attributed to processor alone | Comparison protocol selected; actual Jetson model precision and matched measurements pending |
+
+The current status draft treats a completed Jetson model run as a **user-requested assumption**, not a verified repository result. Update this row and [hardware.md](hardware.md) with the actual engine metadata, prompt/output and runtime traces once available. No full air-gapped RCA pipeline or cross-board benchmark is claimed by these hardware smoke tests.
