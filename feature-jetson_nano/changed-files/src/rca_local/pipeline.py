@@ -1,0 +1,73 @@
+"""Run the local RAG stages and retain a complete audit per request."""
+import hashlib
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+from uuid import uuid4
+
+from .core import EvidenceError, LIMITATIONS, build_prompt, make_catalog, render_answer, validate_selection
+from .workers import settings
+
+
+def dump(path, value):
+    path.write_text(json.dumps(value, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
+def run_worker(mode, source, target):
+    env = os.environ.copy()
+    env.update({"HF_HUB_OFFLINE": "1", "TRANSFORMERS_OFFLINE": "1", "ANONYMIZED_TELEMETRY": "False"})
+    package_root = Path(__file__).resolve().parents[2]
+    with target.with_suffix(".log").open("w") as log:
+        process = subprocess.Popen([sys.executable, "-m", "src.rca_local.workers", mode, str(source), str(target)],
+                                   cwd=str(package_root), env=env, stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
+        try:
+            code = process.wait(timeout=660)
+        except subprocess.TimeoutExpired:
+            # Kill the worker and its TensorRT child, not unrelated Jetson processes.
+            import signal
+            os.killpg(process.pid, signal.SIGKILL)
+            process.wait()
+            raise EvidenceError("Local inference timed out; this job was stopped.") from None
+    if code != 0:
+        error = target.with_suffix(".error.json")
+        message = json.loads(error.read_text())["error"] if error.exists() else "Worker failed; inspect its saved log."
+        raise EvidenceError(message)
+    return json.loads(target.read_text())
+
+
+def run_pipeline(current):
+    root, _, _, _ = settings()
+    run_id = uuid4().hex
+    folder = root / "artifacts/rca_app" / run_id
+    folder.mkdir(parents=True)
+    dump(folder / "incident.json", current)
+    bundle = None
+    try:
+        bundle = run_worker("retrieve", folder / "incident.json", folder / "evidence.json")
+        if not bundle["matches"]:
+            answer = {"status": "refuse", "summary": "No historical cases match this product and failed test.", "causes": [], "checks": [], "limitations": LIMITATIONS}
+        else:
+            catalog = make_catalog(bundle)
+            prompt, aliases = build_prompt(bundle, catalog)
+            dump(folder / "catalog.json", {"catalog": catalog, "aliases": aliases})
+            dump(folder / "prompt.json", {"prompt": prompt})
+            generated = run_worker("generate", folder / "prompt.json", folder / "model.json")
+            # Reject a source changed after retrieval instead of citing stale bytes.
+            for match in bundle["matches"]:
+                for source in match["sources"].values():
+                    actual = hashlib.sha256((root / source["file"]).read_bytes()).hexdigest()
+                    if actual != source["sha256"]:
+                        raise EvidenceError("A historical source changed during this request.")
+            status, selected = validate_selection(generated["text"], aliases, catalog)
+            answer = render_answer(bundle, status, selected)
+    except Exception as exc:
+        answer = {"status": "rejected", "summary": "No validated model answer is available.", "error": str(exc),
+                  "causes": [], "checks": [], "limitations": LIMITATIONS}
+    answer.update({"run_id": run_id, "dut_id": current["dut_id"], "question": current["question"],
+                   "observation": current["retrieval_text"], "current_is_synthetic": current.get("synthetic", False)})
+    # Evidence stays readable on rejection, explicitly separate from an answer.
+    answer["historical_evidence"] = bundle["matches"] if bundle else []
+    dump(folder / "answer.json", answer)
+    return answer

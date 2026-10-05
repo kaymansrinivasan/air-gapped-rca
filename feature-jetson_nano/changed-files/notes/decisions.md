@@ -1,0 +1,133 @@
+# Design decisions
+
+| Date | Decision | Reason | Status |
+| --- | --- | --- | --- |
+| 2026-09-07 | Use the section 11 repository structure | Follow the mentor's guide | Implemented |
+| 2026-09-07 | Start a Markdown paper outline | Keep the paper beside the code from week 1 | Implemented |
+| 2026-09-08 | Record RB3 Gen 2 initial DSP validation separately from LLM qualification | QNN reported supported hardware and available libraries; the DSP calculator test passed. This does not establish language-model execution or offline readiness | Initial DSP check completed; LLM inference and offline cold boot pending |
+| 2026-09-09 | Keep Jetson qualification preliminary after the local TensorRT Edge-LLM text-generation check | The project discussion recorded a successful `qwen3vl-2b` response with citation-style output. Generated citations still need deterministic verification | Initial inference reported; citation verification, engine/device warning review, and offline reboot test pending |
+| 2026-09-09 | Investigate Loghub Hadoop as an initial public-log candidate | Reviewed the raw sample, parsed CSV, templates, and dataset provenance. Parsed records and templates alone do not supply reviewed causal ground truth | Investigation completed; not a frozen or integrated benchmark |
+| 2026-09-12–16 | Focus the prototype data investigation on semiconductor ATE failures | Studied the ATE flow and STDF examples, including `lot2`, `lot3`, and the Galaxy demo, to understand recorded test results and the diagnostic evidence needed alongside them | Data-format and project-scope review completed |
+| 2026-09-16 | Prioritize test-result logs and matching diagnostic evidence before further LLM, fine-tuning, or vector-RAG work | A useful cause explanation needs evidence beyond identifying a failed test; settle the input data before building the pipeline | Agreed working priority; data validation remains open |
+| 2026-09-16–18 | Use A595 STDF and its matching readable tester log as the prototype source | Provides concrete measured failure anchors for the ATE workflow. Preserve source files, attribution, and checksums; source results do not establish the original physical causes | Source pair committed under `syn_data/source/`; original factory provenance not independently authenticated |
+| 2026-09-18 | Add synthetic investigation, action, and retest records around measured A595 failures | Demonstrate how evidence accumulates while explicitly separating original measurements from invented follow-up events | Six scenarios from five distinct source-device failures committed; engineer review pending |
+| 2026-09-18 | Represent the synthetic workflow as staged evidence and questions | Each question declares available evidence so later investigation or retest information can be withheld until its stage | 25 evidence records, 24 replay events, 18 questions, and 18 reference answers committed; replay enforcement not implemented |
+| 2026-09-18 | Include ambiguous and misleading-evidence cases in the demonstration | The scenarios include alternative outcomes for the same continuity failure, an unresolved scan failure, and a retest linked to the wrong device | Cases authored; no measured model or verifier performance yet |
+| 2026-09-18 | Keep synthetic scenarios explicitly limited to workflow demonstration | Every scenario records an unknown real-world cause and `human_engineer_reviewed: false`; designer-authored answers are not expert-certified RCA labels | Implemented in dataset metadata; ATE engineer validation pending |
+| 2026-09-18 | Update the working paper with supervisor details and a refreshed PDF | Record Kother Badushah, Solutions Architect (Semicon and AI), UST, in the manuscript while retaining explicit pending-results language | Source and PDF updated; completed technical paper and experiments still pending |
+| 2026-09-18–19 | Define the intended prototype around new failures compared with historical investigated cases | Historical logs, investigations, and engineer solutions should support possible-cause suggestions for new logs. Merely naming the failed test does not meet the intended goal; a similar past case alone does not confirm the current cause | Prototype intent clarified; exact evidence requirements for confirmation and mentor agreement remain open |
+
+## Current Product_A direction — 2026-09-24
+
+The earlier A595 source, authored cases, replay files and A595-specific Block 2 implementation were removed from the active tree to keep the new Product_A work separate. They remain recoverable from Git history; the dated decisions above describe historical work, not current searchable evidence.
+
+Product_A first-attempt logs and STDF files are the active data. They contain generated observations only. ATE engineers are reviewing the next scenario evidence; no Product_A investigation, corrective action, retest or confirmed cause has been added. Product_A observation chunking and local lexical indexing can proceed while engineers review scenario records. Cause-bearing case histories and cause-answer evaluation still depend on that review. Citation verification and cross-board evaluation remain pending.
+
+Hardware observations remain documented in [hardware.md](hardware.md). The [paper](../paper/main.tex) is a working manuscript with results pending.
+
+## Product_A observations and indexing — 2026-09-25
+
+The current Block 2 reads all 3,920 first-attempt DUT records as separate exact source-linked observations, preserving 35 wafer-file hashes and stopping rules. No diagnosis is assigned. Block 3 stores their keywords in SQLite FTS5 and 256-dimensional hashed TF-IDF vectors for an offline lexical baseline. It is not semantic embedding retrieval; model weights are not yet inventoried for offline use. The incoming DUT must be excluded from its own historical results, and later case histories require an explicit historical/current split. Tests and reproduction commands are in [the Product_A retrieval notes](../docs/product_a_retrieval.md).
+
+## Product_A semantic retrieval and case histories — 2026-09-27
+
+This section supersedes the earlier descriptions of the active retrieval
+approach and the absence of Product_A case histories.
+
+| Date | Decision | Reason | Status |
+| --- | --- | --- | --- |
+| 2026-09-25 | Use Continuity, IDD_Static, and Scan for the prototype, following Kother's recommendation | Reduce test-log complexity while demonstrating the investigation workflow | Implemented in the generated Product_A dataset |
+| 2026-09-25 | Use all-MiniLM-L6-v2 embeddings with a persistent Chroma database | Retrieve observations with similar descriptions using local semantic embeddings | All 3,920 DUT observations embedded as 384-dimensional vectors and stored |
+| 2026-09-25 | Use Ansari's feedback to guide synthetic case histories | Supply plausible causes, investigation checks, and action/retest procedures for the prototype | Engineer guidance received; subsequently simulated outcomes are not engineer-reviewed |
+| 2026-09-26 | Create six historical cases and one observation-only incoming case | Repeat the earlier staged-case approach using Product_A observations | 25 JSON files created under syn_data/product_a_scenarios_v1 |
+| 2026-09-26 | Retrieve historical observations, then load their linked case histories | Provide the LLM with the complete investigation sequence for each matched case | Implemented in retrieve_case_evidence.py |
+| 2026-09-26 | Restrict the initial case-retrieval demonstration to historical cases with the same failed test | Keep the first comparison relevant and easy to inspect | Case 07 searches the two historical Continuity cases |
+| 2026-09-26 | Keep Case 07 outside the historical index | Prevent the incoming incident from retrieving itself as historical evidence | Query-only role and exclusion enforced by the retrieval script |
+
+### Active data and evidence
+
+- Product_A contains five lots, 35 wafers, and 3,920 generated DUT observations.
+- Test order is Continuity → IDD_Static → Scan, stopping at the first failure.
+- Cases 01–06 each contain observation, investigation, action, and retest records.
+- Case 07 contains only the incoming observation.
+- Original observations retain their source references.
+- Investigation findings, actions, and retest outcomes are explicitly synthetic.
+- Ansari's guidance and the newly simulated outcomes have separate review status.
+- Some histories retain unresolved physical causes rather than claiming a specific defect.
+
+### Active retrieval approach
+
+The current working flow uses Chroma and MiniLM embeddings.
+
+The earlier SQLite FTS5 and hashed-TF-IDF implementation remains in
+src/index.py as a separate baseline. It is not called by the current
+Chroma retrieval scripts.
+
+Chroma stores the 3,920 observation records. The 18 historical investigation,
+action, and retest records remain in JSON files and are loaded through their
+case links after observation retrieval. They are not separately embedded
+in the current approach.
+
+### Observed Case 07 run
+
+The local retrieval run returned:
+
+| Rank | Historical case | DUT | Vector distance |
+| --- | --- | --- | --- |
+| 1 | case_01 | Product_A-L01-W03-D012 | 0.5303 |
+| 2 | case_02 | Product_A-L01-W03-D005 | 0.6455 |
+
+The script loaded all four evidence stages for each match and saved:
+
+artifacts/retrieval/case_07_evidence.json
+
+The bundle contains the current observation, eight historical evidence
+records, source references, and instructions for keeping historical findings
+separate from the current incident.
+
+The Chroma record count remained 3,920. No LLM was called.
+
+This run demonstrates filtering, vector ranking, case linking, and evidence
+assembly. It does not establish general retrieval accuracy or diagnostic
+accuracy. Vector distance is not a cause probability.
+
+### Next implementation stage
+
+Connect the evidence bundle to a local LLM to produce:
+
+- Possible causes supported by historical evidence.
+- Citations to the supporting records.
+- Recommended investigation checks.
+- Explicit statements of missing evidence or uncertainty.
+
+Confirm the exact model identifier and runtime before integration.
+LLM generation, deterministic answer verification, broader evaluation,
+offline board execution, and cross-board benchmarking remain pending.
+
+## Edge model deployment decision — 2026-10-02
+
+| Date | Decision | Reason | Status |
+| --- | --- | --- | --- |
+| 2026-10-02 | Use Qwen3.5-0.8B with the 2K profile on RB3 Gen 2 via the unofficial QNN/HTP port | Establish a small on-device language-model smoke test before coupling retrieval and generation | Hash-verified assets installed; server health and short text response observed. Offline reboot, quality, and energy evaluation pending |
+| 2026-10-02 | Prepare the same upstream Qwen3.5-0.8B checkpoint for Jetson Orin Nano Super using TensorRT Edge-LLM v0.10.0 | Compare execution on the NVIDIA GPU with the Qualcomm NPU while tracking backend-specific model preparation | SM87 FMHA/GDN kernels and C++ runtime built; model export, engine evidence, and inference output not independently recorded here |
+| 2026-10-02 | Record checkpoint revision, context, precision, and backend separately for every board | RB3 uses quantized QNN graphs; a possible Jetson FP16 engine would not be quantization-equivalent. Latency or quality differences cannot be attributed to processor alone | Comparison protocol selected; actual Jetson model precision and matched measurements pending |
+
+The current status draft treats a completed Jetson model run as a **user-requested assumption**, not a verified repository result. Update this row and [hardware.md](hardware.md) with the actual engine metadata, prompt/output and runtime traces once available. No full air-gapped RCA pipeline or cross-board benchmark is claimed by these hardware smoke tests.
+
+
+
+## 2026-10-05 — Jetson LlamaIndex integration and evidence-bound UI
+
+- Demonstrated LlamaIndex Chroma retrieval of two historical continuity cases
+  and LlamaIndex CustomLLM calls to Qwen3.5-0.8B on TensorRT-Edge-LLM.
+- Fixed missing plugin-path configuration and memory pressure using SSH with
+  local browser/editor closed. No complete offline certification is claimed.
+- Free-text drafts copied placeholders, assigned wrong citations and referenced
+  a historical DUT in proposed checks. Reject these as failed answers.
+- New local app uses a model-selected catalog of source-bound causes/checks.
+  Text and citations are attached by code; invalid selections fail closed.
+  This verifies source membership, not semantic or causal correctness.
+- Provide a local browser form; JSON remains an internal audit format. Support
+  current Product_A single-DUT observations and the three selected tests only.
+- Keep development on a feature branch; main should only receive accepted
+  milestones. New UI/selection code still requires a Jetson run and benchmark.
