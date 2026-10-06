@@ -4,12 +4,29 @@ Grounded root cause analysis on offline edge accelerators.
 
 ## Current status
 
-The active dataset is generated Product_A wafer-sort data: five lots, seven
-wafers per lot, and 112 DUTs per wafer. No Product_A DUT was physically
-measured. But engineer-reviewed Product_A investigation, corrective
-action, retest, or confirmed-cause records for six synthetic cases.
+The active dataset contains 3,920 synthetic Product_A wafer-sort observations
+(five lots, 35 wafers) and six curated historical scenarios. Engineering
+guidance informed possible causes and investigation procedures. The simulated
+investigation, action and retest outcomes are **not physically tested and not
+reviewed**. They are not confirmed real-world diagnoses.
 
-These flows are measured in term of blocks, we had 8 blocks in total. block one, two and three has completed!
+LlamaIndex-to-Chroma retrieval and LlamaIndex-to-Qwen3.5-0.8B inference have
+been demonstrated on the Jetson Orin Nano. Free-text RCA drafts produced wrong
+citations and historical-DUT references and were rejected.
+
+The new local app presents a browser form for a failure observation and an
+engineer's question. Qwen selects evidence IDs; code supplies source-owned
+text and citations. Invalid selections are rejected. Source validation is
+not proof that a hypothesis explains the current DUT.
+
+- [Local app setup, supported inputs and limitations](docs/local-app.md)
+- [Observed Jetson integration progress](docs/jetson-progress.md)
+- Start the app: `python -m src.rca_local` inside the Jetson environment.
+- Run software tests: `python -m unittest discover -s tests -v`.
+
+The new selection workflow still needs on-board validation. The full quality
+benchmark, offline unplug/reboot test, RB3 integration and board comparison
+are pending. This is a research prototype, not a production RCA service.
 
 ## Proposed workflow
 
@@ -17,5 +34,6 @@ These flows are measured in term of blocks, we had 8 blocks in total. block one,
 
 The diagram describes the whole intended system.
 
-keep on reseaching...
+The diagram describes the target architecture; not all acceptance criteria
+have been demonstrated.
 
