@@ -16,3 +16,10 @@ artifacts/
 .pytest_cache/
 .coverage
 htmlcov/
+
+# Jetson environments, model engines and local run configuration
+.venv-*/
+*.engine
+*.onnx
+*.safetensors
+*.log

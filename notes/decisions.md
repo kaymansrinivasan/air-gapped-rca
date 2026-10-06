@@ -113,3 +113,21 @@ offline board execution, and cross-board benchmarking remain pending.
 | 2026-10-02 | Record checkpoint revision, context, precision, and backend separately for every board | RB3 uses quantized QNN graphs; a possible Jetson FP16 engine would not be quantization-equivalent. Latency or quality differences cannot be attributed to processor alone | Comparison protocol selected; actual Jetson model precision and matched measurements pending |
 
 The current status draft treats a completed Jetson model run as a **user-requested assumption**, not a verified repository result. Update this row and [hardware.md](hardware.md) with the actual engine metadata, prompt/output and runtime traces once available. No full air-gapped RCA pipeline or cross-board benchmark is claimed by these hardware smoke tests.
+
+
+
+## 2026-10-05 — Jetson LlamaIndex integration and evidence-bound UI
+
+- Demonstrated LlamaIndex Chroma retrieval of two historical continuity cases
+  and LlamaIndex CustomLLM calls to Qwen3.5-0.8B on TensorRT-Edge-LLM.
+- Fixed missing plugin-path configuration and memory pressure using SSH with
+  local browser/editor closed. No complete offline certification is claimed.
+- Free-text drafts copied placeholders, assigned wrong citations and referenced
+  a historical DUT in proposed checks. Reject these as failed answers.
+- New local app uses a model-selected catalog of source-bound causes/checks.
+  Text and citations are attached by code; invalid selections fail closed.
+  This verifies source membership, not semantic or causal correctness.
+- Provide a local browser form; JSON remains an internal audit format. Support
+  current Product_A single-DUT observations and the three selected tests only.
+- Keep development on a feature branch; main should only receive accepted
+  milestones. New UI/selection code still requires a Jetson run and benchmark.
