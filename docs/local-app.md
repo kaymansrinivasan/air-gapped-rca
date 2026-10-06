@@ -12,8 +12,8 @@
    evidence remains available separately for engineer inspection.
 
 Engineers do not edit Python or type JSON. An operator starts the server once.
-Only Product_A and the current Continuity (100), IDD_Static (200) and Scan
-(300) prototype are supported. Test/product/DUT fields are engineer-confirmed
+Only Product_A and the current Continuity (100), IDD_Static (210) and Scan
+(606) prototype are supported. Test/product/DUT fields are engineer-confirmed
 input; arbitrary STDF files, whole wafers and unknown log formats are not
 automatically parsed. The form supports new DUTs, not just Case 07.
 

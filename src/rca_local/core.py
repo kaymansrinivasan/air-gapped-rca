@@ -34,7 +34,7 @@ def observation_from_form(form):
         test = int(form.get("failed_test", 0))
     except (TypeError, ValueError):
         raise EvidenceError("Choose the failed test.") from None
-    require(test in (100, 200, 300), "Choose Continuity, IDD_Static or Scan.")
+    require(test in (100, 210, 606), "Choose Continuity, IDD_Static or Scan.")
     text = str(form.get("observation", "")).strip()
     require(0 < len(text) <= 12000, "Enter an observation of at most 12,000 characters.")
     question = str(form.get("question", "")).strip()
