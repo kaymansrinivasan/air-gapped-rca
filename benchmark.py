@@ -57,7 +57,33 @@ def load_manifest(path: Path):
     return data, hashlib.sha256(raw).hexdigest()
 
 
-def summarize(items, results):
+def load_gold(path: Path, manifest: dict, manifest_hash: str):
+    gold = json.loads(path.read_text(encoding="utf-8"))
+    if gold.get("schema_version") != "airgap-rca-reviewed-gold-v1" or gold.get("manifest_sha256") != manifest_hash:
+        raise ValueError("Gold labels are for a different manifest.")
+    entries = gold.get("items")
+    if not isinstance(entries, list) or len(entries) != len(manifest["items"]):
+        raise ValueError("Gold labels must cover every frozen question.")
+    labels = {}
+    for entry in entries:
+        identity = entry["id"]
+        if identity in labels or entry.get("review_status") != "approved" or not entry.get("reviewer"):
+            raise ValueError("Duplicate, unreviewed, or anonymous gold label.")
+        status = entry.get("expected_status")
+        causes, checks = entry.get("acceptable_cause_ids"), entry.get("acceptable_check_ids")
+        if status not in ("unconfirmed", "refuse") or not isinstance(causes, list) or not isinstance(checks, list):
+            raise ValueError("Invalid gold label.")
+        if any(not isinstance(x, str) or not x for x in causes + checks):
+            raise ValueError("Gold IDs must be strings.")
+        if (status == "refuse" and (causes or checks)) or (status == "unconfirmed" and (not causes or not checks)):
+            raise ValueError("Gold cause/check choices conflict with expected status.")
+        labels[identity] = entry
+    if set(labels) != {item["id"] for item in manifest["items"]}:
+        raise ValueError("Gold and manifest question IDs differ.")
+    return labels
+
+
+def summarize(items, results, gold):
     statuses = Counter(row["status"] for row in results)
     elapsed = sorted(row["latency_seconds"] for row in results)
     summary = {
@@ -69,9 +95,33 @@ def summarize(items, results):
             if item["category"] == "no_answer"),
         "no_answer_total": sum(item["category"] == "no_answer" for item in items),
     }
-    # A pending label is not ground truth. Never fill these with a proxy score.
-    summary["accuracy"] = None
-    summary["false_answer_rate"] = None
+    correct = []
+    false_answers = 0
+    answered = 0
+    top1_correct = 0
+    top2_correct = 0
+    for item, result in zip(items, results):
+        label = gold[item["id"]]
+        causes = result["cause_ids"]
+        checks = result["check_ids"]
+        acceptable = set(label["acceptable_cause_ids"])
+        valid = (result["status"] == label["expected_status"] == "refuse"
+                 or result["status"] == label["expected_status"] == "unconfirmed"
+                 and bool(causes) and bool(checks) and set(causes) <= acceptable
+                 and set(checks) <= set(label["acceptable_check_ids"]))
+        correct.append(valid)
+        if result["status"] == "unconfirmed":
+            answered += 1
+            false_answers += not valid
+            top1_correct += bool(causes and causes[0] in acceptable)
+            top2_correct += bool(set(causes[:2]) & acceptable)
+    summary["exact_answer_accuracy"] = sum(correct) / len(correct)
+    summary["false_answer_rate_per_answer"] = false_answers / answered if answered else None
+    summary["top1_cause_accuracy_on_answered"] = top1_correct / answered if answered else None
+    summary["top2_cause_hit_rate_on_answered"] = top2_correct / answered if answered else None
+    summary["top3_cause_hit_rate_on_answered"] = None  # Current selection allows only two causes.
+    summary["answered_count"] = answered
+    summary["false_answer_count"] = false_answers
     summary["citation_validity"] = None
     summary["power_watts"] = None
     summary["energy_joules_per_triage"] = None
@@ -85,19 +135,28 @@ def main():
     parser.add_argument("--run", action="store_true", help="Run all items through the local Jetson backend.")
     parser.add_argument("--data-root", type=Path, help="RCA_DATA_ROOT containing the local index.")
     parser.add_argument("--output", type=Path, help="New JSON result file; never overwritten.")
+    parser.add_argument("--gold", type=Path, help="Separate, fully reviewed labels for this manifest.")
     args = parser.parse_args()
     data, manifest_hash = load_manifest(args.manifest)
     counts = Counter(item["category"] for item in data["items"])
     print(json.dumps({"items": len(data["items"]), "categories": counts,
                       "manifest_sha256": manifest_hash,
-                      "approved_gold": sum(x["gold"]["review_status"] == "approved"
-                                           for x in data["items"])}, indent=2))
+                      "embedded_labels_pending_review": sum(
+                          x["gold"]["review_status"] != "approved" for x in data["items"])}, indent=2))
+    try:
+        labels = load_gold(args.gold, data, manifest_hash) if args.gold else None
+    except ValueError as exc:
+        parser.error(str(exc))
     if not args.run:
         if not args.validate:
             parser.error("Choose --validate or --run.")
+        if labels is not None:
+            print("Reviewed gold labels:", len(labels))
         return
-    if not args.output or not args.data_root:
-        parser.error("--run requires --output and --data-root.")
+    if not args.output or not args.data_root or not args.gold:
+        parser.error("--run requires --output, --data-root and reviewed --gold labels.")
+    if labels is None:
+        parser.error("--run requires reviewed --gold labels.")
     if args.output.exists():
         raise SystemExit("Result file already exists. Choose a new --output.")
     os.environ["RCA_DATA_ROOT"] = str(args.data_root.resolve())
@@ -114,9 +173,11 @@ def main():
                "check_ids": [x["id"] for x in answer.get("checks", [])]}
         results.append(row)
         print(item["id"], row["status"], f'{row["latency_seconds"]:.2f}s', flush=True)
-    output = {"manifest_sha256": manifest_hash, "backend": "jetson_tensorrt_edge_llm",
-              "summary": summarize(data["items"], results), "results": results,
-              "notes": "Pending engineer labels: accuracy, citation validity and FAR are not scored."}
+    output = {"manifest_sha256": manifest_hash,
+              "gold_sha256": hashlib.sha256(args.gold.read_bytes()).hexdigest(),
+              "backend": "jetson_tensorrt_edge_llm",
+              "summary": summarize(data["items"], results, labels), "results": results,
+              "notes": "Engineer-reviewed gold applied; citation validity and power require separate audits."}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with args.output.open("x", encoding="utf-8") as handle:
         json.dump(output, handle, indent=2)

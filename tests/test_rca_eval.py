@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 import unittest
 
-from benchmark import load_manifest
+from benchmark import load_manifest, load_gold
 from src.rca_local.core import load_history, make_catalog
 from src.verify import verify_selection
 
@@ -35,6 +35,14 @@ class EvaluationTests(unittest.TestCase):
                         for field, kind in (("cause_ids", "cause"), ("check_ids", "check"))}
             status, _, _ = verify_selection(ROOT, bundle, "unconfirmed", selected)
             self.assertEqual(status, "refuse", item["id"])
+
+    def test_pending_gold_cannot_start_an_official_run(self):
+        manifest, digest = load_manifest(MANIFEST)
+        path = ROOT / "eval/product_a_v1_50_review_template.json"
+        with self.assertRaisesRegex(ValueError, "unreviewed"):
+            load_gold(path, manifest, digest)
+        with self.assertRaisesRegex(ValueError, "different manifest"):
+            load_gold(path, manifest, "0" * 64)
 
 
 if __name__ == "__main__":

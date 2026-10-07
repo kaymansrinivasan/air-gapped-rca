@@ -33,13 +33,24 @@ From the repository root:
 python3 benchmark.py --validate --manifest eval/product_a_v1_50.json
 ```
 
-With the Jetson venv, local Chroma index, tokenizer, and TensorRT runtime
-already in place, run the fixed inputs offline:
+Before any official model run, copy
+`eval/product_a_v1_50_review_template.json` to
+`eval/product_a_v1_50_gold_reviewed.json`. An ATE engineer must inspect all
+50 input logs and candidate options,
+fill `expected_status`, `acceptable_cause_ids`, `acceptable_check_ids`,
+`reviewer`, and `review_note`, and set each `review_status` to `approved`.
+The ten proposed no-answer labels also need review. The runner rejects an
+incomplete, anonymous, or mismatched gold file. Do not infer a gold label from
+the model's answer.
+
+With reviewed labels, the Jetson venv, local Chroma index, tokenizer, and
+TensorRT runtime in place, run the fixed inputs offline:
 
 ```bash
 export RCA_DATA_ROOT=/home/orin_nano/Documents/airgap-rca
 /home/orin_nano/Documents/airgap-rca/.venv-llamaindex-jetson/bin/python \
   benchmark.py --run --manifest eval/product_a_v1_50.json \
+  --gold eval/product_a_v1_50_gold_reviewed.json \
   --data-root "$RCA_DATA_ROOT" \
   --output "$RCA_DATA_ROOT/artifacts/evaluation/jetson_v1.json"
 ```
@@ -47,9 +58,10 @@ export RCA_DATA_ROOT=/home/orin_nano/Documents/airgap-rca
 The runner does not overwrite an existing result. It records status, selected
 source IDs, generation attempts, and wall-clock latency per question, plus
 median and p95 latency. It reports how many of the ten incomplete-observation
-probes refused. It deliberately leaves accuracy, false-answer rate, citation
-validity, power and energy unset until reviewed gold labels and measurement
-instrumentation are added. The model output and verification audit remain in
+probes refused, exact reviewed-answer accuracy, false-answer rate per answer,
+and top-1 and top-2 cause hits. The current selector returns at most two
+causes, so top-3 is deliberately unset. Citation validity, power, and energy
+still need separate measurement and review. Model output and audit remain in
 `artifacts/rca_app/<run_id>/`.
 
 ## Before comparing boards
