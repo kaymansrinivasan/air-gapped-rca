@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+import re
 import unittest
 
 from benchmark import load_manifest, load_gold
@@ -43,6 +44,17 @@ class EvaluationTests(unittest.TestCase):
             load_gold(path, manifest, digest)
         with self.assertRaisesRegex(ValueError, "different manifest"):
             load_gold(path, manifest, "0" * 64)
+
+    def test_offline_review_page_has_only_frozen_unreviewed_inputs(self):
+        page = (ROOT / "eval/product_a_v1_50_review.html").read_text()
+        payload = json.loads(re.search(
+            r'<script type="application/json" id="payload">(.*?)</script>',
+            page, re.S)[1])
+        manifest, digest = load_manifest(MANIFEST)
+        self.assertEqual(payload["manifest_sha256"], digest)
+        self.assertEqual(len(payload["items"]), len(manifest["items"]))
+        self.assertTrue(all(x["review_status"] == "pending_engineer_review"
+                            for x in payload["items"]))
 
 
 if __name__ == "__main__":

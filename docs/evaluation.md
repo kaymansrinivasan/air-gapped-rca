@@ -33,12 +33,16 @@ From the repository root:
 python3 benchmark.py --validate --manifest eval/product_a_v1_50.json
 ```
 
-Before any official model run, copy
-`eval/product_a_v1_50_review_template.json` to
-`eval/product_a_v1_50_gold_reviewed.json`. An ATE engineer must inspect all
-50 input logs and candidate options,
-fill `expected_status`, `acceptable_cause_ids`, `acceptable_check_ids`,
-`reviewer`, and `review_note`, and set each `review_status` to `approved`.
+Before any official model run, open the standalone offline file
+`eval/product_a_v1_50_review.html` in a browser. It shows one question and
+its source options at a time. The engineer can save a draft, resume it, and
+export `product_a_v1_50_gold_reviewed.json` only after reviewing all 50.
+The generated JSON is an interchange file for the benchmark, not an engineer
+question interface. The same information remains in
+`eval/product_a_v1_50_review_template.json` for audit.
+An ATE engineer must inspect all 50 input logs and candidate options, choose
+acceptable causes and checks or refusal, record a note and name, and mark each
+reviewed.
 The ten proposed no-answer labels also need review. The runner rejects an
 incomplete, anonymous, or mismatched gold file. Do not infer a gold label from
 the model's answer.
