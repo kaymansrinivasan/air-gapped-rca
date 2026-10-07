@@ -48,11 +48,19 @@ def run_pipeline(current):
     generation_attempts = 0
     try:
         bundle = run_worker("retrieve", folder / "incident.json", folder / "evidence.json")
-        if not bundle["matches"]:
-            answer = {"status": "refuse", "summary": "No historical cases match this product and failed test.", "causes": [], "checks": [], "limitations": LIMITATIONS}
+        from src.verify import compatible_matches
+        eligible = compatible_matches(bundle)
+        dump(folder / "eligibility.json", {
+            "retrieved_cases": [m["records"]["observation"]["case_id"] for m in bundle["matches"]],
+            "eligible_cases": [m["records"]["observation"]["case_id"] for m in eligible],
+            "rule": "IDD direction must be observed and match the historical case (test 210 only).",
+        })
+        if not eligible:
+            answer = {"status": "refuse", "summary": "No symptom-compatible historical case supports an answer.", "causes": [], "checks": [], "limitations": LIMITATIONS}
         else:
-            catalog = make_catalog(bundle)
-            prompt, aliases = build_prompt(bundle, catalog)
+            selection_bundle = {**bundle, "matches": eligible}
+            catalog = make_catalog(selection_bundle)
+            prompt, aliases = build_prompt(selection_bundle, catalog)
             dump(folder / "catalog.json", {"catalog": catalog, "aliases": aliases})
             correction = ""
             for attempt in range(2):

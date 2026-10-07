@@ -81,6 +81,21 @@ def _historical_direction(match: dict) -> str | None:
     return "high" if high and not low else "low" if low and not high else None
 
 
+def compatible_matches(bundle: dict) -> list[dict]:
+    """Limit model choices to histories with the observed IDD direction.
+
+    The original retrieval bundle remains intact for audit and display. The
+    verifier below independently repeats this check on the model's selections.
+    An unknown current direction does not license a high or low hypothesis.
+    """
+    current = bundle["current"]
+    if current["test_result"]["test_number"] != 210:
+        return bundle["matches"]
+    direction = _direction(current)
+    return [match for match in bundle["matches"]
+            if direction is not None and _historical_direction(match) == direction]
+
+
 def verify_selection(root: Path, bundle: dict, status: str, selected: dict):
     """Return status, supported selections, and a per-item rejection audit.
 

@@ -6,8 +6,8 @@ import shutil
 import tempfile
 import unittest
 
-from src.rca_local.core import EvidenceError, load_history, make_catalog, observation_from_form
-from src.verify import verify_selection
+from src.rca_local.core import EvidenceError, build_prompt, load_history, make_catalog, observation_from_form
+from src.verify import compatible_matches, verify_selection
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -78,6 +78,27 @@ class VerifyTests(unittest.TestCase):
         bundle, selected = self.selection(210, "210 IDD_Static: FAIL", "", "product_a_case_03")
         bundle["current"]["question"] = "The current is above the upper limit: what caused it?"
         self.assertEqual(verify_selection(self.root, bundle, "unconfirmed", selected)[0], "refuse")
+
+    def test_idd_catalog_excludes_opposite_direction_before_generation(self):
+        high = ("210 IDD_Static curr 35.00 ma < 68.33 ma (F) < 55.00 ma")
+        bundle, _ = self.selection(210, high, "", "product_a_case_03")
+        history = load_history(self.root, bundle["current"])
+        bundle["matches"] = [m for m in history.values()
+                             if m["records"]["observation"]["case_id"]
+                             in ("product_a_case_03", "product_a_case_04")]
+        eligible = compatible_matches(bundle)
+        self.assertEqual([m["records"]["observation"]["case_id"] for m in eligible],
+                         ["product_a_case_03"])
+        catalog = make_catalog({**bundle, "matches": eligible})
+        self.assertTrue(catalog)
+        self.assertTrue(all(x["case_id"] == "product_a_case_03" for x in catalog.values()))
+        prompt, aliases = build_prompt({**bundle, "matches": eligible}, catalog)
+        self.assertNotIn("product_a_case_04", prompt)
+        self.assertTrue(all(catalog[key]["case_id"] == "product_a_case_03"
+                            for key in aliases.values()))
+        bundle["current"]["observation_text"] = "210 IDD_Static: FAIL"
+        bundle["current"]["retrieval_text"] = "210 IDD_Static: FAIL"
+        self.assertEqual(compatible_matches(bundle), [])
 
     def test_changed_or_forged_citation_is_an_error(self):
         bundle, selected = self.selection(100, "100 Open/Short-: FAIL", "TSTIN", "product_a_case_01")
