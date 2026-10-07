@@ -81,6 +81,11 @@ def select_prompt(job, template, old_text, tokenizer, limits, output_tokens, mar
 
 
 def generate(job, run_dir):
+    backend = os.environ.get("RCA_BACKEND", "jetson")
+    require(backend in ("jetson", "rb3"), "Unknown RCA_BACKEND.")
+    if backend == "rb3":
+        from .rb3 import generate_rb3
+        return generate_rb3(job, run_dir)
     _, build, engine, sample_path = settings()
     from tokenizers import Tokenizer
     from llama_index.core.llms import CustomLLM, CompletionResponse, LLMMetadata

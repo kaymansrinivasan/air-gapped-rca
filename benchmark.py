@@ -151,7 +151,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--validate", action="store_true", help="Check manifest without inference.")
-    parser.add_argument("--run", action="store_true", help="Run all items through the local Jetson backend.")
+    parser.add_argument("--run", action="store_true", help="Run all items through the selected local backend.")
+    parser.add_argument("--backend", choices=("jetson", "rb3"), default="jetson",
+                        help="Local generation backend (default: jetson).")
     parser.add_argument("--data-root", type=Path, help="RCA_DATA_ROOT containing the local index.")
     parser.add_argument("--output", type=Path, help="New JSON result file; never overwritten.")
     parser.add_argument("--gold", type=Path, help="Separate labels for this manifest.")
@@ -181,6 +183,7 @@ def main():
     if args.output.exists():
         raise SystemExit("Result file already exists. Choose a new --output.")
     os.environ["RCA_DATA_ROOT"] = str(args.data_root.resolve())
+    os.environ["RCA_BACKEND"] = args.backend
     os.environ.update(HF_HUB_OFFLINE="1", TRANSFORMERS_OFFLINE="1", ANONYMIZED_TELEMETRY="False")
     from src.rca_local.pipeline import run_pipeline
     results = []
@@ -197,7 +200,7 @@ def main():
     output = {"manifest_sha256": manifest_hash,
               "gold_sha256": hashlib.sha256(args.gold.read_bytes()).hexdigest(),
               "label_origin": origin,
-              "backend": "jetson_tensorrt_edge_llm",
+              "backend": {"jetson": "jetson_tensorrt_edge_llm", "rb3": "rb3_qnn_htp"}[args.backend],
               "summary": summarize(data["items"], results, labels, origin), "results": results,
               "notes": ("AI proxy agreement only; not independent engineer-validated diagnostic accuracy."
                         if origin == "ai_proxy_from_six_synthetic_scenarios" else
