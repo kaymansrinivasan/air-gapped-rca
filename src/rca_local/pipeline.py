@@ -9,6 +9,7 @@ from uuid import uuid4
 
 from .core import EvidenceError, LIMITATIONS, build_prompt, make_catalog, render_answer, validate_selection
 from .workers import settings
+from src.verify import verify_selection
 
 
 def dump(path, value):
@@ -85,6 +86,15 @@ def run_pipeline(current):
                 else:
                     dump(attempt_dir / "validation.json", {"accepted": True})
                     break
+            status, selected, rejected = verify_selection(root, bundle, status, selected)
+            dump(folder / "verification.json", {
+                "status": status,
+                "retained_ids": {field: [item["id"] for item in selected[field]]
+                                 for field in ("cause_ids", "check_ids")},
+                "rejected": rejected,
+                "scope": "Source integrity, failed test, pins and IDD direction only. "
+                         "Diagnostic correctness requires engineer review.",
+            })
             answer = render_answer(bundle, status, selected)
     except Exception as exc:
         answer = {"status": "rejected", "summary": "No validated model answer is available.", "error": str(exc),
