@@ -116,7 +116,7 @@ class EvidenceTests(unittest.TestCase):
         current = observation_from_form(data)
         self.assertFalse(current["index_as_history"])
         self.assertEqual(current["test_result"]["failing_pins"], [{"name": "TSTIN"}])
-        for key, value in [("product", "Unknown"), ("failed_test", "999"), ("observation", ""), ("question", ""), ("dut_id", "../path")]:
+        for key, value in [("product", "Unknown"), ("failed_test", "999"), ("question", ""), ("dut_id", "../path")]:
             with self.subTest(key=key), self.assertRaises(EvidenceError):
                 observation_from_form({**data, key: value})
 

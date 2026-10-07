@@ -24,9 +24,10 @@ not proof that a hypothesis explains the current DUT.
 - Start the app: `python -m src.rca_local` inside the Jetson environment.
 - Run software tests: `python -m unittest discover -s tests -v`.
 
-The new selection workflow still needs on-board validation. The full quality
-benchmark, offline unplug/reboot test, RB3 integration and board comparison
-are pending. This is a research prototype, not a production RCA service.
+One new synthetic IDD case completed the browser-to-answer flow on the Jetson
+on 2026-10-06. The compact UI revision still needs on-board validation. The
+full quality benchmark, offline unplug/reboot test, RB3 integration and board
+comparison are pending. This is a research prototype, not a production RCA service.
 
 ## Proposed workflow
 

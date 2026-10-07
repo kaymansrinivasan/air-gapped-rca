@@ -66,6 +66,20 @@ def retrieve(current):
     return bundle
 
 
+def select_prompt(job, template, old_text, tokenizer, limits, output_tokens, margin):
+    """Select a complete prompt that fits; never clip evidence or the latest reply."""
+    variants = job.get("prompt_options", [{"prompt": job["prompt"], "history_turns": None}])
+    require(isinstance(variants, list) and 1 <= len(variants) <= 3, "Invalid prompt options.")
+    for variant in variants:
+        prompt = variant["prompt"]
+        require(isinstance(prompt, str), "Prompt must be text.")
+        formatted = template.replace(old_text, prompt, 1)
+        count = len(tokenizer.encode(formatted, add_special_tokens=False).ids)
+        if count <= limits["max_input_len"] and count + output_tokens + margin <= limits["max_kv_cache_capacity"]:
+            return prompt, formatted, count, variant.get("history_turns")
+    raise EvidenceError(f"Conversation exceeds the engine budget: {count} input + {output_tokens} output + {margin} margin. Start a new investigation with a shorter log or question. No evidence was truncated.")
+
+
 def generate(job, run_dir):
     _, build, engine, sample_path = settings()
     from tokenizers import Tokenizer
@@ -78,18 +92,15 @@ def generate(job, run_dir):
     old_text = sample["messages"][0]["content"][0]["text"]
     template = sample["formatted_complete_request"]
     require(bool(old_text) and template.count(old_text) == 1, "Cannot recover chat template from sample.")
-    prompt = job["prompt"]
-    formatted = template.replace(old_text, prompt, 1)
     tokenizer = Tokenizer.from_file(str(engine / "tokenizer.json"))
     tokenizer.no_truncation()
     tokenizer.no_padding()
-    count = len(tokenizer.encode(formatted, add_special_tokens=False).ids)
-    del tokenizer
     limits = json.loads((engine / "config.json").read_text())["builder_config"]
-    output_tokens, margin = 160, 64
-    require(count <= limits["max_input_len"] and count + output_tokens + margin <= limits["max_kv_cache_capacity"],
-            f"Evidence exceeds the engine budget: {count} input + {output_tokens} output + {margin} margin. No evidence was truncated.")
-    (run_dir / "budget.json").write_text(json.dumps({"input_tokens": count, "output_tokens": output_tokens, "margin": margin, "limits": limits}, indent=2))
+    output_tokens, margin = job.get("output_tokens", 160), 64
+    require(type(output_tokens) is int and 1 <= output_tokens <= 384, "Invalid output token budget.")
+    prompt, formatted, count, history_turns = select_prompt(job, template, old_text, tokenizer, limits, output_tokens, margin)
+    del tokenizer
+    (run_dir / "budget.json").write_text(json.dumps({"input_tokens": count, "output_tokens": output_tokens, "margin": margin, "limits": limits, "history_turns_used": history_turns}, indent=2))
 
     class JetsonQwen(CustomLLM):
         @property
@@ -122,7 +133,7 @@ def generate(job, run_dir):
     item = result.raw["responses"][0]
     require(item.get("finish_reason") == "end-of-sequence", "Model output was incomplete; no answer accepted.")
     require(item.get("formatted_complete_request") == formatted, "Runtime formatting differs from counted prompt; no answer accepted.")
-    return {"text": result.text, "input_tokens": count, "finish_reason": item["finish_reason"]}
+    return {"text": result.text, "input_tokens": count, "finish_reason": item["finish_reason"], "history_turns_used": history_turns}
 
 
 def main():

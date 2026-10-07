@@ -40,3 +40,23 @@ failure observations. Validate selections and show uncertainty/refusal to
 the engineer. New code still requires a Jetson run and engineer assessment.
 The 50-question evaluation, false-answer measurement, unplug/reboot test,
 RB3 integration and board comparison are outstanding.
+
+
+## 2026-10-06 — First new-case browser run and UI review
+
+- User confirmed initial app commit `d8111bf` and test-ID correction `475bbf8`
+  were pushed. GitHub main `3a5ba46` merged both through PR #3.
+- Actual historical IDs are Continuity 100, IDD_Static 210, Scan 606. Earlier
+  UI/example IDs 200/300 were incorrect and caused empty candidate selection.
+- A continuity/IDD input mismatch reached Qwen. It returned five cause IDs
+  (including check IDs) and four check IDs; validation rejected that output.
+- After correction, new synthetic DUT Product_A-L06-W02-D008 returned two
+  Case 03 high-current hypotheses and two investigation checks. Original
+  wording, current-DUT procedure adaptation and synthetic limitations were
+  visible; Case 04 low-current history remained separate. User supplied
+  screenshots, audit reference `80bd54415a984cf19eed8f4538761585`.
+- This demonstrates one functional end-to-end run. It does not establish
+  diagnosis accuracy, robustness, calibrated confidence or offline certification.
+- Compact UI revision separates Answer/Evidence/Details, supports optional
+  logs/pins/DUT and checks recognized log/form conflicts before retrieval.
+  Local software checks do not replace the pending browser/Jetson UI test.
