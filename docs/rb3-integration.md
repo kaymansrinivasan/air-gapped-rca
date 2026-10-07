@@ -14,6 +14,12 @@ messages or clamps output, if token counts differ, if generation stops early,
 or if request metrics do not report full QNN HTP language prefill/decode with
 fallback disabled. Exact raw response and budget are saved per run. This is a
 runtime provenance check, not an independent silicon utilization measurement.
+It explicitly sets greedy sampling, top-k 1, and zero presence/frequency
+penalties. The installed server's default text presence penalty of 1.5 made
+the first high-current selection add a reasoning field and exhaust 160 tokens;
+a local pilot with these decoding settings returned valid three-key JSON in
+25 tokens. The adapter keeps the original 160-token selection budget; its
+end-to-end result still needs an on-board validation run.
 The original retrieved history stays in the audit; IDD direction-incompatible
 cases cannot be offered to the model as causes/checks.
 

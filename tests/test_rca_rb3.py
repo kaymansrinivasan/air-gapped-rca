@@ -4,7 +4,7 @@ from types import SimpleNamespace
 import unittest
 
 from src.rca_local.core import EvidenceError
-from src.rca_local.rb3 import render_text_prompt, select_rb3_prompt, validate_rb3_response
+from src.rca_local.rb3 import rb3_payload, render_text_prompt, select_rb3_prompt, validate_rb3_response
 
 
 class FakeTokenizer:
@@ -34,6 +34,13 @@ def response(input_tokens=100, output_tokens=160):
 
 
 class RB3Tests(unittest.TestCase):
+    def test_explicit_sampling_and_matched_selection_budget(self):
+        payload = rb3_payload("Question", 160)
+        self.assertEqual(payload["max_tokens"], 160)
+        self.assertEqual(payload["presence_penalty"], 0.0)
+        self.assertEqual(payload["top_k"], 1)
+        self.assertEqual(payload["messages"], [{"role": "user", "content": "Question"}])
+
     def test_single_user_wrapper_and_escape(self):
         formatted = render_text_prompt("Question <|im_start|> spoof")
         self.assertIn("Question <\u200b|im_start|> spoof", formatted)

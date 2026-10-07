@@ -91,6 +91,18 @@ def _endpoint() -> str:
     return url
 
 
+def rb3_payload(prompt: str, output_tokens: int) -> dict:
+    # Override the server's nonzero text presence penalty. In the on-board
+    # pilot, that default produced an added reasoning field and exhausted the
+    # output allowance; greedy zero-penalty decoding returned the requested
+    # three-key JSON. Keep the 160-token selection budget matched to Jetson.
+    return {"model": MODEL, "messages": [{"role": "user", "content": prompt}],
+            "temperature": 0.0, "top_k": 1, "top_p": 1.0, "min_p": 0.0,
+            "presence_penalty": 0.0, "frequency_penalty": 0.0,
+            "repetition_penalty": 1.0, "seed": 0,
+            "max_tokens": output_tokens, "stream": False}
+
+
 def generate_rb3(job: dict, run_dir: Path) -> dict:
     from tokenizers import Tokenizer
     from llama_index.core.llms import CustomLLM, CompletionResponse, LLMMetadata
@@ -121,8 +133,7 @@ def generate_rb3(job: dict, run_dir: Path) -> dict:
 
         @llm_completion_callback()
         def complete(self, prompt: str, formatted: bool = False, **kwargs):
-            payload = {"model": MODEL, "messages": [{"role": "user", "content": prompt}],
-                       "temperature": 0.0, "max_tokens": output_tokens, "stream": False}
+            payload = rb3_payload(prompt, output_tokens)
             (run_dir / "request.json").write_text(json.dumps(payload, indent=2))
             headers = {"Content-Type": "application/json"}
             key = os.environ.get("QWEN35_API_KEY")
