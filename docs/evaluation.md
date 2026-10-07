@@ -80,3 +80,37 @@ still need separate measurement and review. Model output and audit remain in
 4. Implement the RB3 Genie/QNN backend behind the same pipeline contract,
    confirm accelerator execution, then run the exact manifest and report its
    hash. Document Jetson FP16 versus RB3 W8 differences.
+
+## Provisional comparison while engineers are unavailable
+
+`eval/product_a_v1_50_proxy_gold.json` contains AI-derived provisional labels
+for the same 50 fixed inputs. The label script uses only the six synthetic
+scenario investigations, current failed-test measurements, and named failing
+pins. It treats matching causes as **possible**, never confirmed. Cases 01–02
+record their guidance status as **Not reviewed**; cases 03–06 record plausible
+causes and proposed procedures, but their simulated outcomes were not
+reviewed or physically tested. These labels are not an independent answer key.
+
+The runner requires an explicit flag to use proxy labels:
+
+```bash
+python3 benchmark.py --validate --manifest eval/product_a_v1_50.json \
+  --gold eval/product_a_v1_50_proxy_gold.json --allow-proxy-gold
+```
+
+On the Jetson, with the same local runtime and index used by the app:
+
+```bash
+export RCA_DATA_ROOT=/home/orin_nano/Documents/airgap-rca
+/home/orin_nano/Documents/airgap-rca/.venv-llamaindex-jetson/bin/python \
+  benchmark.py --run --manifest eval/product_a_v1_50.json \
+  --gold eval/product_a_v1_50_proxy_gold.json --allow-proxy-gold \
+  --data-root "$RCA_DATA_ROOT" \
+  --output "$RCA_DATA_ROOT/artifacts/evaluation/jetson_proxy_v1.json"
+```
+
+The output calls the scores `proxy_*\` agreement and keeps diagnostic
+accuracy and false-answer rate against engineer review unset. Latency is
+measured, but power and energy are still unset. Repeat the **same manifest
+hash and proxy-label hash** on RB3 once its backend is integrated. Engineer
+review can later provide an independent key without changing the questions.

@@ -1,0 +1,1055 @@
+{
+  "schema_version": "airgap-rca-reviewed-gold-v1",
+  "manifest_sha256": "06c67914b489811db1fdc96dad66bdd56a37028acb659da86505368d92b96d9a",
+  "label_origin": "ai_proxy_from_six_synthetic_scenarios",
+  "limitations": [
+    "Not an independent or engineer-reviewed answer key.",
+    "Continuity scenario guidance (cases 01 and 02) was recorded as Not reviewed.",
+    "The other scenario guidance covered plausible causes and proposed checks, not the simulated outcomes.",
+    "Agreement with these labels is a proxy metric, not diagnostic accuracy."
+  ],
+  "items": [
+    {
+      "id": "PA-EVAL-001",
+      "dut_id": "Product_A-L05-W06-D082",
+      "failed_test": 100,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_02_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_01_check_1",
+        "product_a_case_01_check_2",
+        "product_a_case_02_check_1",
+        "product_a_case_02_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Continuity pin-specific hypotheses require matching named pins. The general contact/tester hypothesis and comparison checks remain unconfirmed. Case 01–02 guidance was recorded as 'Not reviewed'. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_01",
+        "product_a_case_02"
+      ]
+    },
+    {
+      "id": "PA-EVAL-002",
+      "dut_id": "Product_A-L03-W02-D063",
+      "failed_test": 100,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_02_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_01_check_1",
+        "product_a_case_01_check_2",
+        "product_a_case_02_check_1",
+        "product_a_case_02_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Continuity pin-specific hypotheses require matching named pins. The general contact/tester hypothesis and comparison checks remain unconfirmed. Case 01–02 guidance was recorded as 'Not reviewed'. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_01",
+        "product_a_case_02"
+      ]
+    },
+    {
+      "id": "PA-EVAL-003",
+      "dut_id": "Product_A-L03-W02-D008",
+      "failed_test": 100,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_01_cause_1",
+        "product_a_case_01_cause_2",
+        "product_a_case_02_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_01_check_1",
+        "product_a_case_01_check_2",
+        "product_a_case_02_check_1",
+        "product_a_case_02_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Continuity pin-specific hypotheses require matching named pins. The general contact/tester hypothesis and comparison checks remain unconfirmed. Case 01–02 guidance was recorded as 'Not reviewed'. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_01",
+        "product_a_case_02"
+      ]
+    },
+    {
+      "id": "PA-EVAL-004",
+      "dut_id": "Product_A-L01-W04-D084",
+      "failed_test": 100,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_02_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_01_check_1",
+        "product_a_case_01_check_2",
+        "product_a_case_02_check_1",
+        "product_a_case_02_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Continuity pin-specific hypotheses require matching named pins. The general contact/tester hypothesis and comparison checks remain unconfirmed. Case 01–02 guidance was recorded as 'Not reviewed'. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_01",
+        "product_a_case_02"
+      ]
+    },
+    {
+      "id": "PA-EVAL-005",
+      "dut_id": "Product_A-L04-W01-D003",
+      "failed_test": 100,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_02_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_01_check_1",
+        "product_a_case_01_check_2",
+        "product_a_case_02_check_1",
+        "product_a_case_02_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Continuity pin-specific hypotheses require matching named pins. The general contact/tester hypothesis and comparison checks remain unconfirmed. Case 01–02 guidance was recorded as 'Not reviewed'. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_01",
+        "product_a_case_02"
+      ]
+    },
+    {
+      "id": "PA-EVAL-006",
+      "dut_id": "Product_A-L04-W04-D010",
+      "failed_test": 100,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_02_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_01_check_1",
+        "product_a_case_01_check_2",
+        "product_a_case_02_check_1",
+        "product_a_case_02_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Continuity pin-specific hypotheses require matching named pins. The general contact/tester hypothesis and comparison checks remain unconfirmed. Case 01–02 guidance was recorded as 'Not reviewed'. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_01",
+        "product_a_case_02"
+      ]
+    },
+    {
+      "id": "PA-EVAL-007",
+      "dut_id": "Product_A-L01-W04-D020",
+      "failed_test": 100,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_02_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_01_check_1",
+        "product_a_case_01_check_2",
+        "product_a_case_02_check_1",
+        "product_a_case_02_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Continuity pin-specific hypotheses require matching named pins. The general contact/tester hypothesis and comparison checks remain unconfirmed. Case 01–02 guidance was recorded as 'Not reviewed'. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_01",
+        "product_a_case_02"
+      ]
+    },
+    {
+      "id": "PA-EVAL-008",
+      "dut_id": "Product_A-L05-W06-D018",
+      "failed_test": 100,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_02_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_01_check_1",
+        "product_a_case_01_check_2",
+        "product_a_case_02_check_1",
+        "product_a_case_02_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Continuity pin-specific hypotheses require matching named pins. The general contact/tester hypothesis and comparison checks remain unconfirmed. Case 01–02 guidance was recorded as 'Not reviewed'. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_01",
+        "product_a_case_02"
+      ]
+    },
+    {
+      "id": "PA-EVAL-009",
+      "dut_id": "Product_A-L03-W02-D112",
+      "failed_test": 100,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_01_cause_1",
+        "product_a_case_01_cause_2",
+        "product_a_case_02_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_01_check_1",
+        "product_a_case_01_check_2",
+        "product_a_case_02_check_1",
+        "product_a_case_02_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Continuity pin-specific hypotheses require matching named pins. The general contact/tester hypothesis and comparison checks remain unconfirmed. Case 01–02 guidance was recorded as 'Not reviewed'. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_01",
+        "product_a_case_02"
+      ]
+    },
+    {
+      "id": "PA-EVAL-010",
+      "dut_id": "Product_A-L03-W02-D019",
+      "failed_test": 100,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_02_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_01_check_1",
+        "product_a_case_01_check_2",
+        "product_a_case_02_check_1",
+        "product_a_case_02_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Continuity pin-specific hypotheses require matching named pins. The general contact/tester hypothesis and comparison checks remain unconfirmed. Case 01–02 guidance was recorded as 'Not reviewed'. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_01",
+        "product_a_case_02"
+      ]
+    },
+    {
+      "id": "PA-EVAL-011",
+      "dut_id": "Product_A-L04-W01-D024",
+      "failed_test": 100,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_02_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_01_check_1",
+        "product_a_case_01_check_2",
+        "product_a_case_02_check_1",
+        "product_a_case_02_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Continuity pin-specific hypotheses require matching named pins. The general contact/tester hypothesis and comparison checks remain unconfirmed. Case 01–02 guidance was recorded as 'Not reviewed'. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_01",
+        "product_a_case_02"
+      ]
+    },
+    {
+      "id": "PA-EVAL-012",
+      "dut_id": "Product_A-L01-W04-D015",
+      "failed_test": 100,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_02_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_01_check_1",
+        "product_a_case_01_check_2",
+        "product_a_case_02_check_1",
+        "product_a_case_02_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Continuity pin-specific hypotheses require matching named pins. The general contact/tester hypothesis and comparison checks remain unconfirmed. Case 01–02 guidance was recorded as 'Not reviewed'. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_01",
+        "product_a_case_02"
+      ]
+    },
+    {
+      "id": "PA-EVAL-013",
+      "dut_id": "Product_A-L05-W07-D109",
+      "failed_test": 210,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_03_cause_1",
+        "product_a_case_03_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_03_check_1",
+        "product_a_case_03_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Measured static current is high; only the same-direction history (product_a_case_03) supplies these provisional hypotheses and checks. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_03"
+      ]
+    },
+    {
+      "id": "PA-EVAL-014",
+      "dut_id": "Product_A-L05-W06-D107",
+      "failed_test": 210,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_04_cause_1",
+        "product_a_case_04_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_04_check_1",
+        "product_a_case_04_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Measured static current is low; only the same-direction history (product_a_case_04) supplies these provisional hypotheses and checks. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_04"
+      ]
+    },
+    {
+      "id": "PA-EVAL-015",
+      "dut_id": "Product_A-L05-W07-D040",
+      "failed_test": 210,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_04_cause_1",
+        "product_a_case_04_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_04_check_1",
+        "product_a_case_04_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Measured static current is low; only the same-direction history (product_a_case_04) supplies these provisional hypotheses and checks. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_04"
+      ]
+    },
+    {
+      "id": "PA-EVAL-016",
+      "dut_id": "Product_A-L04-W04-D057",
+      "failed_test": 210,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_03_cause_1",
+        "product_a_case_03_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_03_check_1",
+        "product_a_case_03_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Measured static current is high; only the same-direction history (product_a_case_03) supplies these provisional hypotheses and checks. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_03"
+      ]
+    },
+    {
+      "id": "PA-EVAL-017",
+      "dut_id": "Product_A-L04-W04-D067",
+      "failed_test": 210,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_04_cause_1",
+        "product_a_case_04_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_04_check_1",
+        "product_a_case_04_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Measured static current is low; only the same-direction history (product_a_case_04) supplies these provisional hypotheses and checks. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_04"
+      ]
+    },
+    {
+      "id": "PA-EVAL-018",
+      "dut_id": "Product_A-L05-W07-D098",
+      "failed_test": 210,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_03_cause_1",
+        "product_a_case_03_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_03_check_1",
+        "product_a_case_03_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Measured static current is high; only the same-direction history (product_a_case_03) supplies these provisional hypotheses and checks. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_03"
+      ]
+    },
+    {
+      "id": "PA-EVAL-019",
+      "dut_id": "Product_A-L04-W04-D112",
+      "failed_test": 210,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_04_cause_1",
+        "product_a_case_04_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_04_check_1",
+        "product_a_case_04_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Measured static current is low; only the same-direction history (product_a_case_04) supplies these provisional hypotheses and checks. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_04"
+      ]
+    },
+    {
+      "id": "PA-EVAL-020",
+      "dut_id": "Product_A-L05-W06-D029",
+      "failed_test": 210,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_03_cause_1",
+        "product_a_case_03_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_03_check_1",
+        "product_a_case_03_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Measured static current is high; only the same-direction history (product_a_case_03) supplies these provisional hypotheses and checks. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_03"
+      ]
+    },
+    {
+      "id": "PA-EVAL-021",
+      "dut_id": "Product_A-L05-W06-D089",
+      "failed_test": 210,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_03_cause_1",
+        "product_a_case_03_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_03_check_1",
+        "product_a_case_03_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Measured static current is high; only the same-direction history (product_a_case_03) supplies these provisional hypotheses and checks. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_03"
+      ]
+    },
+    {
+      "id": "PA-EVAL-022",
+      "dut_id": "Product_A-L04-W04-D006",
+      "failed_test": 210,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_04_cause_1",
+        "product_a_case_04_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_04_check_1",
+        "product_a_case_04_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Measured static current is low; only the same-direction history (product_a_case_04) supplies these provisional hypotheses and checks. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_04"
+      ]
+    },
+    {
+      "id": "PA-EVAL-023",
+      "dut_id": "Product_A-L05-W07-D075",
+      "failed_test": 210,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_04_cause_1",
+        "product_a_case_04_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_04_check_1",
+        "product_a_case_04_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Measured static current is low; only the same-direction history (product_a_case_04) supplies these provisional hypotheses and checks. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_04"
+      ]
+    },
+    {
+      "id": "PA-EVAL-024",
+      "dut_id": "Product_A-L04-W04-D095",
+      "failed_test": 210,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_03_cause_1",
+        "product_a_case_03_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_03_check_1",
+        "product_a_case_03_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Measured static current is high; only the same-direction history (product_a_case_03) supplies these provisional hypotheses and checks. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_03"
+      ]
+    },
+    {
+      "id": "PA-EVAL-025",
+      "dut_id": "Product_A-L05-W07-D105",
+      "failed_test": 210,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_04_cause_1",
+        "product_a_case_04_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_04_check_1",
+        "product_a_case_04_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Measured static current is low; only the same-direction history (product_a_case_04) supplies these provisional hypotheses and checks. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_04"
+      ]
+    },
+    {
+      "id": "PA-EVAL-026",
+      "dut_id": "Product_A-L04-W04-D054",
+      "failed_test": 210,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_04_cause_1",
+        "product_a_case_04_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_04_check_1",
+        "product_a_case_04_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Measured static current is low; only the same-direction history (product_a_case_04) supplies these provisional hypotheses and checks. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_04"
+      ]
+    },
+    {
+      "id": "PA-EVAL-027",
+      "dut_id": "Product_A-L05-W06-D039",
+      "failed_test": 606,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_05_cause_2",
+        "product_a_case_06_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_05_check_1",
+        "product_a_case_05_check_2",
+        "product_a_case_06_check_1",
+        "product_a_case_06_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Specific scan-path hypotheses require matching pins. General interface/timing possibilities and comparison checks remain unconfirmed. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_05",
+        "product_a_case_06"
+      ]
+    },
+    {
+      "id": "PA-EVAL-028",
+      "dut_id": "Product_A-L05-W06-D015",
+      "failed_test": 606,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_05_cause_2",
+        "product_a_case_06_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_05_check_1",
+        "product_a_case_05_check_2",
+        "product_a_case_06_check_1",
+        "product_a_case_06_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Specific scan-path hypotheses require matching pins. General interface/timing possibilities and comparison checks remain unconfirmed. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_05",
+        "product_a_case_06"
+      ]
+    },
+    {
+      "id": "PA-EVAL-029",
+      "dut_id": "Product_A-L05-W02-D055",
+      "failed_test": 606,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_05_cause_2",
+        "product_a_case_06_cause_1",
+        "product_a_case_06_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_05_check_1",
+        "product_a_case_05_check_2",
+        "product_a_case_06_check_1",
+        "product_a_case_06_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Specific scan-path hypotheses require matching pins. General interface/timing possibilities and comparison checks remain unconfirmed. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_05",
+        "product_a_case_06"
+      ]
+    },
+    {
+      "id": "PA-EVAL-030",
+      "dut_id": "Product_A-L01-W04-D019",
+      "failed_test": 606,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_05_cause_2",
+        "product_a_case_06_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_05_check_1",
+        "product_a_case_05_check_2",
+        "product_a_case_06_check_1",
+        "product_a_case_06_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Specific scan-path hypotheses require matching pins. General interface/timing possibilities and comparison checks remain unconfirmed. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_05",
+        "product_a_case_06"
+      ]
+    },
+    {
+      "id": "PA-EVAL-031",
+      "dut_id": "Product_A-L05-W07-D003",
+      "failed_test": 606,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_05_cause_2",
+        "product_a_case_06_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_05_check_1",
+        "product_a_case_05_check_2",
+        "product_a_case_06_check_1",
+        "product_a_case_06_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Specific scan-path hypotheses require matching pins. General interface/timing possibilities and comparison checks remain unconfirmed. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_05",
+        "product_a_case_06"
+      ]
+    },
+    {
+      "id": "PA-EVAL-032",
+      "dut_id": "Product_A-L05-W02-D036",
+      "failed_test": 606,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_05_cause_2",
+        "product_a_case_06_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_05_check_1",
+        "product_a_case_05_check_2",
+        "product_a_case_06_check_1",
+        "product_a_case_06_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Specific scan-path hypotheses require matching pins. General interface/timing possibilities and comparison checks remain unconfirmed. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_05",
+        "product_a_case_06"
+      ]
+    },
+    {
+      "id": "PA-EVAL-033",
+      "dut_id": "Product_A-L01-W04-D028",
+      "failed_test": 606,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_05_cause_2",
+        "product_a_case_06_cause_1",
+        "product_a_case_06_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_05_check_1",
+        "product_a_case_05_check_2",
+        "product_a_case_06_check_1",
+        "product_a_case_06_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Specific scan-path hypotheses require matching pins. General interface/timing possibilities and comparison checks remain unconfirmed. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_05",
+        "product_a_case_06"
+      ]
+    },
+    {
+      "id": "PA-EVAL-034",
+      "dut_id": "Product_A-L05-W06-D097",
+      "failed_test": 606,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_05_cause_2",
+        "product_a_case_06_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_05_check_1",
+        "product_a_case_05_check_2",
+        "product_a_case_06_check_1",
+        "product_a_case_06_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Specific scan-path hypotheses require matching pins. General interface/timing possibilities and comparison checks remain unconfirmed. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_05",
+        "product_a_case_06"
+      ]
+    },
+    {
+      "id": "PA-EVAL-035",
+      "dut_id": "Product_A-L05-W02-D025",
+      "failed_test": 606,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_05_cause_2",
+        "product_a_case_06_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_05_check_1",
+        "product_a_case_05_check_2",
+        "product_a_case_06_check_1",
+        "product_a_case_06_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Specific scan-path hypotheses require matching pins. General interface/timing possibilities and comparison checks remain unconfirmed. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_05",
+        "product_a_case_06"
+      ]
+    },
+    {
+      "id": "PA-EVAL-036",
+      "dut_id": "Product_A-L05-W06-D066",
+      "failed_test": 606,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_05_cause_2",
+        "product_a_case_06_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_05_check_1",
+        "product_a_case_05_check_2",
+        "product_a_case_06_check_1",
+        "product_a_case_06_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Specific scan-path hypotheses require matching pins. General interface/timing possibilities and comparison checks remain unconfirmed. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_05",
+        "product_a_case_06"
+      ]
+    },
+    {
+      "id": "PA-EVAL-037",
+      "dut_id": "Product_A-L05-W02-D039",
+      "failed_test": 606,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_05_cause_2",
+        "product_a_case_06_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_05_check_1",
+        "product_a_case_05_check_2",
+        "product_a_case_06_check_1",
+        "product_a_case_06_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Specific scan-path hypotheses require matching pins. General interface/timing possibilities and comparison checks remain unconfirmed. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_05",
+        "product_a_case_06"
+      ]
+    },
+    {
+      "id": "PA-EVAL-038",
+      "dut_id": "Product_A-L05-W02-D083",
+      "failed_test": 606,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_05_cause_2",
+        "product_a_case_06_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_05_check_1",
+        "product_a_case_05_check_2",
+        "product_a_case_06_check_1",
+        "product_a_case_06_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Specific scan-path hypotheses require matching pins. General interface/timing possibilities and comparison checks remain unconfirmed. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_05",
+        "product_a_case_06"
+      ]
+    },
+    {
+      "id": "PA-EVAL-039",
+      "dut_id": "Product_A-L05-W07-D035",
+      "failed_test": 606,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_05_cause_2",
+        "product_a_case_06_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_05_check_1",
+        "product_a_case_05_check_2",
+        "product_a_case_06_check_1",
+        "product_a_case_06_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Specific scan-path hypotheses require matching pins. General interface/timing possibilities and comparison checks remain unconfirmed. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_05",
+        "product_a_case_06"
+      ]
+    },
+    {
+      "id": "PA-EVAL-040",
+      "dut_id": "Product_A-L01-W04-D044",
+      "failed_test": 606,
+      "expected_status": "unconfirmed",
+      "acceptable_cause_ids": [
+        "product_a_case_05_cause_2",
+        "product_a_case_06_cause_2"
+      ],
+      "acceptable_check_ids": [
+        "product_a_case_05_check_1",
+        "product_a_case_05_check_2",
+        "product_a_case_06_check_1",
+        "product_a_case_06_check_2"
+      ],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "Specific scan-path hypotheses require matching pins. General interface/timing possibilities and comparison checks remain unconfirmed. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": [
+        "product_a_case_05",
+        "product_a_case_06"
+      ]
+    },
+    {
+      "id": "PA-EVAL-041",
+      "dut_id": "Product_A-L05-W02-D004",
+      "failed_test": 210,
+      "expected_status": "refuse",
+      "acceptable_cause_ids": [],
+      "acceptable_check_ids": [],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "The supplied IDD excerpt omits the value and limits; high versus low current cannot be distinguished. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": []
+    },
+    {
+      "id": "PA-EVAL-042",
+      "dut_id": "Product_A-L05-W06-D025",
+      "failed_test": 210,
+      "expected_status": "refuse",
+      "acceptable_cause_ids": [],
+      "acceptable_check_ids": [],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "The supplied IDD excerpt omits the value and limits; high versus low current cannot be distinguished. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": []
+    },
+    {
+      "id": "PA-EVAL-043",
+      "dut_id": "Product_A-L05-W06-D106",
+      "failed_test": 210,
+      "expected_status": "refuse",
+      "acceptable_cause_ids": [],
+      "acceptable_check_ids": [],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "The supplied IDD excerpt omits the value and limits; high versus low current cannot be distinguished. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": []
+    },
+    {
+      "id": "PA-EVAL-044",
+      "dut_id": "Product_A-L05-W02-D082",
+      "failed_test": 210,
+      "expected_status": "refuse",
+      "acceptable_cause_ids": [],
+      "acceptable_check_ids": [],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "The supplied IDD excerpt omits the value and limits; high versus low current cannot be distinguished. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": []
+    },
+    {
+      "id": "PA-EVAL-045",
+      "dut_id": "Product_A-L05-W07-D091",
+      "failed_test": 210,
+      "expected_status": "refuse",
+      "acceptable_cause_ids": [],
+      "acceptable_check_ids": [],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "The supplied IDD excerpt omits the value and limits; high versus low current cannot be distinguished. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": []
+    },
+    {
+      "id": "PA-EVAL-046",
+      "dut_id": "Product_A-L02-W01-D041",
+      "failed_test": 210,
+      "expected_status": "refuse",
+      "acceptable_cause_ids": [],
+      "acceptable_check_ids": [],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "The supplied IDD excerpt omits the value and limits; high versus low current cannot be distinguished. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": []
+    },
+    {
+      "id": "PA-EVAL-047",
+      "dut_id": "Product_A-L05-W02-D016",
+      "failed_test": 210,
+      "expected_status": "refuse",
+      "acceptable_cause_ids": [],
+      "acceptable_check_ids": [],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "The supplied IDD excerpt omits the value and limits; high versus low current cannot be distinguished. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": []
+    },
+    {
+      "id": "PA-EVAL-048",
+      "dut_id": "Product_A-L05-W07-D007",
+      "failed_test": 210,
+      "expected_status": "refuse",
+      "acceptable_cause_ids": [],
+      "acceptable_check_ids": [],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "The supplied IDD excerpt omits the value and limits; high versus low current cannot be distinguished. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": []
+    },
+    {
+      "id": "PA-EVAL-049",
+      "dut_id": "Product_A-L04-W04-D088",
+      "failed_test": 210,
+      "expected_status": "refuse",
+      "acceptable_cause_ids": [],
+      "acceptable_check_ids": [],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "The supplied IDD excerpt omits the value and limits; high versus low current cannot be distinguished. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": []
+    },
+    {
+      "id": "PA-EVAL-050",
+      "dut_id": "Product_A-L04-W04-D008",
+      "failed_test": 210,
+      "expected_status": "refuse",
+      "acceptable_cause_ids": [],
+      "acceptable_check_ids": [],
+      "review_status": "proxy",
+      "reviewer": "",
+      "labeler": "AI proxy based on six synthetic scenario records",
+      "review_note": "The supplied IDD excerpt omits the value and limits; high versus low current cannot be distinguished. No current DUT cause or physical outcome is confirmed.",
+      "source_case_ids": []
+    }
+  ]
+}

@@ -1,7 +1,8 @@
-"""Offline evaluation runner for a frozen, reviewed RCA question manifest.
+"""Offline evaluation runner for a frozen RCA question manifest.
 
 Validation works without a model. --run uses the local Jetson pipeline and
-records raw outcomes. Accuracy and false-answer rate need reviewed gold labels.
+records raw outcomes. AI proxy labels produce provisional agreement, never
+engineer-validated diagnostic accuracy.
 """
 import argparse
 from collections import Counter
@@ -57,18 +58,29 @@ def load_manifest(path: Path):
     return data, hashlib.sha256(raw).hexdigest()
 
 
-def load_gold(path: Path, manifest: dict, manifest_hash: str):
+def load_gold(path: Path, manifest: dict, manifest_hash: str, allow_proxy=False):
     gold = json.loads(path.read_text(encoding="utf-8"))
     if gold.get("schema_version") != "airgap-rca-reviewed-gold-v1" or gold.get("manifest_sha256") != manifest_hash:
         raise ValueError("Gold labels are for a different manifest.")
     entries = gold.get("items")
     if not isinstance(entries, list) or len(entries) != len(manifest["items"]):
         raise ValueError("Gold labels must cover every frozen question.")
+    origin = gold.get("label_origin", "human_engineer_review")
+    proxy = origin == "ai_proxy_from_six_synthetic_scenarios"
+    if proxy and not allow_proxy:
+        raise ValueError("AI proxy labels require --allow-proxy-gold; they are not engineer review.")
+    if not proxy and origin != "human_engineer_review":
+        raise ValueError("Unknown gold-label origin.")
     labels = {}
     for entry in entries:
         identity = entry["id"]
-        if identity in labels or entry.get("review_status") != "approved" or not entry.get("reviewer"):
-            raise ValueError("Duplicate, unreviewed, or anonymous gold label.")
+        if identity in labels:
+            raise ValueError("Duplicate gold label.")
+        if proxy:
+            if entry.get("review_status") != "proxy" or not entry.get("labeler") or entry.get("reviewer"):
+                raise ValueError("Proxy label must not impersonate an engineer review.")
+        elif entry.get("review_status") != "approved" or not entry.get("reviewer"):
+            raise ValueError("unreviewed or anonymous gold label.")
         status = entry.get("expected_status")
         causes, checks = entry.get("acceptable_cause_ids"), entry.get("acceptable_check_ids")
         if status not in ("unconfirmed", "refuse") or not isinstance(causes, list) or not isinstance(checks, list):
@@ -80,10 +92,10 @@ def load_gold(path: Path, manifest: dict, manifest_hash: str):
         labels[identity] = entry
     if set(labels) != {item["id"] for item in manifest["items"]}:
         raise ValueError("Gold and manifest question IDs differ.")
-    return labels
+    return labels, origin
 
 
-def summarize(items, results, gold):
+def summarize(items, results, gold, origin="human_engineer_review"):
     statuses = Counter(row["status"] for row in results)
     elapsed = sorted(row["latency_seconds"] for row in results)
     summary = {
@@ -115,10 +127,17 @@ def summarize(items, results, gold):
             false_answers += not valid
             top1_correct += bool(causes and causes[0] in acceptable)
             top2_correct += bool(set(causes[:2]) & acceptable)
-    summary["exact_answer_accuracy"] = sum(correct) / len(correct)
-    summary["false_answer_rate_per_answer"] = false_answers / answered if answered else None
-    summary["top1_cause_accuracy_on_answered"] = top1_correct / answered if answered else None
-    summary["top2_cause_hit_rate_on_answered"] = top2_correct / answered if answered else None
+    proxy = origin == "ai_proxy_from_six_synthetic_scenarios"
+    prefix = "proxy_" if proxy else ""
+    summary[prefix + "exact_answer_agreement" if proxy else "exact_answer_accuracy"] = sum(correct) / len(correct)
+    summary[prefix + "false_answer_rate_per_answer"] = false_answers / answered if answered else None
+    summary[prefix + "top1_cause_hit_rate_on_answered"] = top1_correct / answered if answered else None
+    summary[prefix + "top2_cause_hit_rate_on_answered"] = top2_correct / answered if answered else None
+    if proxy:
+        summary["exact_answer_accuracy"] = None
+        summary["false_answer_rate_per_answer"] = None
+        summary["top1_cause_accuracy_on_answered"] = None
+        summary["top2_cause_hit_rate_on_answered"] = None
     summary["top3_cause_hit_rate_on_answered"] = None  # Current selection allows only two causes.
     summary["answered_count"] = answered
     summary["false_answer_count"] = false_answers
@@ -135,7 +154,9 @@ def main():
     parser.add_argument("--run", action="store_true", help="Run all items through the local Jetson backend.")
     parser.add_argument("--data-root", type=Path, help="RCA_DATA_ROOT containing the local index.")
     parser.add_argument("--output", type=Path, help="New JSON result file; never overwritten.")
-    parser.add_argument("--gold", type=Path, help="Separate, fully reviewed labels for this manifest.")
+    parser.add_argument("--gold", type=Path, help="Separate labels for this manifest.")
+    parser.add_argument("--allow-proxy-gold", action="store_true",
+                        help="Allow explicitly provisional AI proxy labels.")
     args = parser.parse_args()
     data, manifest_hash = load_manifest(args.manifest)
     counts = Counter(item["category"] for item in data["items"])
@@ -144,19 +165,19 @@ def main():
                       "embedded_labels_pending_review": sum(
                           x["gold"]["review_status"] != "approved" for x in data["items"])}, indent=2))
     try:
-        labels = load_gold(args.gold, data, manifest_hash) if args.gold else None
+        labels, origin = load_gold(args.gold, data, manifest_hash, args.allow_proxy_gold) if args.gold else (None, None)
     except ValueError as exc:
         parser.error(str(exc))
     if not args.run:
         if not args.validate:
             parser.error("Choose --validate or --run.")
         if labels is not None:
-            print("Reviewed gold labels:", len(labels))
+            print("Labels:", len(labels), "origin:", origin)
         return
     if not args.output or not args.data_root or not args.gold:
-        parser.error("--run requires --output, --data-root and reviewed --gold labels.")
+        parser.error("--run requires --output, --data-root and --gold labels.")
     if labels is None:
-        parser.error("--run requires reviewed --gold labels.")
+        parser.error("--run requires --gold labels.")
     if args.output.exists():
         raise SystemExit("Result file already exists. Choose a new --output.")
     os.environ["RCA_DATA_ROOT"] = str(args.data_root.resolve())
@@ -175,9 +196,12 @@ def main():
         print(item["id"], row["status"], f'{row["latency_seconds"]:.2f}s', flush=True)
     output = {"manifest_sha256": manifest_hash,
               "gold_sha256": hashlib.sha256(args.gold.read_bytes()).hexdigest(),
+              "label_origin": origin,
               "backend": "jetson_tensorrt_edge_llm",
-              "summary": summarize(data["items"], results, labels), "results": results,
-              "notes": "Engineer-reviewed gold applied; citation validity and power require separate audits."}
+              "summary": summarize(data["items"], results, labels, origin), "results": results,
+              "notes": ("AI proxy agreement only; not independent engineer-validated diagnostic accuracy."
+                        if origin == "ai_proxy_from_six_synthetic_scenarios" else
+                        "Engineer-reviewed labels applied; citation validity and power require separate audits.")}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with args.output.open("x", encoding="utf-8") as handle:
         json.dump(output, handle, indent=2)

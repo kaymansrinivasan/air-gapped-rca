@@ -3,7 +3,7 @@ from pathlib import Path
 import re
 import unittest
 
-from benchmark import load_manifest, load_gold
+from benchmark import load_manifest, load_gold, summarize
 from src.rca_local.core import load_history, make_catalog
 from src.verify import verify_selection
 
@@ -44,6 +44,25 @@ class EvaluationTests(unittest.TestCase):
             load_gold(path, manifest, digest)
         with self.assertRaisesRegex(ValueError, "different manifest"):
             load_gold(path, manifest, "0" * 64)
+
+    def test_ai_proxy_is_explicit_and_never_scored_as_engineer_accuracy(self):
+        manifest, digest = load_manifest(MANIFEST)
+        path = ROOT / "eval/product_a_v1_50_proxy_gold.json"
+        with self.assertRaisesRegex(ValueError, "allow-proxy-gold"):
+            load_gold(path, manifest, digest)
+        labels, origin = load_gold(path, manifest, digest, allow_proxy=True)
+        self.assertEqual(len(labels), 50)
+        self.assertEqual(sum(x["expected_status"] == "refuse" for x in labels.values()), 10)
+        results = []
+        for item in manifest["items"]:
+            label = labels[item["id"]]
+            results.append({"status": label["expected_status"], "latency_seconds": 1,
+                            "cause_ids": label["acceptable_cause_ids"][:1],
+                            "check_ids": label["acceptable_check_ids"][:1]})
+        summary = summarize(manifest["items"], results, labels, origin)
+        self.assertEqual(summary["proxy_exact_answer_agreement"], 1.0)
+        self.assertIsNone(summary["exact_answer_accuracy"])
+        self.assertIsNone(summary["false_answer_rate_per_answer"])
 
     def test_offline_review_page_has_only_frozen_unreviewed_inputs(self):
         page = (ROOT / "eval/product_a_v1_50_review.html").read_text()
