@@ -5,7 +5,9 @@ records raw outcomes. AI proxy labels produce provisional agreement, never
 engineer-validated diagnostic accuracy.
 """
 import argparse
+import csv
 from collections import Counter
+from contextlib import nullcontext
 import hashlib
 import json
 import math
@@ -154,11 +156,15 @@ def main():
     parser.add_argument("--run", action="store_true", help="Run all items through the selected local backend.")
     parser.add_argument("--backend", choices=("jetson", "rb3"), default="jetson",
                         help="Local generation backend (default: jetson).")
+    parser.add_argument("--retrieval-mode", choices=("hybrid", "vector_only"), default="hybrid",
+                        help="Use the full retrieval or vector-only ablation; writes the mode into results.")
     parser.add_argument("--data-root", type=Path, help="RCA_DATA_ROOT containing the local index.")
     parser.add_argument("--output", type=Path, help="New JSON result file; never overwritten.")
     parser.add_argument("--gold", type=Path, help="Separate labels for this manifest.")
     parser.add_argument("--allow-proxy-gold", action="store_true",
                         help="Allow explicitly provisional AI proxy labels.")
+    parser.add_argument("--jetson-power", action="store_true",
+                        help="Sample Jetson VDD_IN with tegrastats during each question; saves a matching power CSV.")
     args = parser.parse_args()
     data, manifest_hash = load_manifest(args.manifest)
     counts = Counter(item["category"] for item in data["items"])
@@ -182,16 +188,33 @@ def main():
         parser.error("--run requires --gold labels.")
     if args.output.exists():
         raise SystemExit("Result file already exists. Choose a new --output.")
+    if args.jetson_power and args.backend != "jetson":
+        parser.error("--jetson-power requires --backend jetson.")
+    power_path = args.output.with_suffix(".power.csv") if args.jetson_power else None
+    if power_path and power_path.exists():
+        raise SystemExit("Power CSV already exists. Choose a new --output.")
     os.environ["RCA_DATA_ROOT"] = str(args.data_root.resolve())
     os.environ["RCA_BACKEND"] = args.backend
+    os.environ["RCA_RETRIEVAL_MODE"] = args.retrieval_mode
     os.environ.update(HF_HUB_OFFLINE="1", TRANSFORMERS_OFFLINE="1", ANONYMIZED_TELEMETRY="False")
     from src.rca_local.pipeline import run_pipeline
+    from src.measure import JetsonPowerSampler
     results = []
+    if power_path:
+        power_path.parent.mkdir(parents=True, exist_ok=True)
+        with power_path.open("x", newline="", encoding="utf-8") as file:
+            csv.writer(file).writerow(["case_id", "watts"])
     for item in data["items"]:
-        start = time.perf_counter()
-        answer = run_pipeline(item["current"])
+        with JetsonPowerSampler() if args.jetson_power else nullcontext() as sampler:
+            start = time.perf_counter()
+            answer = run_pipeline(item["current"])
+            elapsed = time.perf_counter() - start
+        if power_path:
+            with power_path.open("a", newline="", encoding="utf-8") as file:
+                writer = csv.writer(file)
+                writer.writerows((item["id"], value) for value in sampler.values)
         row = {"id": item["id"], "run_id": answer["run_id"], "status": answer["status"],
-               "latency_seconds": time.perf_counter() - start,
+               "latency_seconds": elapsed,
                "generation_attempts": answer.get("generation_attempts", 0),
                "cause_ids": [x["id"] for x in answer.get("causes", [])],
                "check_ids": [x["id"] for x in answer.get("checks", [])]}
@@ -201,6 +224,9 @@ def main():
               "gold_sha256": hashlib.sha256(args.gold.read_bytes()).hexdigest(),
               "label_origin": origin,
               "backend": {"jetson": "jetson_tensorrt_edge_llm", "rb3": "rb3_qnn_htp"}[args.backend],
+              "retrieval_mode": args.retrieval_mode,
+              "power_samples_csv": str(power_path) if power_path else None,
+              "power_method": "Jetson tegrastats VDD_IN, 1000 ms interval (board input rail)" if power_path else None,
               "summary": summarize(data["items"], results, labels, origin), "results": results,
               "notes": ("AI proxy agreement only; not independent engineer-validated diagnostic accuracy."
                         if origin == "ai_proxy_from_six_synthetic_scenarios" else
