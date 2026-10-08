@@ -31,8 +31,9 @@ current DUT.
 Both boards completed the same frozen 50-question hybrid-retrieval proxy
 evaluation: 40 unconfirmed suggestions and 10 refusals each, including all 10
 unsupported questions. The Jetson median/p95 end-to-end latencies were
-15.72/16.81 s; RB3 measured 33.48/37.29 s. Both matched the AI-derived proxy
-key based on the same synthetic historical scenarios. Source audits checked
+15.72/16.81 s; RB3 measured 33.48/37.29 s. Both satisfied the AI-derived proxy
+acceptance rubric, which permits supported subsets of causes and checks from
+the same synthetic historical scenarios. Source audits checked
 110/110 Jetson and 132/132 RB3 displayed citations. Jetson board input averaged
 7.60 W, peaked at 13.11 W, and averaged 104.98 J per triage. RB3 power and
 independently reviewed diagnostic accuracy remain unmeasured; the disconnected
