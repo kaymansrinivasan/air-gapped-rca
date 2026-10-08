@@ -131,3 +131,18 @@ The current status draft treats a completed Jetson model run as a **user-request
   current Product_A single-DUT observations and the three selected tests only.
 - Keep development on a feature branch; main should only receive accepted
   milestones. New UI/selection code still requires a Jetson run and benchmark.
+
+
+## 2026-10-06 — Minimal engineer input and progressive evidence display
+
+- Keep product/test context and the engineer question in the main form.
+  Tester choices come from local history, with unknown and custom options.
+- Use one optional text area for pasted/uploaded logs or observations. Keep
+  DUT/pins optional; unknown context must not become invented measurements.
+- Extract only recognized text fields, retain raw text and block explicit
+  conflicts. Do not silently translate unsupported test numbers.
+- Separate the compact answer from full historical evidence and audit details;
+  preserve citations and unconfirmed/synthetic status in the visible answer.
+- PR #3 already merged the original app and ID fix. Review the redesign on a
+  separate branch before any further merge. No new model quality result is
+  implied by this interface change.

@@ -8,7 +8,9 @@ import threading
 from urllib.parse import urlparse
 
 from .core import observation_from_form
+from .inputs import form_options, inspect_log
 from .pipeline import run_pipeline
+from .chat import chat_input, run_chat
 from .workers import settings
 
 TOKEN = secrets.token_urlsafe(32)
@@ -39,6 +41,9 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/":
             page = Path(__file__).with_name("index.html").read_text()
             return self.send(200, page.replace("__RCA_TOKEN__", TOKEN), "text/html")
+        if path == "/api/options":
+            root, _, _, _ = settings()
+            return self.send(200, form_options(root))
         if path == "/api/example":
             root, _, _, _ = settings()
             try:
@@ -55,7 +60,7 @@ class Handler(BaseHTTPRequestHandler):
     def do_POST(self):
         if not self.allowed_host() or self.headers.get("X-RCA-Token") != TOKEN:
             return self.send(403, {"error": "Refresh the local page before submitting."})
-        if self.path != "/api/analyze":
+        if self.path not in ("/api/analyze", "/api/inspect-log", "/api/chat"):
             return self.send(404, {"error": "Not found."})
         try:
             length = int(self.headers.get("Content-Length", "0"))
@@ -64,7 +69,13 @@ class Handler(BaseHTTPRequestHandler):
             form = json.loads(self.rfile.read(length))
             if not isinstance(form, dict):
                 raise ValueError("Expected an input form.")
-            current = observation_from_form(form)
+            if self.path == "/api/inspect-log":
+                return self.send(200, {"fields": inspect_log(form.get("observation", ""))})
+            is_chat = self.path == "/api/chat"
+            if is_chat:
+                run_id, question = chat_input(form)
+            else:
+                current = observation_from_form(form)
         except (ValueError, TypeError) as exc:
             return self.send(400, {"error": str(exc)})
         if not BUSY.acquire(blocking=False):
@@ -77,7 +88,7 @@ class Handler(BaseHTTPRequestHandler):
 
         def execute():
             try:
-                answer = run_pipeline(current)
+                answer = run_chat(run_id, question) if is_chat else run_pipeline(current)
                 result = {"state": "done", "answer": answer}
             except Exception as exc:
                 result = {"state": "error", "error": str(exc)}

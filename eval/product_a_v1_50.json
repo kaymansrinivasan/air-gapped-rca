@@ -1,0 +1,2171 @@
+{
+  "schema_version": "airgap-rca-eval-v1",
+  "frozen_inputs": true,
+  "notes": "50 unique synthetic logged failures; 10 hide the IDD measurement and are intended as no-answer probes. Gold labels require engineer review. Do not report accuracy or false-answer rate from pending labels.",
+  "items": [
+    {
+      "id": "PA-EVAL-001",
+      "category": "continuity",
+      "current": {
+        "dut_id": "Product_A-L05-W06-D082",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 100,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "XCKP"
+            },
+            {
+              "name": "DTOP"
+            }
+          ]
+        },
+        "observation_text": "Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 082      Station: 1   Site: 0    Date: Thu Jan  1 11:47:31 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Halt Vector:      0   Halt Cycle:      0   Failing Pins:  2 (F)\n          Failed Pins:\n                 XCKP : 45      DTOP : 84\n\nBin:  4     Wafer Coordinates: ( 0 , 22)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W06-D082; Product_A; tester ate-01; program product_a_ws; failed test 100 Continuity / Open–Short; pins XCKP, DTOP. Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 082      Station: 1   Site: 0    Date: Thu Jan  1 11:47:31 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Halt Vector:      0   Halt Cycle:      0   Failing Pins:  2 (F)\n          Failed Pins:\n                 XCKP : 45      DTOP : 84\n\nBin:  4     Wafer Coordinates: ( 0 , 22)",
+        "question": "What could explain this continuity failure, and what comparison should I perform?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W06.txt",
+        "source_lines": {
+          "start": 1204,
+          "end": 1213
+        },
+        "excerpt_sha256": "9c69d0ae81446378ca46d6f680e885af99a5632e91c8f74df8bd3f6e593933ac"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-002",
+      "category": "continuity",
+      "current": {
+        "dut_id": "Product_A-L03-W02-D063",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 100,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "XCKP"
+            },
+            {
+              "name": "AMSDSM"
+            }
+          ]
+        },
+        "observation_text": "Lot: L03                   Tester: ate-01           Program: product_a_ws\nDevice: 063      Station: 1   Site: 0    Date: Thu Jan  1 09:44:46 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Halt Vector:      0   Halt Cycle:      0   Failing Pins:  2 (F)\n          Failed Pins:\n                 XCKP : 45    AMSDSM : 40\n\nBin:  4     Wafer Coordinates: ( 4 , 20)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L03-W02-D063; Product_A; tester ate-01; program product_a_ws; failed test 100 Continuity / Open–Short; pins XCKP, AMSDSM. Lot: L03                   Tester: ate-01           Program: product_a_ws\nDevice: 063      Station: 1   Site: 0    Date: Thu Jan  1 09:44:46 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Halt Vector:      0   Halt Cycle:      0   Failing Pins:  2 (F)\n          Failed Pins:\n                 XCKP : 45    AMSDSM : 40\n\nBin:  4     Wafer Coordinates: ( 4 , 20)",
+        "question": "What could explain this continuity failure, and what comparison should I perform?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L03/W02.txt",
+        "source_lines": {
+          "start": 917,
+          "end": 926
+        },
+        "excerpt_sha256": "7441900dd336dbea141773662eea239fa3c03a0e106278da2014fb9ab67e68b0"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-003",
+      "category": "continuity",
+      "current": {
+        "dut_id": "Product_A-L03-W02-D008",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 100,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "TSTIN"
+            }
+          ]
+        },
+        "observation_text": "Lot: L03                   Tester: ate-01           Program: product_a_ws\nDevice: 008      Station: 1   Site: 0    Date: Thu Jan  1 09:42:01 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Halt Vector:      0   Halt Cycle:      0   Failing Pins:  1 (F)\n          Failed Pins:\n                TSTIN : 75\n\nBin:  4     Wafer Coordinates: ( 4 , 15)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L03-W02-D008; Product_A; tester ate-01; program product_a_ws; failed test 100 Continuity / Open–Short; pins TSTIN. Lot: L03                   Tester: ate-01           Program: product_a_ws\nDevice: 008      Station: 1   Site: 0    Date: Thu Jan  1 09:42:01 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Halt Vector:      0   Halt Cycle:      0   Failing Pins:  1 (F)\n          Failed Pins:\n                TSTIN : 75\n\nBin:  4     Wafer Coordinates: ( 4 , 15)",
+        "question": "What could explain this continuity failure, and what comparison should I perform?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L03/W02.txt",
+        "source_lines": {
+          "start": 107,
+          "end": 116
+        },
+        "excerpt_sha256": "73280ded34a50d3f7e7de81b68edb168c6a5f4b687934434f881663ceda1bd81"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-004",
+      "category": "continuity",
+      "current": {
+        "dut_id": "Product_A-L01-W04-D084",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 100,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "XCKP"
+            },
+            {
+              "name": "CCK"
+            }
+          ]
+        },
+        "observation_text": "Lot: L01                   Tester: ate-01           Program: product_a_ws\nDevice: 084      Station: 1   Site: 0    Date: Thu Jan  1 08:24:37 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Halt Vector:      0   Halt Cycle:      0   Failing Pins:  2 (F)\n          Failed Pins:\n                 XCKP : 45       CCK : 79\n\nBin:  4     Wafer Coordinates: ( 2 , 22)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L01-W04-D084; Product_A; tester ate-01; program product_a_ws; failed test 100 Continuity / Open–Short; pins XCKP, CCK. Lot: L01                   Tester: ate-01           Program: product_a_ws\nDevice: 084      Station: 1   Site: 0    Date: Thu Jan  1 08:24:37 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Halt Vector:      0   Halt Cycle:      0   Failing Pins:  2 (F)\n          Failed Pins:\n                 XCKP : 45       CCK : 79\n\nBin:  4     Wafer Coordinates: ( 2 , 22)",
+        "question": "What could explain this continuity failure, and what comparison should I perform?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L01/W04.txt",
+        "source_lines": {
+          "start": 1250,
+          "end": 1259
+        },
+        "excerpt_sha256": "f5eed5719693b12ddc21bd7eccf0b904e97992de751912b6c7c631f54ae81751"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-005",
+      "category": "continuity",
+      "current": {
+        "dut_id": "Product_A-L04-W01-D003",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 100,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "TSTEN"
+            },
+            {
+              "name": "DTO2P"
+            },
+            {
+              "name": "CCK"
+            }
+          ]
+        },
+        "observation_text": "Lot: L04                   Tester: ate-01           Program: product_a_ws\nDevice: 003      Station: 1   Site: 0    Date: Thu Jan  1 10:22:22 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Halt Vector:      0   Halt Cycle:      0   Failing Pins:  3 (F)\n          Failed Pins:\n                TSTEN : 37     DTO2P : 82       CCK : 79\n\nBin:  4     Wafer Coordinates: ( 4 , 14)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L04-W01-D003; Product_A; tester ate-01; program product_a_ws; failed test 100 Continuity / Open–Short; pins TSTEN, DTO2P, CCK. Lot: L04                   Tester: ate-01           Program: product_a_ws\nDevice: 003      Station: 1   Site: 0    Date: Thu Jan  1 10:22:22 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Halt Vector:      0   Halt Cycle:      0   Failing Pins:  3 (F)\n          Failed Pins:\n                TSTEN : 37     DTO2P : 82       CCK : 79\n\nBin:  4     Wafer Coordinates: ( 4 , 14)",
+        "question": "What could explain this continuity failure, and what comparison should I perform?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L04/W01.txt",
+        "source_lines": {
+          "start": 35,
+          "end": 44
+        },
+        "excerpt_sha256": "8392116c7caff2dda65afcebbb7acb22f8c50997455b1241acfe37e58a60b16a"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-006",
+      "category": "continuity",
+      "current": {
+        "dut_id": "Product_A-L04-W04-D010",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 100,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "RSIB"
+            }
+          ]
+        },
+        "observation_text": "Lot: L04                   Tester: ate-01           Program: product_a_ws\nDevice: 010      Station: 1   Site: 0    Date: Thu Jan  1 10:43:01 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Halt Vector:      0   Halt Cycle:      0   Failing Pins:  1 (F)\n          Failed Pins:\n                 RSIB : 80\n\nBin:  4     Wafer Coordinates: ( 2 , 15)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L04-W04-D010; Product_A; tester ate-01; program product_a_ws; failed test 100 Continuity / Open–Short; pins RSIB. Lot: L04                   Tester: ate-01           Program: product_a_ws\nDevice: 010      Station: 1   Site: 0    Date: Thu Jan  1 10:43:01 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Halt Vector:      0   Halt Cycle:      0   Failing Pins:  1 (F)\n          Failed Pins:\n                 RSIB : 80\n\nBin:  4     Wafer Coordinates: ( 2 , 15)",
+        "question": "What could explain this continuity failure, and what comparison should I perform?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L04/W04.txt",
+        "source_lines": {
+          "start": 131,
+          "end": 140
+        },
+        "excerpt_sha256": "08436acd77b54cf78b38aae6ebe79d8a39fe5ce38a52efc84b67bdaf4e9e3382"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-007",
+      "category": "continuity",
+      "current": {
+        "dut_id": "Product_A-L01-W04-D020",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 100,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "TSTEN"
+            }
+          ]
+        },
+        "observation_text": "Lot: L01                   Tester: ate-01           Program: product_a_ws\nDevice: 020      Station: 1   Site: 0    Date: Thu Jan  1 08:21:25 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Halt Vector:      0   Halt Cycle:      0   Failing Pins:  1 (F)\n          Failed Pins:\n                TSTEN : 37\n\nBin:  4     Wafer Coordinates: ( 6 , 16)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L01-W04-D020; Product_A; tester ate-01; program product_a_ws; failed test 100 Continuity / Open–Short; pins TSTEN. Lot: L01                   Tester: ate-01           Program: product_a_ws\nDevice: 020      Station: 1   Site: 0    Date: Thu Jan  1 08:21:25 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Halt Vector:      0   Halt Cycle:      0   Failing Pins:  1 (F)\n          Failed Pins:\n                TSTEN : 37\n\nBin:  4     Wafer Coordinates: ( 6 , 16)",
+        "question": "What could explain this continuity failure, and what comparison should I perform?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L01/W04.txt",
+        "source_lines": {
+          "start": 289,
+          "end": 298
+        },
+        "excerpt_sha256": "e41aabce363deb5571b68eb1432176de4a365e2dd9e36867acb195d2ad000c4b"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-008",
+      "category": "continuity",
+      "current": {
+        "dut_id": "Product_A-L05-W06-D018",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 100,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "RSIB"
+            }
+          ]
+        },
+        "observation_text": "Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 018      Station: 1   Site: 0    Date: Thu Jan  1 11:44:19 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Halt Vector:      0   Halt Cycle:      0   Failing Pins:  1 (F)\n          Failed Pins:\n                 RSIB : 80\n\nBin:  4     Wafer Coordinates: ( 4 , 16)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W06-D018; Product_A; tester ate-01; program product_a_ws; failed test 100 Continuity / Open–Short; pins RSIB. Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 018      Station: 1   Site: 0    Date: Thu Jan  1 11:44:19 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Halt Vector:      0   Halt Cycle:      0   Failing Pins:  1 (F)\n          Failed Pins:\n                 RSIB : 80\n\nBin:  4     Wafer Coordinates: ( 4 , 16)",
+        "question": "What could explain this continuity failure, and what comparison should I perform?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W06.txt",
+        "source_lines": {
+          "start": 256,
+          "end": 265
+        },
+        "excerpt_sha256": "36c54dba1cd6621581998f1949d1eabd39244dcad00d2e3b9de1513842038e6e"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-009",
+      "category": "continuity",
+      "current": {
+        "dut_id": "Product_A-L03-W02-D112",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 100,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "TSTIN"
+            }
+          ]
+        },
+        "observation_text": "Lot: L03                   Tester: ate-01           Program: product_a_ws\nDevice: 112      Station: 1   Site: 0    Date: Thu Jan  1 09:47:13 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Halt Vector:      0   Halt Cycle:      0   Failing Pins:  1 (F)\n          Failed Pins:\n                TSTIN : 75\n\nBin:  4     Wafer Coordinates: ( 2 , 25)\n\n\nEnd of Wafer: W02  Part Count: 112   Finish Time: Thu Jan  1 09:47:16 2026",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L03-W02-D112; Product_A; tester ate-01; program product_a_ws; failed test 100 Continuity / Open–Short; pins TSTIN. Lot: L03                   Tester: ate-01           Program: product_a_ws\nDevice: 112      Station: 1   Site: 0    Date: Thu Jan  1 09:47:13 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Halt Vector:      0   Halt Cycle:      0   Failing Pins:  1 (F)\n          Failed Pins:\n                TSTIN : 75\n\nBin:  4     Wafer Coordinates: ( 2 , 25)\n\n\nEnd of Wafer: W02  Part Count: 112   Finish Time: Thu Jan  1 09:47:16 2026",
+        "question": "What could explain this continuity failure, and what comparison should I perform?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L03/W02.txt",
+        "source_lines": {
+          "start": 1634,
+          "end": 1646
+        },
+        "excerpt_sha256": "d633d867513551a0c9d08814cfa6ccc635cab05a628dde65bc352c754056f292"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-010",
+      "category": "continuity",
+      "current": {
+        "dut_id": "Product_A-L03-W02-D019",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 100,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "XCKP"
+            },
+            {
+              "name": "DTO2P"
+            }
+          ]
+        },
+        "observation_text": "Lot: L03                   Tester: ate-01           Program: product_a_ws\nDevice: 019      Station: 1   Site: 0    Date: Thu Jan  1 09:42:34 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Halt Vector:      0   Halt Cycle:      0   Failing Pins:  2 (F)\n          Failed Pins:\n                 XCKP : 45     DTO2P : 82\n\nBin:  4     Wafer Coordinates: ( 5 , 16)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L03-W02-D019; Product_A; tester ate-01; program product_a_ws; failed test 100 Continuity / Open–Short; pins XCKP, DTO2P. Lot: L03                   Tester: ate-01           Program: product_a_ws\nDevice: 019      Station: 1   Site: 0    Date: Thu Jan  1 09:42:34 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Halt Vector:      0   Halt Cycle:      0   Failing Pins:  2 (F)\n          Failed Pins:\n                 XCKP : 45     DTO2P : 82\n\nBin:  4     Wafer Coordinates: ( 5 , 16)",
+        "question": "What could explain this continuity failure, and what comparison should I perform?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L03/W02.txt",
+        "source_lines": {
+          "start": 269,
+          "end": 278
+        },
+        "excerpt_sha256": "728498d80bc6b8a44cb7a66b64b1200ca4075e5a761bdfefaee9e71c4e92d5b6"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-011",
+      "category": "continuity",
+      "current": {
+        "dut_id": "Product_A-L04-W01-D024",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 100,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "DTO2P"
+            },
+            {
+              "name": "DTOP"
+            }
+          ]
+        },
+        "observation_text": "Lot: L04                   Tester: ate-01           Program: product_a_ws\nDevice: 024      Station: 1   Site: 0    Date: Thu Jan  1 10:23:25 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Halt Vector:      0   Halt Cycle:      0   Failing Pins:  2 (F)\n          Failed Pins:\n                DTO2P : 82      DTOP : 84\n\nBin:  4     Wafer Coordinates: ( 7 , 17)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L04-W01-D024; Product_A; tester ate-01; program product_a_ws; failed test 100 Continuity / Open–Short; pins DTO2P, DTOP. Lot: L04                   Tester: ate-01           Program: product_a_ws\nDevice: 024      Station: 1   Site: 0    Date: Thu Jan  1 10:23:25 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Halt Vector:      0   Halt Cycle:      0   Failing Pins:  2 (F)\n          Failed Pins:\n                DTO2P : 82      DTOP : 84\n\nBin:  4     Wafer Coordinates: ( 7 , 17)",
+        "question": "What could explain this continuity failure, and what comparison should I perform?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L04/W01.txt",
+        "source_lines": {
+          "start": 344,
+          "end": 353
+        },
+        "excerpt_sha256": "77445a472ee244e56031708d2724d39fd22f44dbb425a049903af586f4388672"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-012",
+      "category": "continuity",
+      "current": {
+        "dut_id": "Product_A-L01-W04-D015",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 100,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "CCK"
+            }
+          ]
+        },
+        "observation_text": "Lot: L01                   Tester: ate-01           Program: product_a_ws\nDevice: 015      Station: 1   Site: 0    Date: Thu Jan  1 08:21:10 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Halt Vector:      0   Halt Cycle:      0   Failing Pins:  1 (F)\n          Failed Pins:\n                  CCK : 79\n\nBin:  4     Wafer Coordinates: ( 1 , 16)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L01-W04-D015; Product_A; tester ate-01; program product_a_ws; failed test 100 Continuity / Open–Short; pins CCK. Lot: L01                   Tester: ate-01           Program: product_a_ws\nDevice: 015      Station: 1   Site: 0    Date: Thu Jan  1 08:21:10 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Halt Vector:      0   Halt Cycle:      0   Failing Pins:  1 (F)\n          Failed Pins:\n                  CCK : 79\n\nBin:  4     Wafer Coordinates: ( 1 , 16)",
+        "question": "What could explain this continuity failure, and what comparison should I perform?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L01/W04.txt",
+        "source_lines": {
+          "start": 215,
+          "end": 224
+        },
+        "excerpt_sha256": "d8871d35f7c0e0b6b0959e8601e6c0135a28fd72953a662011654041e8126cec"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-013",
+      "category": "idd_static",
+      "current": {
+        "dut_id": "Product_A-L05-W07-D109",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 210,
+          "result": "FAIL",
+          "failing_pins": []
+        },
+        "observation_text": "Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 109      Station: 1   Site: 0    Date: Thu Jan  1 11:55:38 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    68.33 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 5 , 25)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W07-D109; Product_A; tester ate-01; program product_a_ws; failed test 210 IDD_Static; pins unknown. Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 109      Station: 1   Site: 0    Date: Thu Jan  1 11:55:38 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    68.33 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 5 , 25)",
+        "question": "What could explain this static-current failure, and which check should I do next?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W07.txt",
+        "source_lines": {
+          "start": 1624,
+          "end": 1633
+        },
+        "excerpt_sha256": "7b8297ff05f075408e9ca8368e05ca9f75d6789906d3a3b26c63e984833c0c3e"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-014",
+      "category": "idd_static",
+      "current": {
+        "dut_id": "Product_A-L05-W06-D107",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 210,
+          "result": "FAIL",
+          "failing_pins": []
+        },
+        "observation_text": "Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 107      Station: 1   Site: 0    Date: Thu Jan  1 11:48:46 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    32.89 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 6 , 24)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W06-D107; Product_A; tester ate-01; program product_a_ws; failed test 210 IDD_Static; pins unknown. Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 107      Station: 1   Site: 0    Date: Thu Jan  1 11:48:46 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    32.89 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 6 , 24)",
+        "question": "What could explain this static-current failure, and which check should I do next?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W06.txt",
+        "source_lines": {
+          "start": 1566,
+          "end": 1575
+        },
+        "excerpt_sha256": "e927f5dffb731366a300a966053eaae785a894598048deff10f4d18130dd38a3"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-015",
+      "category": "idd_static",
+      "current": {
+        "dut_id": "Product_A-L05-W07-D040",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 210,
+          "result": "FAIL",
+          "failing_pins": []
+        },
+        "observation_text": "Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 040      Station: 1   Site: 0    Date: Thu Jan  1 11:52:11 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    29.95 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 5 , 18)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W07-D040; Product_A; tester ate-01; program product_a_ws; failed test 210 IDD_Static; pins unknown. Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 040      Station: 1   Site: 0    Date: Thu Jan  1 11:52:11 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    29.95 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 5 , 18)",
+        "question": "What could explain this static-current failure, and which check should I do next?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W07.txt",
+        "source_lines": {
+          "start": 595,
+          "end": 604
+        },
+        "excerpt_sha256": "a2beb0fa59bf2189010b108c4d277e44c1b4d54acb387ad2c136ac4f51bca4ce"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-016",
+      "category": "idd_static",
+      "current": {
+        "dut_id": "Product_A-L04-W04-D057",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 210,
+          "result": "FAIL",
+          "failing_pins": []
+        },
+        "observation_text": "Lot: L04                   Tester: ate-01           Program: product_a_ws\nDevice: 057      Station: 1   Site: 0    Date: Thu Jan  1 10:45:22 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    69.66 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( -2 , 20)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L04-W04-D057; Product_A; tester ate-01; program product_a_ws; failed test 210 IDD_Static; pins unknown. Lot: L04                   Tester: ate-01           Program: product_a_ws\nDevice: 057      Station: 1   Site: 0    Date: Thu Jan  1 10:45:22 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    69.66 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( -2 , 20)",
+        "question": "What could explain this static-current failure, and which check should I do next?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L04/W04.txt",
+        "source_lines": {
+          "start": 827,
+          "end": 836
+        },
+        "excerpt_sha256": "d07e17a71d7fbe98b6eb7a61a76154a3778547f8bb2b2c342f9ea94a5e29fc08"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-017",
+      "category": "idd_static",
+      "current": {
+        "dut_id": "Product_A-L04-W04-D067",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 210,
+          "result": "FAIL",
+          "failing_pins": []
+        },
+        "observation_text": "Lot: L04                   Tester: ate-01           Program: product_a_ws\nDevice: 067      Station: 1   Site: 0    Date: Thu Jan  1 10:45:52 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    32.38 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 8 , 20)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L04-W04-D067; Product_A; tester ate-01; program product_a_ws; failed test 210 IDD_Static; pins unknown. Lot: L04                   Tester: ate-01           Program: product_a_ws\nDevice: 067      Station: 1   Site: 0    Date: Thu Jan  1 10:45:52 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    32.38 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 8 , 20)",
+        "question": "What could explain this static-current failure, and which check should I do next?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L04/W04.txt",
+        "source_lines": {
+          "start": 968,
+          "end": 977
+        },
+        "excerpt_sha256": "6fe7685ea96030b192f1de64f4cfd3e98013d5361bf47cea443869c696570bfc"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-018",
+      "category": "idd_static",
+      "current": {
+        "dut_id": "Product_A-L05-W07-D098",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 210,
+          "result": "FAIL",
+          "failing_pins": []
+        },
+        "observation_text": "Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 098      Station: 1   Site: 0    Date: Thu Jan  1 11:55:05 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    62.97 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 1 , 23)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W07-D098; Product_A; tester ate-01; program product_a_ws; failed test 210 IDD_Static; pins unknown. Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 098      Station: 1   Site: 0    Date: Thu Jan  1 11:55:05 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    62.97 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 1 , 23)",
+        "question": "What could explain this static-current failure, and which check should I do next?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W07.txt",
+        "source_lines": {
+          "start": 1459,
+          "end": 1468
+        },
+        "excerpt_sha256": "c46785744f1d75b61d40790043d6329b55ec3872c80414399be49a1be112e7ad"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-019",
+      "category": "idd_static",
+      "current": {
+        "dut_id": "Product_A-L04-W04-D112",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 210,
+          "result": "FAIL",
+          "failing_pins": []
+        },
+        "observation_text": "Lot: L04                   Tester: ate-01           Program: product_a_ws\nDevice: 112      Station: 1   Site: 0    Date: Thu Jan  1 10:48:07 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    32.21 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 2 , 25)\n\n\nEnd of Wafer: W04  Part Count: 112   Finish Time: Thu Jan  1 10:48:10 2026",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L04-W04-D112; Product_A; tester ate-01; program product_a_ws; failed test 210 IDD_Static; pins unknown. Lot: L04                   Tester: ate-01           Program: product_a_ws\nDevice: 112      Station: 1   Site: 0    Date: Thu Jan  1 10:48:07 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    32.21 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 2 , 25)\n\n\nEnd of Wafer: W04  Part Count: 112   Finish Time: Thu Jan  1 10:48:10 2026",
+        "question": "What could explain this static-current failure, and which check should I do next?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L04/W04.txt",
+        "source_lines": {
+          "start": 1625,
+          "end": 1637
+        },
+        "excerpt_sha256": "68ddbefb563003cdd14fae4769bb47defb6bf02edc086ef2b8a31e9f8ec3e188"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-020",
+      "category": "idd_static",
+      "current": {
+        "dut_id": "Product_A-L05-W06-D029",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 210,
+          "result": "FAIL",
+          "failing_pins": []
+        },
+        "observation_text": "Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 029      Station: 1   Site: 0    Date: Thu Jan  1 11:44:52 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    69.09 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 2 , 17)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W06-D029; Product_A; tester ate-01; program product_a_ws; failed test 210 IDD_Static; pins unknown. Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 029      Station: 1   Site: 0    Date: Thu Jan  1 11:44:52 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    69.09 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 2 , 17)",
+        "question": "What could explain this static-current failure, and which check should I do next?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W06.txt",
+        "source_lines": {
+          "start": 415,
+          "end": 424
+        },
+        "excerpt_sha256": "d0d693277780ffa217f55f5a85209d5a239c33c1b08d718d58064385a3721aac"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-021",
+      "category": "idd_static",
+      "current": {
+        "dut_id": "Product_A-L05-W06-D089",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 210,
+          "result": "FAIL",
+          "failing_pins": []
+        },
+        "observation_text": "Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 089      Station: 1   Site: 0    Date: Thu Jan  1 11:47:52 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    66.99 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 7 , 22)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W06-D089; Product_A; tester ate-01; program product_a_ws; failed test 210 IDD_Static; pins unknown. Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 089      Station: 1   Site: 0    Date: Thu Jan  1 11:47:52 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    66.99 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 7 , 22)",
+        "question": "What could explain this static-current failure, and which check should I do next?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W06.txt",
+        "source_lines": {
+          "start": 1306,
+          "end": 1315
+        },
+        "excerpt_sha256": "a36b368e2c06475fc2906a0d9f4b2aa63b5c1c5d4fcc48715a9e9301f2134eff"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-022",
+      "category": "idd_static",
+      "current": {
+        "dut_id": "Product_A-L04-W04-D006",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 210,
+          "result": "FAIL",
+          "failing_pins": []
+        },
+        "observation_text": "Lot: L04                   Tester: ate-01           Program: product_a_ws\nDevice: 006      Station: 1   Site: 0    Date: Thu Jan  1 10:42:49 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    27.72 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 6 , 15)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L04-W04-D006; Product_A; tester ate-01; program product_a_ws; failed test 210 IDD_Static; pins unknown. Lot: L04                   Tester: ate-01           Program: product_a_ws\nDevice: 006      Station: 1   Site: 0    Date: Thu Jan  1 10:42:49 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    27.72 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 6 , 15)",
+        "question": "What could explain this static-current failure, and which check should I do next?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L04/W04.txt",
+        "source_lines": {
+          "start": 77,
+          "end": 86
+        },
+        "excerpt_sha256": "a8c5584ef33d5f160a058eb4e61c2bea296adfe8d89a098677017741a0858947"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-023",
+      "category": "idd_static",
+      "current": {
+        "dut_id": "Product_A-L05-W07-D075",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 210,
+          "result": "FAIL",
+          "failing_pins": []
+        },
+        "observation_text": "Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 075      Station: 1   Site: 0    Date: Thu Jan  1 11:53:56 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    27.03 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 3 , 21)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W07-D075; Product_A; tester ate-01; program product_a_ws; failed test 210 IDD_Static; pins unknown. Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 075      Station: 1   Site: 0    Date: Thu Jan  1 11:53:56 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    27.03 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 3 , 21)",
+        "question": "What could explain this static-current failure, and which check should I do next?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W07.txt",
+        "source_lines": {
+          "start": 1123,
+          "end": 1132
+        },
+        "excerpt_sha256": "10453b89b2de8fe0508defe0fb0d67a8566ce5f537bfe006788a0d0ed173e539"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-024",
+      "category": "idd_static",
+      "current": {
+        "dut_id": "Product_A-L04-W04-D095",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 210,
+          "result": "FAIL",
+          "failing_pins": []
+        },
+        "observation_text": "Lot: L04                   Tester: ate-01           Program: product_a_ws\nDevice: 095      Station: 1   Site: 0    Date: Thu Jan  1 10:47:16 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    59.89 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 4 , 23)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L04-W04-D095; Product_A; tester ate-01; program product_a_ws; failed test 210 IDD_Static; pins unknown. Lot: L04                   Tester: ate-01           Program: product_a_ws\nDevice: 095      Station: 1   Site: 0    Date: Thu Jan  1 10:47:16 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    59.89 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 4 , 23)",
+        "question": "What could explain this static-current failure, and which check should I do next?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L04/W04.txt",
+        "source_lines": {
+          "start": 1376,
+          "end": 1385
+        },
+        "excerpt_sha256": "ad6a5b9b8dbcc6de70e1edf94a289ce2be6d808148e3737abb9de81c1d76baba"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-025",
+      "category": "idd_static",
+      "current": {
+        "dut_id": "Product_A-L05-W07-D105",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 210,
+          "result": "FAIL",
+          "failing_pins": []
+        },
+        "observation_text": "Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 105      Station: 1   Site: 0    Date: Thu Jan  1 11:55:26 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    30.24 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 4 , 24)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W07-D105; Product_A; tester ate-01; program product_a_ws; failed test 210 IDD_Static; pins unknown. Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 105      Station: 1   Site: 0    Date: Thu Jan  1 11:55:26 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    30.24 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 4 , 24)",
+        "question": "What could explain this static-current failure, and which check should I do next?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W07.txt",
+        "source_lines": {
+          "start": 1567,
+          "end": 1576
+        },
+        "excerpt_sha256": "85477ffcb5e1eda40186aab3511c7f7d8b07000547ecac8f1aa0be012ef4f342"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-026",
+      "category": "idd_static",
+      "current": {
+        "dut_id": "Product_A-L04-W04-D054",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 210,
+          "result": "FAIL",
+          "failing_pins": []
+        },
+        "observation_text": "Lot: L04                   Tester: ate-01           Program: product_a_ws\nDevice: 054      Station: 1   Site: 0    Date: Thu Jan  1 10:45:13 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    31.52 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 0 , 19)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L04-W04-D054; Product_A; tester ate-01; program product_a_ws; failed test 210 IDD_Static; pins unknown. Lot: L04                   Tester: ate-01           Program: product_a_ws\nDevice: 054      Station: 1   Site: 0    Date: Thu Jan  1 10:45:13 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    31.52 ma (F) <  55.00 ma\n\nBin:  3     Wafer Coordinates: ( 0 , 19)",
+        "question": "What could explain this static-current failure, and which check should I do next?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L04/W04.txt",
+        "source_lines": {
+          "start": 785,
+          "end": 794
+        },
+        "excerpt_sha256": "b4a9ea64c676cfe0df91ca6e11977f7639ed2de49e3f79ede7c21ccff6a06859"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-027",
+      "category": "scan",
+      "current": {
+        "dut_id": "Product_A-L05-W06-D039",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 606,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "TSTIN"
+            }
+          ]
+        },
+        "observation_text": "Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 039      Station: 1   Site: 0    Date: Thu Jan  1 11:45:22 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    42.19 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   2298   Halt Cycle:   2298   Failing Pins:  1 (F)\n       Pattern: scan\n          Failed Pins:\n                TSTIN : 75\n\nBin:  2     Wafer Coordinates: ( 4 , 18)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W06-D039; Product_A; tester ate-01; program product_a_ws; failed test 606 Scan; pins TSTIN. Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 039      Station: 1   Site: 0    Date: Thu Jan  1 11:45:22 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    42.19 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   2298   Halt Cycle:   2298   Failing Pins:  1 (F)\n       Pattern: scan\n          Failed Pins:\n                TSTIN : 75\n\nBin:  2     Wafer Coordinates: ( 4 , 18)",
+        "question": "Which possible scan-failure causes and distinguishing checks fit this observation?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W06.txt",
+        "source_lines": {
+          "start": 562,
+          "end": 576
+        },
+        "excerpt_sha256": "12ad4265b957b58c21163c877c388c3cbd33507b3b320e83fc1b4b495b60443d"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-028",
+      "category": "scan",
+      "current": {
+        "dut_id": "Product_A-L05-W06-D015",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 606,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "DTO2P"
+            },
+            {
+              "name": "CCK"
+            }
+          ]
+        },
+        "observation_text": "Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 015      Station: 1   Site: 0    Date: Thu Jan  1 11:44:10 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    41.70 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   3205   Halt Cycle:   3205   Failing Pins:  2 (F)\n       Pattern: scan\n          Failed Pins:\n                DTO2P : 82       CCK : 79\n\nBin:  2     Wafer Coordinates: ( 1 , 16)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W06-D015; Product_A; tester ate-01; program product_a_ws; failed test 606 Scan; pins DTO2P, CCK. Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 015      Station: 1   Site: 0    Date: Thu Jan  1 11:44:10 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    41.70 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   3205   Halt Cycle:   3205   Failing Pins:  2 (F)\n       Pattern: scan\n          Failed Pins:\n                DTO2P : 82       CCK : 79\n\nBin:  2     Wafer Coordinates: ( 1 , 16)",
+        "question": "Which possible scan-failure causes and distinguishing checks fit this observation?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W06.txt",
+        "source_lines": {
+          "start": 209,
+          "end": 223
+        },
+        "excerpt_sha256": "ddbb95eab7fb47b1b4aca09923110ade91fea5ff484096e495c8a089018a07cb"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-029",
+      "category": "scan",
+      "current": {
+        "dut_id": "Product_A-L05-W02-D055",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 606,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "TSTIN"
+            },
+            {
+              "name": "TSTEN"
+            },
+            {
+              "name": "AMSDSM"
+            }
+          ]
+        },
+        "observation_text": "Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 055      Station: 1   Site: 0    Date: Thu Jan  1 11:19:06 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    49.49 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   3879   Halt Cycle:   3879   Failing Pins:  3 (F)\n       Pattern: scan\n          Failed Pins:\n                TSTIN : 75     TSTEN : 37    AMSDSM : 40\n\nBin:  2     Wafer Coordinates: ( -1 , 19)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W02-D055; Product_A; tester ate-01; program product_a_ws; failed test 606 Scan; pins TSTIN, TSTEN, AMSDSM. Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 055      Station: 1   Site: 0    Date: Thu Jan  1 11:19:06 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    49.49 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   3879   Halt Cycle:   3879   Failing Pins:  3 (F)\n       Pattern: scan\n          Failed Pins:\n                TSTIN : 75     TSTEN : 37    AMSDSM : 40\n\nBin:  2     Wafer Coordinates: ( -1 , 19)",
+        "question": "Which possible scan-failure causes and distinguishing checks fit this observation?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W02.txt",
+        "source_lines": {
+          "start": 823,
+          "end": 837
+        },
+        "excerpt_sha256": "a08ac143900ae0f071571e34c9a329526f824dc759cc34d7bd17cfdd5d407294"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-030",
+      "category": "scan",
+      "current": {
+        "dut_id": "Product_A-L01-W04-D019",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 606,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "TSTIN"
+            }
+          ]
+        },
+        "observation_text": "Lot: L01                   Tester: ate-01           Program: product_a_ws\nDevice: 019      Station: 1   Site: 0    Date: Thu Jan  1 08:21:22 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    46.89 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   5698   Halt Cycle:   5698   Failing Pins:  1 (F)\n       Pattern: scan\n          Failed Pins:\n                TSTIN : 75\n\nBin:  2     Wafer Coordinates: ( 5 , 16)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L01-W04-D019; Product_A; tester ate-01; program product_a_ws; failed test 606 Scan; pins TSTIN. Lot: L01                   Tester: ate-01           Program: product_a_ws\nDevice: 019      Station: 1   Site: 0    Date: Thu Jan  1 08:21:22 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    46.89 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   5698   Halt Cycle:   5698   Failing Pins:  1 (F)\n       Pattern: scan\n          Failed Pins:\n                TSTIN : 75\n\nBin:  2     Wafer Coordinates: ( 5 , 16)",
+        "question": "Which possible scan-failure causes and distinguishing checks fit this observation?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L01/W04.txt",
+        "source_lines": {
+          "start": 272,
+          "end": 286
+        },
+        "excerpt_sha256": "d6d55267bf8c6590de8a24e54d79ec1446873aa1127bfe47edc1941a140fadc0"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-031",
+      "category": "scan",
+      "current": {
+        "dut_id": "Product_A-L05-W07-D003",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 606,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "CCK"
+            },
+            {
+              "name": "TSTEN"
+            },
+            {
+              "name": "XCKP"
+            }
+          ]
+        },
+        "observation_text": "Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 003      Station: 1   Site: 0    Date: Thu Jan  1 11:50:20 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    43.78 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   6892   Halt Cycle:   6892   Failing Pins:  3 (F)\n       Pattern: scan\n          Failed Pins:\n                  CCK : 79     TSTEN : 37      XCKP : 45\n\nBin:  2     Wafer Coordinates: ( 4 , 14)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W07-D003; Product_A; tester ate-01; program product_a_ws; failed test 606 Scan; pins CCK, TSTEN, XCKP. Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 003      Station: 1   Site: 0    Date: Thu Jan  1 11:50:20 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    43.78 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   6892   Halt Cycle:   6892   Failing Pins:  3 (F)\n       Pattern: scan\n          Failed Pins:\n                  CCK : 79     TSTEN : 37      XCKP : 45\n\nBin:  2     Wafer Coordinates: ( 4 , 14)",
+        "question": "Which possible scan-failure causes and distinguishing checks fit this observation?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W07.txt",
+        "source_lines": {
+          "start": 35,
+          "end": 49
+        },
+        "excerpt_sha256": "b561de92bbe327292631be3fe2ed6d3bf70a5a6ed8e36d97109b64de240d00be"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-032",
+      "category": "scan",
+      "current": {
+        "dut_id": "Product_A-L05-W02-D036",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 606,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "DTO2P"
+            }
+          ]
+        },
+        "observation_text": "Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 036      Station: 1   Site: 0    Date: Thu Jan  1 11:18:09 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    45.23 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   2789   Halt Cycle:   2789   Failing Pins:  1 (F)\n       Pattern: scan\n          Failed Pins:\n                DTO2P : 82\n\nBin:  2     Wafer Coordinates: ( 1 , 18)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W02-D036; Product_A; tester ate-01; program product_a_ws; failed test 606 Scan; pins DTO2P. Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 036      Station: 1   Site: 0    Date: Thu Jan  1 11:18:09 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    45.23 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   2789   Halt Cycle:   2789   Failing Pins:  1 (F)\n       Pattern: scan\n          Failed Pins:\n                DTO2P : 82\n\nBin:  2     Wafer Coordinates: ( 1 , 18)",
+        "question": "Which possible scan-failure causes and distinguishing checks fit this observation?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W02.txt",
+        "source_lines": {
+          "start": 532,
+          "end": 546
+        },
+        "excerpt_sha256": "563ca92c8defd122498daaa230eb27a19eb4cb26774d24ce35ccdaddcb72efe7"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-033",
+      "category": "scan",
+      "current": {
+        "dut_id": "Product_A-L01-W04-D028",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 606,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "TSTIN"
+            },
+            {
+              "name": "CCK"
+            },
+            {
+              "name": "TSTEN"
+            }
+          ]
+        },
+        "observation_text": "Lot: L01                   Tester: ate-01           Program: product_a_ws\nDevice: 028      Station: 1   Site: 0    Date: Thu Jan  1 08:21:49 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    42.76 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   5557   Halt Cycle:   5557   Failing Pins:  3 (F)\n       Pattern: scan\n          Failed Pins:\n                TSTIN : 75       CCK : 79     TSTEN : 37\n\nBin:  2     Wafer Coordinates: ( 3 , 17)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L01-W04-D028; Product_A; tester ate-01; program product_a_ws; failed test 606 Scan; pins TSTIN, CCK, TSTEN. Lot: L01                   Tester: ate-01           Program: product_a_ws\nDevice: 028      Station: 1   Site: 0    Date: Thu Jan  1 08:21:49 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    42.76 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   5557   Halt Cycle:   5557   Failing Pins:  3 (F)\n       Pattern: scan\n          Failed Pins:\n                TSTIN : 75       CCK : 79     TSTEN : 37\n\nBin:  2     Wafer Coordinates: ( 3 , 17)",
+        "question": "Which possible scan-failure causes and distinguishing checks fit this observation?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L01/W04.txt",
+        "source_lines": {
+          "start": 406,
+          "end": 420
+        },
+        "excerpt_sha256": "1d423de1fe2de9bbe5d696472877a6a720ff6a74bd73380a7474158216f1a9bf"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-034",
+      "category": "scan",
+      "current": {
+        "dut_id": "Product_A-L05-W06-D097",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 606,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "TSTIN"
+            },
+            {
+              "name": "RSIB"
+            }
+          ]
+        },
+        "observation_text": "Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 097      Station: 1   Site: 0    Date: Thu Jan  1 11:48:16 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    40.87 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   3265   Halt Cycle:   3265   Failing Pins:  2 (F)\n       Pattern: scan\n          Failed Pins:\n                TSTIN : 75      RSIB : 80\n\nBin:  2     Wafer Coordinates: ( 2 , 23)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W06-D097; Product_A; tester ate-01; program product_a_ws; failed test 606 Scan; pins TSTIN, RSIB. Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 097      Station: 1   Site: 0    Date: Thu Jan  1 11:48:16 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    40.87 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   3265   Halt Cycle:   3265   Failing Pins:  2 (F)\n       Pattern: scan\n          Failed Pins:\n                TSTIN : 75      RSIB : 80\n\nBin:  2     Wafer Coordinates: ( 2 , 23)",
+        "question": "Which possible scan-failure causes and distinguishing checks fit this observation?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W06.txt",
+        "source_lines": {
+          "start": 1423,
+          "end": 1437
+        },
+        "excerpt_sha256": "0628e25438dc5cc4a06339b49480e1e6a7d1d83c421e166a4bfabd1e459fc4c8"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-035",
+      "category": "scan",
+      "current": {
+        "dut_id": "Product_A-L05-W02-D025",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 606,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "AMSDSM"
+            },
+            {
+              "name": "CCK"
+            }
+          ]
+        },
+        "observation_text": "Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 025      Station: 1   Site: 0    Date: Thu Jan  1 11:17:36 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    46.45 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   1147   Halt Cycle:   1147   Failing Pins:  2 (F)\n       Pattern: scan\n          Failed Pins:\n               AMSDSM : 40       CCK : 79\n\nBin:  2     Wafer Coordinates: ( 6 , 17)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W02-D025; Product_A; tester ate-01; program product_a_ws; failed test 606 Scan; pins AMSDSM, CCK. Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 025      Station: 1   Site: 0    Date: Thu Jan  1 11:17:36 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    46.45 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   1147   Halt Cycle:   1147   Failing Pins:  2 (F)\n       Pattern: scan\n          Failed Pins:\n               AMSDSM : 40       CCK : 79\n\nBin:  2     Wafer Coordinates: ( 6 , 17)",
+        "question": "Which possible scan-failure causes and distinguishing checks fit this observation?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W02.txt",
+        "source_lines": {
+          "start": 363,
+          "end": 377
+        },
+        "excerpt_sha256": "b349d50039cd1bcee163cfab314ad68f6949c53e845afac20f641fb7eb98683c"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-036",
+      "category": "scan",
+      "current": {
+        "dut_id": "Product_A-L05-W06-D066",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 606,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "RSIB"
+            }
+          ]
+        },
+        "observation_text": "Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 066      Station: 1   Site: 0    Date: Thu Jan  1 11:46:43 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    48.60 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   1957   Halt Cycle:   1957   Failing Pins:  1 (F)\n       Pattern: scan\n          Failed Pins:\n                 RSIB : 80\n\nBin:  2     Wafer Coordinates: ( 7 , 20)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W06-D066; Product_A; tester ate-01; program product_a_ws; failed test 606 Scan; pins RSIB. Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 066      Station: 1   Site: 0    Date: Thu Jan  1 11:46:43 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    48.60 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   1957   Halt Cycle:   1957   Failing Pins:  1 (F)\n       Pattern: scan\n          Failed Pins:\n                 RSIB : 80\n\nBin:  2     Wafer Coordinates: ( 7 , 20)",
+        "question": "Which possible scan-failure causes and distinguishing checks fit this observation?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W06.txt",
+        "source_lines": {
+          "start": 962,
+          "end": 976
+        },
+        "excerpt_sha256": "601d4a7a83769184efe944e99a0f1bc78bcc36656e0ec62ac3e1886c9e9224e1"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-037",
+      "category": "scan",
+      "current": {
+        "dut_id": "Product_A-L05-W02-D039",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 606,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "TSTEN"
+            },
+            {
+              "name": "AMSDSM"
+            },
+            {
+              "name": "RSIB"
+            }
+          ]
+        },
+        "observation_text": "Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 039      Station: 1   Site: 0    Date: Thu Jan  1 11:18:18 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    42.21 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   8145   Halt Cycle:   8145   Failing Pins:  3 (F)\n       Pattern: scan\n          Failed Pins:\n                TSTEN : 37    AMSDSM : 40      RSIB : 80\n\nBin:  2     Wafer Coordinates: ( 4 , 18)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W02-D039; Product_A; tester ate-01; program product_a_ws; failed test 606 Scan; pins TSTEN, AMSDSM, RSIB. Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 039      Station: 1   Site: 0    Date: Thu Jan  1 11:18:18 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    42.21 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   8145   Halt Cycle:   8145   Failing Pins:  3 (F)\n       Pattern: scan\n          Failed Pins:\n                TSTEN : 37    AMSDSM : 40      RSIB : 80\n\nBin:  2     Wafer Coordinates: ( 4 , 18)",
+        "question": "Which possible scan-failure causes and distinguishing checks fit this observation?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W02.txt",
+        "source_lines": {
+          "start": 579,
+          "end": 593
+        },
+        "excerpt_sha256": "cf71883318a4fbfabf16aa1c020bff0eb3f3317dd785164596cfccbdc968fcdb"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-038",
+      "category": "scan",
+      "current": {
+        "dut_id": "Product_A-L05-W02-D083",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 606,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "AMSDSM"
+            },
+            {
+              "name": "TSTIN"
+            }
+          ]
+        },
+        "observation_text": "Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 083      Station: 1   Site: 0    Date: Thu Jan  1 11:20:30 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    42.14 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   1570   Halt Cycle:   1570   Failing Pins:  2 (F)\n       Pattern: scan\n          Failed Pins:\n               AMSDSM : 40     TSTIN : 75\n\nBin:  2     Wafer Coordinates: ( 1 , 22)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W02-D083; Product_A; tester ate-01; program product_a_ws; failed test 606 Scan; pins AMSDSM, TSTIN. Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 083      Station: 1   Site: 0    Date: Thu Jan  1 11:20:30 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    42.14 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   1570   Halt Cycle:   1570   Failing Pins:  2 (F)\n       Pattern: scan\n          Failed Pins:\n               AMSDSM : 40     TSTIN : 75\n\nBin:  2     Wafer Coordinates: ( 1 , 22)",
+        "question": "Which possible scan-failure causes and distinguishing checks fit this observation?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W02.txt",
+        "source_lines": {
+          "start": 1244,
+          "end": 1258
+        },
+        "excerpt_sha256": "9f13206578f91610c0dad1b66c2a5bcc5bc599c52c87476b68c5553522c67a62"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-039",
+      "category": "scan",
+      "current": {
+        "dut_id": "Product_A-L05-W07-D035",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 606,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "CCK"
+            },
+            {
+              "name": "TSTEN"
+            }
+          ]
+        },
+        "observation_text": "Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 035      Station: 1   Site: 0    Date: Thu Jan  1 11:51:56 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    51.45 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   1368   Halt Cycle:   1368   Failing Pins:  2 (F)\n       Pattern: scan\n          Failed Pins:\n                  CCK : 79     TSTEN : 37\n\nBin:  2     Wafer Coordinates: ( 0 , 18)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W07-D035; Product_A; tester ate-01; program product_a_ws; failed test 606 Scan; pins CCK, TSTEN. Lot: L05                   Tester: ate-01           Program: product_a_ws\nDevice: 035      Station: 1   Site: 0    Date: Thu Jan  1 11:51:56 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    51.45 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   1368   Halt Cycle:   1368   Failing Pins:  2 (F)\n       Pattern: scan\n          Failed Pins:\n                  CCK : 79     TSTEN : 37\n\nBin:  2     Wafer Coordinates: ( 0 , 18)",
+        "question": "Which possible scan-failure causes and distinguishing checks fit this observation?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W07.txt",
+        "source_lines": {
+          "start": 518,
+          "end": 532
+        },
+        "excerpt_sha256": "4982e430516cfcad478345a95bb85e524fb4037eeddde7b71e36ad6d074f5f91"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-040",
+      "category": "scan",
+      "current": {
+        "dut_id": "Product_A-L01-W04-D044",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 606,
+          "result": "FAIL",
+          "failing_pins": [
+            {
+              "name": "CCK"
+            }
+          ]
+        },
+        "observation_text": "Lot: L01                   Tester: ate-01           Program: product_a_ws\nDevice: 044      Station: 1   Site: 0    Date: Thu Jan  1 08:22:37 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    41.32 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   5393   Halt Cycle:   5393   Failing Pins:  1 (F)\n       Pattern: scan\n          Failed Pins:\n                  CCK : 79\n\nBin:  2     Wafer Coordinates: ( 9 , 18)",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L01-W04-D044; Product_A; tester ate-01; program product_a_ws; failed test 606 Scan; pins CCK. Lot: L01                   Tester: ate-01           Program: product_a_ws\nDevice: 044      Station: 1   Site: 0    Date: Thu Jan  1 08:22:37 2026\n\nSequencer:  product_a_ws_seq\n\n   100 Open/Short-          Failing Pins:  0\n\n   210 IDD_Static         curr         35.00 ma <    41.32 ma     <  55.00 ma\n\n   606 SCAN Test            Halt Vector:   5393   Halt Cycle:   5393   Failing Pins:  1 (F)\n       Pattern: scan\n          Failed Pins:\n                  CCK : 79\n\nBin:  2     Wafer Coordinates: ( 9 , 18)",
+        "question": "Which possible scan-failure causes and distinguishing checks fit this observation?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L01/W04.txt",
+        "source_lines": {
+          "start": 648,
+          "end": 662
+        },
+        "excerpt_sha256": "c363cef6f929cfa55b3c332fe781bdeaa7da2c845d74d50474d4543580c3656d"
+      },
+      "gold": {
+        "expected_status": null,
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-041",
+      "category": "no_answer",
+      "current": {
+        "dut_id": "Product_A-L05-W02-D004",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 210,
+          "result": "FAIL",
+          "failing_pins": []
+        },
+        "observation_text": "210 IDD_Static: FAIL. The current value and limits were omitted from this excerpt.",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W02-D004; Product_A; tester ate-01; program product_a_ws; failed test 210 IDD_Static; pins unknown. 210 IDD_Static: FAIL. The current value and limits were omitted from this excerpt.",
+        "question": "Can you distinguish high from low current and identify a supported cause from this excerpt?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W02.txt",
+        "source_lines": {
+          "start": 50,
+          "end": 59
+        },
+        "excerpt_sha256": "4a03fb6df8468df83701d7742a38a7ca46c244d9bb094db061792670437508e3"
+      },
+      "gold": {
+        "expected_status": "refuse",
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-042",
+      "category": "no_answer",
+      "current": {
+        "dut_id": "Product_A-L05-W06-D025",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 210,
+          "result": "FAIL",
+          "failing_pins": []
+        },
+        "observation_text": "210 IDD_Static: FAIL. The current value and limits were omitted from this excerpt.",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W06-D025; Product_A; tester ate-01; program product_a_ws; failed test 210 IDD_Static; pins unknown. 210 IDD_Static: FAIL. The current value and limits were omitted from this excerpt.",
+        "question": "Can you distinguish high from low current and identify a supported cause from this excerpt?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W06.txt",
+        "source_lines": {
+          "start": 358,
+          "end": 367
+        },
+        "excerpt_sha256": "4ffa6a5a66e40b0ef44b89a1271efaea31a517130c319732e6b4cc26adf2c6b8"
+      },
+      "gold": {
+        "expected_status": "refuse",
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-043",
+      "category": "no_answer",
+      "current": {
+        "dut_id": "Product_A-L05-W06-D106",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 210,
+          "result": "FAIL",
+          "failing_pins": []
+        },
+        "observation_text": "210 IDD_Static: FAIL. The current value and limits were omitted from this excerpt.",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W06-D106; Product_A; tester ate-01; program product_a_ws; failed test 210 IDD_Static; pins unknown. 210 IDD_Static: FAIL. The current value and limits were omitted from this excerpt.",
+        "question": "Can you distinguish high from low current and identify a supported cause from this excerpt?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W06.txt",
+        "source_lines": {
+          "start": 1554,
+          "end": 1563
+        },
+        "excerpt_sha256": "17d1879ad6a4238960656bedf070a917ab191b3f0346db5a5fa9ea9bfa8f9436"
+      },
+      "gold": {
+        "expected_status": "refuse",
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-044",
+      "category": "no_answer",
+      "current": {
+        "dut_id": "Product_A-L05-W02-D082",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 210,
+          "result": "FAIL",
+          "failing_pins": []
+        },
+        "observation_text": "210 IDD_Static: FAIL. The current value and limits were omitted from this excerpt.",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W02-D082; Product_A; tester ate-01; program product_a_ws; failed test 210 IDD_Static; pins unknown. 210 IDD_Static: FAIL. The current value and limits were omitted from this excerpt.",
+        "question": "Can you distinguish high from low current and identify a supported cause from this excerpt?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W02.txt",
+        "source_lines": {
+          "start": 1232,
+          "end": 1241
+        },
+        "excerpt_sha256": "7ed07b0d0ea89192bea820934d6726f9d99c76cc5371b788167a76cf4663aa0f"
+      },
+      "gold": {
+        "expected_status": "refuse",
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-045",
+      "category": "no_answer",
+      "current": {
+        "dut_id": "Product_A-L05-W07-D091",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 210,
+          "result": "FAIL",
+          "failing_pins": []
+        },
+        "observation_text": "210 IDD_Static: FAIL. The current value and limits were omitted from this excerpt.",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W07-D091; Product_A; tester ate-01; program product_a_ws; failed test 210 IDD_Static; pins unknown. 210 IDD_Static: FAIL. The current value and limits were omitted from this excerpt.",
+        "question": "Can you distinguish high from low current and identify a supported cause from this excerpt?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W07.txt",
+        "source_lines": {
+          "start": 1357,
+          "end": 1366
+        },
+        "excerpt_sha256": "f300265f643680cb9d6c24cf0acb838d2234751e09749981ba7ec97a2262cc3b"
+      },
+      "gold": {
+        "expected_status": "refuse",
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-046",
+      "category": "no_answer",
+      "current": {
+        "dut_id": "Product_A-L02-W01-D041",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 210,
+          "result": "FAIL",
+          "failing_pins": []
+        },
+        "observation_text": "210 IDD_Static: FAIL. The current value and limits were omitted from this excerpt.",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L02-W01-D041; Product_A; tester ate-01; program product_a_ws; failed test 210 IDD_Static; pins unknown. 210 IDD_Static: FAIL. The current value and limits were omitted from this excerpt.",
+        "question": "Can you distinguish high from low current and identify a supported cause from this excerpt?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L02/W01.txt",
+        "source_lines": {
+          "start": 605,
+          "end": 614
+        },
+        "excerpt_sha256": "6d9446354a8d7dd1b423b891e2c0b3910b111514ca8b47b2c334e7f573569772"
+      },
+      "gold": {
+        "expected_status": "refuse",
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-047",
+      "category": "no_answer",
+      "current": {
+        "dut_id": "Product_A-L05-W02-D016",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 210,
+          "result": "FAIL",
+          "failing_pins": []
+        },
+        "observation_text": "210 IDD_Static: FAIL. The current value and limits were omitted from this excerpt.",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W02-D016; Product_A; tester ate-01; program product_a_ws; failed test 210 IDD_Static; pins unknown. 210 IDD_Static: FAIL. The current value and limits were omitted from this excerpt.",
+        "question": "Can you distinguish high from low current and identify a supported cause from this excerpt?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W02.txt",
+        "source_lines": {
+          "start": 231,
+          "end": 240
+        },
+        "excerpt_sha256": "596e62bb889b62bbd49042da244d644f615261363adb6c74cccefe795a627440"
+      },
+      "gold": {
+        "expected_status": "refuse",
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-048",
+      "category": "no_answer",
+      "current": {
+        "dut_id": "Product_A-L05-W07-D007",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 210,
+          "result": "FAIL",
+          "failing_pins": []
+        },
+        "observation_text": "210 IDD_Static: FAIL. The current value and limits were omitted from this excerpt.",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L05-W07-D007; Product_A; tester ate-01; program product_a_ws; failed test 210 IDD_Static; pins unknown. 210 IDD_Static: FAIL. The current value and limits were omitted from this excerpt.",
+        "question": "Can you distinguish high from low current and identify a supported cause from this excerpt?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L05/W07.txt",
+        "source_lines": {
+          "start": 97,
+          "end": 106
+        },
+        "excerpt_sha256": "475b32d21ba685b3c123e0fb98a05adf358e2f8f358176916e729d6c8c8849a0"
+      },
+      "gold": {
+        "expected_status": "refuse",
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-049",
+      "category": "no_answer",
+      "current": {
+        "dut_id": "Product_A-L04-W04-D088",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 210,
+          "result": "FAIL",
+          "failing_pins": []
+        },
+        "observation_text": "210 IDD_Static: FAIL. The current value and limits were omitted from this excerpt.",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L04-W04-D088; Product_A; tester ate-01; program product_a_ws; failed test 210 IDD_Static; pins unknown. 210 IDD_Static: FAIL. The current value and limits were omitted from this excerpt.",
+        "question": "Can you distinguish high from low current and identify a supported cause from this excerpt?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L04/W04.txt",
+        "source_lines": {
+          "start": 1274,
+          "end": 1283
+        },
+        "excerpt_sha256": "0e9a46d8523f9793fe771a67501209655e43d5c757dd2b26d36b0c6d5139ee42"
+      },
+      "gold": {
+        "expected_status": "refuse",
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    },
+    {
+      "id": "PA-EVAL-050",
+      "category": "no_answer",
+      "current": {
+        "dut_id": "Product_A-L04-W04-D008",
+        "dut_id_provided": true,
+        "role": "query_only",
+        "index_as_history": false,
+        "stage": "observation",
+        "synthetic": true,
+        "context": {
+          "product": "Product_A",
+          "tester": "ate-01",
+          "program": "product_a_ws"
+        },
+        "test_result": {
+          "test_number": 210,
+          "result": "FAIL",
+          "failing_pins": []
+        },
+        "observation_text": "210 IDD_Static: FAIL. The current value and limits were omitted from this excerpt.",
+        "input_notice": "",
+        "retrieval_text": "Product_A-L04-W04-D008; Product_A; tester ate-01; program product_a_ws; failed test 210 IDD_Static; pins unknown. 210 IDD_Static: FAIL. The current value and limits were omitted from this excerpt.",
+        "question": "Can you distinguish high from low current and identify a supported cause from this excerpt?"
+      },
+      "provenance": {
+        "source": "syn_data/product_a_v1/logs/L04/W04.txt",
+        "source_lines": {
+          "start": 104,
+          "end": 113
+        },
+        "excerpt_sha256": "ef765a0dc8ed9f8f22d70450a09e1c719c6b833784910e15dfaf05dd007072d6"
+      },
+      "gold": {
+        "expected_status": "refuse",
+        "acceptable_cause_ids": [],
+        "acceptable_check_ids": [],
+        "review_status": "pending_engineer_review"
+      }
+    }
+  ]
+}

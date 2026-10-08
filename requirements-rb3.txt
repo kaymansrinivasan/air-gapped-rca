@@ -1,0 +1,2 @@
+-r requirements-jetson.txt
+# The Qwen HTTP server uses its own installed runtime; the RCA app uses this venv.
