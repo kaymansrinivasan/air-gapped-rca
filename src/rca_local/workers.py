@@ -159,8 +159,11 @@ def generate(job, run_dir):
             env["EDGELLM_PLUGIN_PATH"] = str(build / "libNvInfer_edgellm_plugin.so")
             binary = build / "examples/llm/llm_inference"
             require(binary.is_file() and Path(env["EDGELLM_PLUGIN_PATH"]).is_file(), "TensorRT executable or plugin is missing; check RCA_BUILD_DIR.")
+            command = [str(binary), "--engineDir", str(engine), "--inputFile", str(request), "--outputFile", str(response)]
+            if job.get("profile"):
+                command.extend(["--dumpProfile", "--profileOutputFile", str(run_dir / "profile.json")])
             with (run_dir / "runtime.log").open("w") as log:
-                run = subprocess.run([str(binary), "--engineDir", str(engine), "--inputFile", str(request), "--outputFile", str(response)],
+                run = subprocess.run(command,
                                      env=env, cwd=str(build.parent), stdout=log, stderr=subprocess.STDOUT, timeout=600)
             require(run.returncode == 0 and response.is_file(), "TensorRT failed; see the saved runtime.log.")
             raw = json.loads(response.read_text())

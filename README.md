@@ -25,6 +25,7 @@ current DUT.
 - [Frozen evaluation and proxy-label limits](docs/evaluation.md)
 - [RB3 backend setup](docs/rb3-integration.md)
 - [Saved-run citation audit and board measurement](docs/measurement.md)
+- [One-command benchmark batch, ablations and remaining acceptance gates](docs/benchmark-closeout.md)
 - Start the app: `python -m src.rca_local` inside the Jetson environment.
 - Run software tests: `python -m unittest discover -s tests -v`.
 
