@@ -1,5 +1,43 @@
 # Measurement checkpoint for both boards
 
+## Observed hybrid run, 2026-10-08
+
+Both boards used the frozen 50-question manifest and AI-derived proxy key with
+`--retrieval-mode hybrid`. These figures are from the board runs and separate
+saved-run audits reported on 2026-10-08; the large per-question artifacts remain
+on the respective boards, not in Git. They are **proxy evaluation** results, not
+an independent ATE diagnosis study.
+
+| Metric | Jetson Orin Nano | RB3 Gen 2 |
+| --- | ---: | ---: |
+| Questions | 50 | 50 |
+| Unconfirmed suggestions / refusals | 40 / 10 | 40 / 10 |
+| Unsupported-question refusals | 10 / 10 | 10 / 10 |
+| Agreement with proxy key | 1.00 | 1.00 |
+| Proxy false answers per answered question | 0 / 40 | 0 / 40 |
+| Median / p95 end-to-end latency | 15.72 / 16.81 s | 33.48 / 37.29 s |
+| Source-owned citations passing audit | 110 / 110 | 132 / 132 |
+| Decode throughput | unavailable | 6.79 tokens/s across 40 samples |
+| Average / peak board input power | 7.60 / 13.11 W | unmeasured |
+| Mean energy per triage | 104.98 J | unmeasured |
+
+The Jetson power method was `tegrastats` VDD_IN at one sample per second during
+each question. The audit averages each question's readings to estimate its energy
+as mean watts times request latency. RB3 needs measured input power during its
+questions for a comparable energy figure; the already completed hybrid run has
+no such samples. The proxy key was derived from the same six synthetic historical
+scenarios, so 1.00 agreement and zero proxy false answers do not establish
+real-world diagnostic accuracy. Citation validity checks exact source membership
+and the verifier's symptom rules; it does not establish correctness of the cause.
+
+Saved results: Jetson `artifacts/evaluation/jetson_proxy_power_v3.json` and
+`jetson_proxy_power_v3_audit.json` under `RCA_DATA_ROOT`; RB3
+`artifacts/evaluation/rb3_proxy_hybrid_v2.json` and
+`rb3_proxy_hybrid_v2_audit.json` under its checkout. The benchmark summary's
+power and citation fields remain null because these metrics are in the separate
+audit JSON. Do not merge those fields mentally or mistake them for missing audit
+results.
+
 The fixed 50-question inputs are in `eval/product_a_v1_50.json`. Jetson and RB3
 have already run them with the AI-derived proxy key. Preserve those original
 result files and all matching `artifacts/rca_app/<run_id>/` folders. Their
