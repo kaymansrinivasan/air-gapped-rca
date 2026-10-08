@@ -26,8 +26,12 @@ each question. The audit averages each question's readings to estimate its energ
 as mean watts times request latency. RB3 needs measured input power during its
 questions for a comparable energy figure; the already completed hybrid run has
 no such samples. The proxy key was derived from the same six synthetic historical
-scenarios, so 1.00 agreement and zero proxy false answers do not establish
-real-world diagnostic accuracy. Citation validity checks exact source membership
+scenarios. The field named `proxy_exact_answer_agreement` accepts any nonempty
+subset of acceptable causes and checks; it is **not** an exact set match and
+does not mean the two boards emitted identical selections. Their different
+citation totals make that distinction visible. A score of 1.00 and zero proxy
+false answers do not establish real-world diagnostic accuracy. Citation validity
+checks exact source membership
 and the verifier's symptom rules; it does not establish correctness of the cause.
 
 Saved results: Jetson `artifacts/evaluation/jetson_proxy_power_v3.json` and
