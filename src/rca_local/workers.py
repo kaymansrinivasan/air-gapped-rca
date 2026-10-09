@@ -6,10 +6,38 @@ import json
 import math
 import os
 from pathlib import Path
+import re
 import subprocess
 import sys
 
 from .core import EvidenceError, load_history, require
+
+
+def keyword_scores(query, documents):
+    """Score exact log tokens within the already scoped historical candidates."""
+    def words(value):
+        # Wafer/DUT IDs are identifiers of different devices, never evidence
+        # that their electrical symptoms match.
+        value = re.sub(r"\bProduct_A-L\d+-W\d+-D\d+\b", " ", value, flags=re.I)
+        return {w for w in re.findall(r"[a-z0-9_]+", value.lower()) if len(w) > 2}
+    terms = words(query)
+    candidates = {key: words(doc) for key, doc in documents.items()}
+    return {key: len(terms & value) for key, value in candidates.items()}
+
+
+def rank_candidates(vector_ids, documents, query, mode):
+    require(mode in ("hybrid", "vector_only"), "Invalid retrieval mode.")
+    if mode == "vector_only":
+        return list(vector_ids), keyword_scores(query, documents)
+    lexical = keyword_scores(query, documents)
+    lexical_ids = sorted(vector_ids, key=lambda key: (-lexical[key], key))
+    vector_rank = {key: i for i, key in enumerate(vector_ids, 1)}
+    keyword_rank = {key: i for i, key in enumerate(lexical_ids, 1)}
+    # Reciprocal-rank fusion, with exact log terms weighted twice. The small
+    # historical set has at most two same-test cases per product today.
+    order = sorted(vector_ids, key=lambda key: (
+        -(1 / (60 + vector_rank[key]) + 2 / (60 + keyword_rank[key])), vector_rank[key]))
+    return order, lexical
 
 
 def settings():
@@ -27,8 +55,12 @@ def retrieve(current):
     eligible = {dut: c for dut, c in cases.items()
                 if c["records"]["observation"]["original_chunk"]["failed_test"] == current["test_result"]["test_number"]
                 and c["records"]["observation"]["original_chunk"].get("product") == current["context"]["product"]}
+    mode = os.environ.get("RCA_RETRIEVAL_MODE", "hybrid")
+    require(mode in ("hybrid", "vector_only"), "Invalid RCA_RETRIEVAL_MODE.")
     bundle = {"current": current, "matches": [], "candidate_count": len(eligible),
-              "method": "llamaindex_chroma_same_product_same_failed_test", "score_is_cause_probability": False}
+              "method": "same_product_test_chroma_keyword_rrf" if mode == "hybrid"
+                        else "same_product_test_chroma_vector_only",
+              "score_is_cause_probability": False}
     if not eligible:
         return bundle
     db = root / "artifacts/chroma_product_a"
@@ -59,9 +91,13 @@ def retrieve(current):
     ))
     ids, scores = results.ids or [], results.similarities or []
     require(bool(ids) and len(ids) == len(scores) and len(ids) == len(set(ids)), "Invalid or empty search result.")
-    for rank, (dut, score) in enumerate(zip(ids, scores), 1):
+    for dut, score in zip(ids, scores):
         require(dut in eligible and math.isfinite(float(score)) and 0 < float(score) <= 1, "Invalid search score or case.")
-        bundle["matches"].append({**eligible[dut], "rank": rank, "vector_distance": -math.log(float(score))})
+    ordered, lexical = rank_candidates(ids, docs, current["retrieval_text"], mode)
+    distance = {dut: -math.log(float(score)) for dut, score in zip(ids, scores)}
+    for rank, dut in enumerate(ordered, 1):
+        bundle["matches"].append({**eligible[dut], "rank": rank,
+                                  "vector_distance": distance[dut], "keyword_overlap": lexical[dut]})
     bundle["chroma_records"] = collection.count()
     return bundle
 
@@ -123,8 +159,11 @@ def generate(job, run_dir):
             env["EDGELLM_PLUGIN_PATH"] = str(build / "libNvInfer_edgellm_plugin.so")
             binary = build / "examples/llm/llm_inference"
             require(binary.is_file() and Path(env["EDGELLM_PLUGIN_PATH"]).is_file(), "TensorRT executable or plugin is missing; check RCA_BUILD_DIR.")
+            command = [str(binary), "--engineDir", str(engine), "--inputFile", str(request), "--outputFile", str(response)]
+            if job.get("profile"):
+                command.extend(["--dumpProfile", "--profileOutputFile", str(run_dir / "profile.json")])
             with (run_dir / "runtime.log").open("w") as log:
-                run = subprocess.run([str(binary), "--engineDir", str(engine), "--inputFile", str(request), "--outputFile", str(response)],
+                run = subprocess.run(command,
                                      env=env, cwd=str(build.parent), stdout=log, stderr=subprocess.STDOUT, timeout=600)
             require(run.returncode == 0 and response.is_file(), "TensorRT failed; see the saved runtime.log.")
             raw = json.loads(response.read_text())

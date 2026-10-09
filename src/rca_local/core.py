@@ -107,7 +107,7 @@ def adapt_procedure(text, historical_dut, current_dut):
     return re.sub(pattern, lambda _: f"the current DUT ({current_dut})" if current_dut else "the current DUT", text)
 
 
-def make_catalog(bundle):
+def make_catalog(bundle, *, filter_pins=True):
     catalog = {}
     current_pins = {p["name"] for p in bundle["current"]["test_result"].get("failing_pins", [])}
     for match in bundle["matches"]:
@@ -125,7 +125,7 @@ def make_catalog(bundle):
                 # A cause naming an unrelated historical pin cannot describe this DUT.
                 # Keep the complete source visible in historical evidence, but do not
                 # offer that pin-specific cause as an answer choice.
-                if kind == "cause" and any(
+                if filter_pins and kind == "cause" and any(
                     pin not in current_pins and re.search(r"\b" + re.escape(pin) + r"\b", text)
                     for pin in historical_pins
                 ):
@@ -137,7 +137,7 @@ def make_catalog(bundle):
     return catalog
 
 
-def build_prompt(bundle, catalog):
+def build_prompt(bundle, catalog, *, max_causes=2, force_answer=False):
     # IDs are shortened only within the model request; citations never come from Qwen.
     aliases = {f"{'C' if v['kind'] == 'cause' else 'K'}{i}": key
                for i, (key, v) in enumerate(catalog.items(), 1)}
@@ -178,10 +178,23 @@ def build_prompt(bundle, catalog):
         "with at least one in each array. Rank for relevance and omit the other IDs. "
         "For refuse: both arrays must be empty. Check the array lengths before answering."
     )
+    require(max_causes in (2, 3), "Invalid cause limit.")
+    if max_causes == 3:
+        instruction = instruction.replace(
+            "Select one or two IDs per array, never more than two.",
+            "Select one to three cause IDs and one or two check IDs.")
+        reminder = reminder.replace("at most TWO C IDs", "at most THREE C IDs")
+    if force_answer:
+        instruction = instruction.replace("status must be unconfirmed or refuse.", "status must be unconfirmed.")
+        instruction = instruction.replace(
+            "If the question is unsupported, refuse with both arrays empty.",
+            "For this benchmark experiment, choose the best available causes and checks even if support is insufficient. Do not refuse.")
+        reminder = reminder.replace("For refuse: both arrays must be empty.", "Do not return refuse in this benchmark experiment.")
     return instruction + json.dumps(data, separators=(",", ":"), ensure_ascii=False) + reminder, aliases
 
 
-def validate_selection(text, aliases, catalog):
+def validate_selection(text, aliases, catalog, *, max_causes=2):
+    require(max_causes in (2, 3), "Invalid cause limit.")
     def unique_object(pairs):
         result = {}
         for k, v in pairs:
@@ -199,7 +212,8 @@ def validate_selection(text, aliases, catalog):
         values = answer[field]
         require(isinstance(values, list) and all(isinstance(x, str) for x in values),
                 f"{field} must be an array of string IDs.")
-        require(len(values) <= 2, f"{field} contains {len(values)} IDs; maximum is 2.")
+        limit = max_causes if field == "cause_ids" else 2
+        require(len(values) <= limit, f"{field} contains {len(values)} IDs; maximum is {limit}.")
         require(len(values) == len(set(values)), "Duplicate selected ID.")
         selected[field] = []
         for alias in values:
@@ -226,3 +240,4 @@ def render_answer(bundle, status, selected):
         "limitations": LIMITATIONS,
         "validation": "IDs, evidence type and source mapping checked; diagnostic relevance has not been independently verified.",
     }
+

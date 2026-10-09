@@ -10,24 +10,37 @@ guidance informed possible causes and investigation procedures. The simulated
 investigation, action and retest outcomes are **not physically tested and not
 reviewed**. They are not confirmed real-world diagnoses.
 
-LlamaIndex-to-Chroma retrieval and LlamaIndex-to-Qwen3.5-0.8B inference have
-been demonstrated on the Jetson Orin Nano. Free-text RCA drafts produced wrong
-citations and historical-DUT references and were rejected.
+Both Jetson Orin Nano (TensorRT Edge-LLM) and RB3 Gen 2 (QNN HTP) run the same
+local investigation flow with Qwen3.5-0.8B. LlamaIndex queries a local Chroma
+index and the application follows linked, source-hashed historical records.
 
-The new local app presents a browser form for a failure observation and an
+The local app presents a browser form for a failure observation and an
 engineer's question. Qwen selects evidence IDs; code supplies source-owned
-text and citations. Invalid selections are rejected. Source validation is
-not proof that a hypothesis explains the current DUT.
+text and citations. Invalid selections are rejected. Free-form chat is
+experimental. Source validation is not proof that a hypothesis explains the
+current DUT.
 
 - [Local app setup, supported inputs and limitations](docs/local-app.md)
 - [Observed Jetson integration progress](docs/jetson-progress.md)
+- [Frozen evaluation and proxy-label limits](docs/evaluation.md)
+- [RB3 backend setup](docs/rb3-integration.md)
+- [Saved-run citation audit and board measurement](docs/measurement.md)
+- [One-command benchmark batch, ablations and remaining acceptance gates](docs/benchmark-closeout.md)
 - Start the app: `python -m src.rca_local` inside the Jetson environment.
 - Run software tests: `python -m unittest discover -s tests -v`.
 
-One new synthetic IDD case completed the browser-to-answer flow on the Jetson
-on 2026-10-06. The compact UI revision still needs on-board validation. The
-full quality benchmark, offline unplug/reboot test, RB3 integration and board
-comparison are pending. This is a research prototype, not a production RCA service.
+Both boards completed the same frozen 50-question hybrid-retrieval proxy
+evaluation: 40 unconfirmed suggestions and 10 refusals each, including all 10
+unsupported questions. The Jetson median/p95 end-to-end latencies were
+15.72/16.81 s; RB3 measured 33.48/37.29 s. Both satisfied the AI-derived proxy
+acceptance rubric, which permits supported subsets of causes and checks from
+the same synthetic historical scenarios. Source audits checked
+110/110 Jetson and 132/132 RB3 displayed citations. Jetson board input averaged
+7.60 W, peaked at 13.11 W, and averaged 104.98 J per triage. RB3 power and
+independently reviewed diagnostic accuracy remain unmeasured; the disconnected
+cold-boot test, ablations, and paper are also open.
+The two runtimes also differ in precision and engine lifecycle. This is a
+research prototype, not a production RCA service.
 
 ## Proposed workflow
 
