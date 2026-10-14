@@ -51,3 +51,7 @@ The diagram describes the whole intended system.
 The diagram describes the target architecture; not all acceptance criteria
 have been demonstrated.
 
+cd ~/Documents/airgap-rca-minimal &&
+export RCA_DATA_ROOT="$HOME/Documents/airgap-rca" &&
+export RCA_BACKEND=jetson &&
+"$RCA_DATA_ROOT/.venv-llamaindex-jetson/bin/python" -m src.rca_local
