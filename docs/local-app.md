@@ -8,7 +8,7 @@
 3. Optionally expand **Add a log or observation** to paste text or load a
    `.txt`/`.log` file into the same field. DUT and failing pins are optional.
 4. Click **Investigate failure**. Read the compact **Answer** view; use
-   **Evidence** for historical cases and **Details** for limitations/audit data.
+   **Chat → View sources** for historical cases and **Details** for data provenance, limitations and audit data.
    Source buttons open the exact original wording in a dialog.
 
 Only Product_A and Continuity (100), IDD_Static (210), Scan (606) are supported.
@@ -265,3 +265,25 @@ No diagnostic text or historical record is silently rewritten.
 Development validation: 52 automated tests passed, including regressions for the
 observed D100 instruction, causal overclaim, preserved historical descriptions,
 retry and exclusion of known-bad previous replies. On-device recheck pending.
+
+
+## Investigation workspace update (2026-10-14)
+
+The interface has three tabs: **Answer**, **Chat**, and **Details**. The separate
+Evidence tab is removed. **Chat → View sources** opens the complete retrieved
+observation, investigation, action and retest records without making a model
+request. Original records retain their record IDs, file/line references and
+SHA-256 hashes. Answer citations and individual chat reply citations also remain.
+
+The workspace uses a navy/teal layout and removes the prototype banner. Data
+provenance is available in Details even before an investigation; simulated and
+unreviewed history is not relabelled as production evidence. Optional input
+provenance remains under **Record settings → Simulated observation**. The API's
+`synthetic` field and all source metadata are unchanged.
+
+All assets are embedded in the HTML. The UI makes only same-origin API calls.
+Answer and Chat retain the existing local Jetson or RB3 backend and shared job
+lock. This UI update does not change model weights, precision, prompts, retrieval,
+verification, refusal behaviour, hardware support or deployment validation.
+Free-form chat still needs engineer review. A polished interface does not change
+the validation status of the application or its bundled data.
