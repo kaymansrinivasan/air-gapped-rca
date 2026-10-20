@@ -123,13 +123,31 @@ class AotSharedTests(unittest.TestCase):
             raise RuntimeError("primary QNN error")
 
         runner.run = run
-        args = SimpleNamespace(cache=self.cache, bundle=self.bundle)
+        args = SimpleNamespace(cache=self.cache, bundle=self.bundle, resource_sharing=True)
         with self.assertRaisesRegex(RuntimeError, "primary QNN error"):
             aot.run_cached(args, runner, [{"name": "layer_00"}])
         record = json.loads(report.read_text())
         self.assertEqual(observed, ["1"])
         self.assertEqual(record["status"], "failed")
         self.assertEqual(record["error"], "original QNN error")
+
+    def test_plain_aot_does_not_request_unsupported_resource_sharing(self):
+        runner = SimpleNamespace(options=ort.SessionOptions, ort=ort)
+        seen = []
+
+        def run(args):
+            options = runner.options()
+            for key in ("htp_share_resource_optimization", "enable_vtcm_backup_buffer_sharing"):
+                with self.assertRaises(RuntimeError):
+                    options.get_session_config_entry("ep.qnnexecutionprovider." + key)
+            self.assertEqual(options.get_session_config_entry("ep.context_enable"), "0")
+            self.assertEqual(options.get_session_config_entry("ep.context_embed_mode"), "0")
+            seen.append(True)
+
+        runner.run = run
+        args = SimpleNamespace(cache=self.cache, bundle=self.bundle, resource_sharing=False)
+        aot.run_cached(args, runner, [{"name": "layer_00"}])
+        self.assertEqual(seen, [True])
 
     def test_prepare_creates_guarded_external_cache_without_executing_graph(self):
         source = self.bundle / "int8" / "layer_14.onnx"

@@ -2,7 +2,8 @@
 """Bounded QNN AOT loading experiment for the existing shared Qwen bundle.
 
 Compile each unchanged graph in a separate process, then run the existing
-generation loop from external QNN contexts with resource sharing requested.
+generation loop from external QNN contexts. Resource sharing is opt-in because
+the target backend can reject that API even when the plugin exposes the option.
 Requires ORT 1.27.0 and onnxruntime-qnn 2.3.0. No accuracy approval is implied.
 """
 import argparse
@@ -105,8 +106,8 @@ def qnn_options(runner, context=None, name=None, prepare=False):
     if not devices:
         raise RuntimeError("QNN devices unavailable")
     values = {"backend_path": qnn.get_qnn_htp_path(), "offload_graph_io_quantization": "0"}
-    values.update({"enable_htp_prepare_only": "1"} if prepare else
-                  {"htp_share_resource_optimization": "1"})
+    if prepare:
+        values["enable_htp_prepare_only"] = "1"
     options.add_provider_for_devices(devices, values)
     return options
 
@@ -164,7 +165,8 @@ def run_cached(args, runner, specs):
         options = original_options()
         options.add_session_config_entry("ep.context_enable", "0")
         options.add_session_config_entry("ep.context_embed_mode", "0")
-        options.add_session_config_entry("ep.qnnexecutionprovider.htp_share_resource_optimization", "1")
+        if args.resource_sharing:
+            options.add_session_config_entry("ep.qnnexecutionprovider.htp_share_resource_optimization", "1")
         return options
 
     runner.options = shared_options
@@ -185,12 +187,12 @@ def run_cached(args, runner, specs):
                     record["status"] = "failed"
                 record["qnn_loading_experiment"] = {
                     "cache": str(args.cache), "mode": "external AOT contexts",
-                    "resource_sharing_requested": True, "loaded_graphs": owner.loaded,
+                    "resource_sharing_requested": args.resource_sharing, "loaded_graphs": owner.loaded,
                     "source_graphs_weights_scales": "unchanged",
                     "accuracy_acceptance": "not established"}
                 write_json(owner.report_path, record)
-                print("AOT-SHARED STATUS:", record["status"], flush=True)
-                print("AOT-SHARED REPORT:", owner.report_path, flush=True)
+                print("AOT STATUS:", record["status"], flush=True)
+                print("AOT REPORT:", owner.report_path, flush=True)
             except Exception as exc:
                 if not primary_error:
                     raise
@@ -206,6 +208,8 @@ def main():
     parser.add_argument("--max-new-tokens", type=int, default=32)
     parser.add_argument("--prompt-ids", type=Path)
     parser.add_argument("--workspace-mib", type=int, default=64)
+    parser.add_argument("--resource-sharing", action="store_true",
+                        help="Opt in to QNN resource sharing; requires target-backend support")
     parser.add_argument("--prepare", help=argparse.SUPPRESS)
     parser.add_argument("--execute", action="store_true", help=argparse.SUPPRESS)
     args = parser.parse_args()
@@ -249,6 +253,8 @@ def main():
         subprocess.run(base + ["--prepare", name], check=True)
     command = base + ["--execute", "--max-new-tokens", str(args.max_new_tokens),
                       "--workspace-mib", str(args.workspace_mib)]
+    if args.resource_sharing:
+        command.append("--resource-sharing")
     if args.prompt_ids:
         command += ["--prompt-ids", str(args.prompt_ids.resolve())]
     subprocess.run(command, check=True)
